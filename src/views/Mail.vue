@@ -66,7 +66,7 @@ export default {
                 Password : "&KX*3aFz8vzo",
                 To : email,
                 From : "webstore496@gmx.com",
-                Subject : "Importaint message for Mr. "+name+"!",
+                Subject : "Important message for Mr. "+name+"!",
                 Body : msg,
             }).then(
                 message => alert(message),
