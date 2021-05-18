@@ -3,27 +3,27 @@
     <div class="cart-wrapper">
       <div class="cart">
         <h1 class="title">Your cart</h1>
-          <p>"0" products</p>
-          <table class="table is-striped">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <!--- Hårdkokdad data, ska ändras --->
-              <tr class="table-item">
-                <td>Product name</td>
-                <td>Product Description</td>
-                <td>Product Price</td>
-                <td><button class="remove-btn">x</button></td>
-              </tr>
-              <!--- Hårdkokdad data, ska ändras --->
-            </tbody>
-        </table>
+        <p>"0" products</p>
+        <table class="table is-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--- Hårdkokdad data, ska ändras --->
+            <tr class="table-item">
+              <td>Product name</td>
+              <td>Product Description</td>
+              <td>Product Price</td>
+              <td><button class="remove-btn">x</button></td>
+            </tr>
+            <!--- Hårdkokdad data, ska ändras --->
+          </tbody>
+      </table>
       </div>
     </div>
     <router-link to="/cart/checkout" class="checkout">Continue to checkout</router-link>
@@ -50,6 +50,11 @@ export default {
 
   .cart {
     margin: 0 20px;
+  }
+
+  .table {
+    color: #000000;
+    box-shadow: #00000075 1px 2px 5px;
   }
 
   .table-item:hover {
