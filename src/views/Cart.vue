@@ -26,7 +26,7 @@
         </table>
       </div>
     </div>
-    <button class="checkout-btn">Finish checkout</button>
+    <router-link to="/cart/checkout" class="checkout">Continue to checkout</router-link>
   </div>
 </template>
 
@@ -45,10 +45,11 @@ export default {
   .cart-wrapper {
     display: flex;
     justify-content: center;
+    margin-bottom: 25px;
   }
 
   .cart {
-    width: 50%;
+    margin: 0 20px;
   }
 
   .table-item:hover {
@@ -66,15 +67,22 @@ export default {
     background-color: #a01919e5;
   }
 
-  .checkout-btn {
+  .checkout {
     border: none;
-    margin-top: 25px;
-    padding: 5px 10px;
+    color: #FFFFFF;
+    padding: 10px 15px;
     border-radius: 5px;
     background-color: #42b983;
   }
 
-  .checkout-btn:hover, .checkout-btn:focus {
+  .checkout:hover, .checkout:focus {
+    text-decoration: none;
     background-color: #289061;
+  }
+
+  @media screen and (min-width: 512px) {
+    .cart {
+      margin: 0 10%;
+    }
   }
 </style>
