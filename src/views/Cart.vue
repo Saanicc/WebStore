@@ -7,18 +7,20 @@
         <table class="table is-striped">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Price</th>
+              <th>Namn</th>
+              <th>Beskrivning</th>
+              <th>Pris</th>
+              <th>Antal</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             <!--- Hårdkokdad data, ska ändras --->
             <tr class="table-item">
-              <td>Product name</td>
-              <td>Product Description</td>
-              <td>Product Price</td>
+              <td>Produkt namn</td>
+              <td>Produkt beskriving</td>
+              <td>Produkt Pris</td>
+              <td><input type="number" value="0" width="75px" /></td>
               <td><button class="remove-btn">x</button></td>
             </tr>
             <!--- Hårdkokdad data, ska ändras --->
@@ -55,21 +57,35 @@ export default {
   .table {
     color: #000000;
     box-shadow: #00000075 1px 2px 5px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+  }
+
+  .table td {
+    vertical-align: middle;
   }
 
   .table-item:hover {
     background-color: rgba(107, 107, 107, 0.24);
   }
 
+  .table-item > td > input {
+    width: 60px;
+    border: none;
+    padding: 5px 5px 5px 10px;
+    border-radius: 5px;
+    box-shadow: #00000050 0px 0px 2px;
+  }
+
   .remove-btn {
     border: none;
     padding: 0 10px;
     border-radius: 5px;
-    background-color: #d82e2ee5;
+    background-color: #ff0000e5;
   }
 
   .remove-btn:hover, .remove-btn:focus {
-    background-color: #a01919e5;
+    background-color: #c00404e5;
   }
 
   .checkout {
