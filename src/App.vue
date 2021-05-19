@@ -2,7 +2,6 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Products</router-link> |
-      <router-link to="/mail">Mail</router-link> |
       <router-link to="/cart" id="checkout">
         <b-icon icon="cart4" font-scale="1.5"></b-icon>
       </router-link>
