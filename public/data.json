@@ -1,0 +1,71 @@
+{
+    "phones": [
+        {
+            "id": "001",
+            "name": "iPhone3",
+            "price": "7999 kr",
+            "color": "Black",
+            "img": "https://picsum.photos/600/300/?image=25"
+        },
+        {
+            "id": "002",
+            "name": "iPhone5",
+            "price": "5999 kr",
+            "color": "Rose",
+            "img": "https://picsum.photos/600/300/?image=25"
+        },
+        {
+            "id": "003",
+            "name": "iPhone7",
+            "price": "8999 kr",
+            "color": "Gold",
+            "img": "https://picsum.photos/600/300/?image=25"
+        },
+        {
+            "id": "004",
+            "name": "iPhoneX",
+            "price": "10999 kr",
+            "color": "Red",
+            "img": "https://picsum.photos/600/300/?image=25"
+        },
+        {
+            "id": "005",
+            "name": "iPhone11",
+            "price": "9999 kr",
+            "color": "Grey",
+            "img": "https://picsum.photos/600/300/?image=25"
+        }
+    ],
+    "computers": [
+        {
+            "id": "006",
+            "name": "iMac1",
+            "price": "7999 kr",
+            "img": "https://picsum.photos/600/300/?image=25"
+        },
+        {
+            "id": "007",
+            "name": "iMac2",
+            "price": "5999 kr",
+            "img": "https://picsum.photos/600/300/?image=25"
+        },
+        {
+            "id": "008",
+            "name": "iMac3",
+            "price": "8999 kr",
+            "img": "https://picsum.photos/600/300/?image=25"
+        },
+        {
+            "id": "009",
+            "name": "iMac4",
+            "price": "10999 kr",
+            "img": "https://picsum.photos/600/300/?image=25"
+        },
+        {
+            "id": "010",
+            "name": "iMac6",
+            "price": "9999 kr",
+            "img": "https://picsum.photos/600/300/?image=25"
+        }
+    ]
+}

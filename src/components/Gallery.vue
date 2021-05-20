@@ -23,42 +23,13 @@
 
 <!-- Hårdkodad data -->
 <script>
+import Data from "../../public/data.json";
+
 export default {
   name: "Gallery",
   data() {
     return {
-      products: [
-        {
-          id: "001",
-          name: "Mobil1",
-          price: "7999 kr",
-          img: require("../assets/logo.png"),
-        },
-        {
-          id: "002",
-          name: "Mobil2",
-          price: "5999 kr",
-          img: require("../assets/drink.png"),
-        },
-        {
-          id: "003",
-          name: "Mobil3",
-          price: "8999 kr",
-          img: "https://picsum.photos/600/300/?image=25",
-        },
-        {
-          id: "004",
-          name: "Mobil4",
-          price: "10999 kr",
-          img: "https://picsum.photos/600/300/?image=25",
-        },
-        {
-          id: "005",
-          name: "Mobil5",
-          price: "9999 kr",
-          img: "https://picsum.photos/600/300/?image=25",
-        },
-      ],
+      products: Data.phones,
     };
   },
   methods: {
