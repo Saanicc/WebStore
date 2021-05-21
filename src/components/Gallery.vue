@@ -23,14 +23,13 @@
 
 <!-- Hårdkodad data -->
 <script>
-import Data from "../../public/data.json";
 
 export default {
   name: "Gallery",
-  data() {
-    return {
-      products: Data.phones,
-    };
+  computed:{
+    products(){
+      return this.$store.state.products
+    }
   },
   methods: {
     addToCart() {},
@@ -38,11 +37,9 @@ export default {
 };
 </script>
 
-
 <style scoped>
 .cards {
   display: flex;
   align-content: center;
 }
 </style>
-
