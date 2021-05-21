@@ -10,19 +10,21 @@
           <thead>
             <tr>
               <th>Namn</th>
-              <th>Beskrivning</th>
-              <th>Pris</th>
               <th>Antal</th>
-              <th></th>
+              <th>Pris</th>
             </tr>
           </thead>
           <tbody>
             <!--- Hårdkokdad data, ska ändras --->
             <tr class="table-item">
-              <td>Produkt namn</td>
-              <td>Produkt beskriving</td>
-              <td>Produkt Pris</td>
-              <td>0</td>
+              <td>Samsung Galaxy S21 Ultra 5G</td>
+              <td>1</td>
+              <td>13490kr</td>
+            </tr>
+            <tr class="table-item">
+              <td>iPhone X</td>
+              <td>1</td>
+              <td>8490kr</td>
             </tr>
             <!--- Hårdkokdad data, ska ändras --->
           </tbody>
@@ -61,10 +63,12 @@
       </div>
     </div>
     <p class="price-total">Totala summan är: {{ 0 }}kr</p>
-    <router-link to="/" class="cancel-btn">Avbryt</router-link>
-    <button class="checkout-btn" @click="finishCheckout()">
-      Slutför betalning
-    </button>
+    <div class="buttons">
+      <router-link to="/" class="cancel-btn" tag="button">Avbryt</router-link>
+      <button class="checkout-btn" @click="finishCheckout()">
+        Slutför betalning
+      </button>
+    </div>
   </div>
 </template>
 
@@ -159,14 +163,16 @@ export default {
 
 .show-cart-btn {
   margin-top: 10px;
+  margin-bottom: 20px;
   padding: 5px 10px 5px 10px;
+  width: 150px;
   border-radius: 5px;
   border: none;
   background-color: #00000025;
 }
 
 .show-cart-btn p {
-  margin: 0;
+  margin: 0 auto;
 }
 
 .show-cart-btn:hover {
@@ -174,32 +180,37 @@ export default {
 }
 
 .cart-info {
-  box-shadow: #00000050 1px 2px 4px;
+  box-shadow: #0000001f 1px 2px 4px;
   background-color: #FFFFFF;
   display: block;
-  margin: 0 auto;
-  width: 500px;
+  margin: 4px auto 0 auto;
+  width: 90%;
   border-radius: 5px;
+  overflow-x: auto;
 }
 
 .table {
-  margin: 20px 0 50px 0;
   color: #000;
+  margin: 0;
+}
+
+.table > thead {
+  background-color: #0000001a;
 }
 
 .input-wrapper {
   display: flex;
   justify-content: center;
-  width: 500px;
-  margin: 20px auto 0 auto;
+  width: 100%;
+  margin: 25px auto 0 auto;
   /* border: 1px solid black */
 }
 
 .inputs {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto;
   /* border: 1px red solid; */
-  width: 100%;
+  width: 90%;
   justify-items: start;
 }
 
@@ -207,7 +218,7 @@ export default {
   position: relative;
   /* border: 1px blue solid; */
   width: 100%;
-  padding: 0 10px;
+  padding: 0;
   margin-bottom: 10px;
 }
 
@@ -216,67 +227,39 @@ export default {
   left: 10px;
 }
 
-.item1 {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.item2 {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.item3 {
-  grid-column: 1 / span 2;
-  grid-row: 2;
-}
-
-.item4 {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.item5 {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-.item6 {
-  grid-column: 1 / span 2;
-  grid-row: 4;
-}
-
-.item7 {
-  grid-column: 1 / span 2;
-  grid-row: 5;
-}
-
 .grid-item > input {
   border: none;
   margin: 0 0 5px 0px;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 5px;
   width: 100%;
   box-shadow: #0000001f 1px 2px 4px;
 }
 
 .price-total {
-  margin-top: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.buttons {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .cancel-btn, .checkout-btn {
   border: none;
-  margin-top: 0;
-  padding: 10px 25px;
-  font-size: 1.2em;
-  border-radius: 5px; 
+  height: 100%;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 0 5px;
 }
 
 .cancel-btn {
   background-color: rgba(245, 21, 21, 0.815);
   color: #000000;
-  margin-right: 20px;
-  padding: 14px 25px;
+  
 }
 
 .cancel-btn:hover,
@@ -292,5 +275,64 @@ export default {
 .checkout-btn:hover,
 .checkout-btn:focus {
   background-color: #289061;
+}
+
+@media screen and (min-width: 513px) {
+  .cart-info {
+    width: 480px;
+  }
+
+  .inputs {
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    width: 480px;
+  }
+
+  .item1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .item2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .item3 {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+  .item4 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .item5 {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .item6 {
+    grid-column: 1 / span 2;
+    grid-row: 4;
+  }
+
+  .item7 {
+    grid-column: 1 / span 2;
+    grid-row: 5;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .cart-info {
+    width: 600px;
+  }
+
+  .inputs {
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    width: 500px;
+  }
 }
 </style>
