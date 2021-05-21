@@ -15,18 +15,11 @@
             </tr>
           </thead>
           <tbody>
-            <!--- Hårdkokdad data, ska ändras --->
-            <tr class="table-item">
-              <td>Samsung Galaxy S21 Ultra 5G</td>
-              <td>1</td>
-              <td>13490kr</td>
+            <tr class="table-item" v-for="product in products" :key="product.id">
+              <td>{{product.name}}</td>
+              <td>{{product.quantity}}</td>
+              <td>{{product.price}}</td>
             </tr>
-            <tr class="table-item">
-              <td>iPhone X</td>
-              <td>1</td>
-              <td>8490kr</td>
-            </tr>
-            <!--- Hårdkokdad data, ska ändras --->
           </tbody>
       </table>
     </div>
@@ -62,7 +55,7 @@
         </div>
       </div>
     </div>
-    <p class="price-total">Totala summan är: {{ 0 }}kr</p>
+    <p class="price-total">Totala summan är: {{ totalSum }}kr</p>
     <div class="buttons">
       <router-link to="/" class="cancel-btn" tag="button">Avbryt</router-link>
       <button class="checkout-btn" @click="finishCheckout()">
@@ -75,6 +68,9 @@
 <script>
 export default {
   name: "Checkout",
+  created(){
+  this.products = this.$store.state.cart
+  },
   data() {
     var Email = { 
       send: function (a) { 
@@ -110,7 +106,7 @@ export default {
       } 
     }
     return {
-      products: [],
+      products: null,
       firstName: "",
       lastName: "",
       streetAdress: "",
@@ -155,6 +151,13 @@ export default {
     adress() {
       return this.streetAdress + "\n" + this.zipCode + " " + this.county;
     },
+    totalSum(){
+      var sum = 0
+      for(let i = 0; i < this.products.length;i++){
+        sum += this.products[i].price
+      }
+      return sum
+    }
   },
 };
 </script>

@@ -6,8 +6,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    cart:[],
     searchQuery: null,
-    products: Data.phones
+    products: Data.phones,
   },
   mutations: {
     searchQuery(state, searchQuery){
@@ -23,6 +24,22 @@ export default new Vuex.Store({
         state.products = Data.phones;
       }
     },
+    addToCart(state, product){
+      if (state.cart.includes(product)){
+        console.log("producten finns redan")
+      }
+      else{
+        state.cart.push(product);
+      }
+    },
+    removeFromCart(state,product){
+      for (let i = 0; i<state.cart.length;i++){
+        if (state.cart[i].id === product.id){
+          state.cart.splice(i,1)
+          break;
+        }
+      }
+    }
   },
   actions: {
   },

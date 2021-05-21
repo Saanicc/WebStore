@@ -1,7 +1,7 @@
 <template>
   <div class="cart-page">
     <h1 class="title">Din kundvagn</h1>
-    <p>Du har "0" produkter i din kundvagn</p>
+    <p>Du har '{{products.length}}' produkter i din kundvagn</p>
     <div class="cart">
       <table class="table is-striped">
         <thead>
@@ -13,40 +13,17 @@
           </tr>
         </thead>
         <tbody>
-          <!--- Hårdkokdad data, ska ändras --->
-          <tr class="table-item">
-            <td>Produkt namn</td>
-            <td><input type="number" value="0" width="75px" /></td>
-            <td>6990kr</td>
-            <td><button class="remove-btn">x</button></td>
+          <tr class="table-item" v-for="product in products" :key="product.id">
+            <td>{{product.name}}</td>
+            <td><input type="number" :value="product.quantity" width="75px" /></td>
+            <td>{{product.price}}</td>
+            <td><button class="remove-btn" @click="removeFromCart(product)">x</button></td>
           </tr>
-          <tr class="table-item">
-            <td>Produkt namn</td>
-            <td><input type="number" value="0" width="75px" /></td>
-            <td>7490kr</td>
-            <td><button class="remove-btn">x</button></td>
-          </tr>
-          <tr class="table-item">
-            <td>Produkt namn</td>
-            <td><input type="number" value="0" width="75px" /></td>
-            <td>10490kr</td>
-            <td><button class="remove-btn">x</button></td>
-          </tr>
-          <tr class="table-item">
-            <td>Produkt namn</td>
-            <td><input type="number" value="0" width="75px" /></td>
-            <td>4990kr</td>
-            <td><button class="remove-btn">x</button></td>
-          </tr>
-          
-          <!--- Hårdkokdad data, ska ändras --->
         </tbody>
         <tbody>
-          <!---  --->
           <tr>
-            <td colspan="4">Totala summan: 0kr</td>
+            <td colspan="4">Totala summan: {{totalSum}}kr</td>
           </tr>
-          <!---  --->
         </tbody>
       </table>
     </div>
@@ -54,18 +31,34 @@
     <br>
     <br>
     <br>
-
   </div>
 </template>
 
 <script>
 export default {
   name: 'Cart',
+  created(){
+    this.products = this.$store.state.cart
+  },
   data() {
     return {
-      products: []
+      products: null
     }
   },
+  methods: {
+    removeFromCart(product){
+      this.$store.commit("removeFromCart", product)
+    }
+  },
+  computed:{
+    totalSum(){
+      var sum = 0
+      for(let i = 0; i < this.products.length;i++){
+        sum += this.products[i].price
+      }
+      return sum
+    }
+  }
 }
 </script>
 

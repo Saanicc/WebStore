@@ -14,7 +14,7 @@
           <b-card-sub-title>{{ product.price }}</b-card-sub-title>
 
           <b-card-text>Info</b-card-text>
-          <b-button class="add-btn" @click="addToCart()">Add to cart</b-button>
+          <b-button class="add-btn" @click="addToCart(product)">Add to cart</b-button>
         </b-card-body>
       </b-card>
     </b-card-group>
@@ -32,7 +32,9 @@ export default {
     }
   },
   methods: {
-    addToCart() {},
+    addToCart(product) {
+      this.$store.commit("addToCart", product)
+    },
   },
 };
 </script>
