@@ -54,9 +54,32 @@
           <label>Telefonnummer</label><br />
           <input type="text" v-model="phoneNumber" />
         </div>
+        <div class="payment-header"> 
+          <h6>Kortbetalning</h6>
+        </div>
+        <div class="grid-item item8">
+          <label>Kortnummer</label><br />
+          <input type="text">
+        </div>
+        <div class="grid-item item9">
+          <label>Månad</label><br />
+          <input type="text">
+        </div>
+        <div class="grid-item item10">
+          <label>År</label><br />
+          <input type="text">
+        </div>
+        <div class="grid-item item11">
+          <label>CVC2</label><br />
+          <input type="text">
+        </div>
+        <div class="grid-item item12">
+          <label>Kortinnehavare</label><br />
+          <input type="text">
+        </div>
       </div>
     </div>
-
+    
     <p class="price-total">Totala summan är: {{ totalSum }}kr</p>
     <div class="buttons">
       <router-link to="/" class="cancel-btn" tag="button">Avbryt</router-link>
@@ -187,6 +210,14 @@ export default {
   justify-items: start;
 }
 
+.payment-header {
+  display: block;
+  margin: 20px auto;
+}
+.payment-header h6 {
+  font-size: 1.4rem;
+}
+
 .grid-item {
   position: relative;
   /* border: 1px blue solid; */
@@ -295,6 +326,15 @@ export default {
     grid-column: 1 / span 2;
     grid-row: 5;
   }
+  .payment-header {
+   grid-column: 1 / span 2;
+   grid-row: 6;
+  }
+  .item8 {
+    grid-column: 1 / span 2;
+    grid-row: 7;
+  }
+
 }
 
 @media screen and (min-width: 900px) {
