@@ -4,107 +4,84 @@
     <button @click="showCart()" class="show-cart-btn">
       <p v-if="showCartInfo">Dölj kundvagnen</p>
       <p v-else>Visa kundvagnen</p>
-      </button>
+    </button>
     <div v-if="showCartInfo" class="cart-info">
       <table class="table is-striped">
-          <thead>
-            <tr>
-              <th>Namn</th>
-              <th>Antal</th>
-              <th>Pris</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="table-item" v-for="product in products" :key="product.id">
-              <td>{{product.name}}</td>
-              <td>{{product.quantity}}</td>
-              <td>{{product.price}}</td>
-            </tr>
-          </tbody>
+        <thead>
+          <tr>
+            <th>Namn</th>
+            <th>Antal</th>
+            <th>Pris</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-item" v-for="product in products" :key="product.id">
+            <td>{{ product.name }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.price }}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
+
     <div class="input-wrapper">
       <div class="inputs">
         <div class="grid-item item1">
-          <label>Förnamn</label><br>
-          <input type="text" v-model="firstName" />
+          <label>Förnamn</label><br />
+          <input name="firstName" type="text" v-model="firstName" />
         </div>
         <div class="grid-item item2">
-          <label>Efternamn</label><br>
-          <input type="text" v-model="lastName" />
+          <label>Efternamn</label><br />
+          <input name="lastName" type="text" v-model="lastName" />
         </div>
         <div class="grid-item item3">
-          <label>Gatuadress</label><br>
+          <label>Gatuadress</label><br />
           <input type="text" v-model="streetAdress" />
         </div>
         <div class="grid-item item4">
-          <label>Postnummer</label><br>
+          <label>Postnummer</label><br />
           <input type="text" v-model="zipCode" />
         </div>
         <div class="grid-item item5">
-          <label>Ort</label><br>
+          <label>Ort</label><br />
           <input type="text" v-model="county" />
         </div>
         <div class="grid-item item6">
-          <label>Email</label><br>
-          <input type="text" v-model="email" />
+          <label>Email</label><br />
+          <input name="user_email" type="text" v-model="email" />
         </div>
         <div class="grid-item item7">
-          <label>Telefonnummer</label><br>
+          <label>Telefonnummer</label><br />
           <input type="text" v-model="phoneNumber" />
         </div>
       </div>
     </div>
+
     <p class="price-total">Totala summan är: {{ totalSum }}kr</p>
     <div class="buttons">
       <router-link to="/" class="cancel-btn" tag="button">Avbryt</router-link>
-      <button class="checkout-btn" @click="finishCheckout()">
-        Slutför betalning
-      </button>
+      <input
+        class="checkout-btn"
+        type="button"
+        @click="finishCheckout()"
+        value="Slutför betalning"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import emailjs from "emailjs-com";
+
+import { init } from "emailjs-com";
+init("user_TiTSwezkNDuf6XB9cHtHU");
+
 export default {
   name: "Checkout",
-  created(){
-  this.products = this.$store.state.cart
+  created() {
+    this.products = this.$store.state.cart;
   },
   data() {
-    var Email = { 
-      send: function (a) { 
-        return new Promise(function (n) { 
-          a.nocache = Math.floor(1e6 * Math.random() + 1), 
-          a.Action = "Send"; 
-          var t = JSON.stringify(a); 
-          Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) { 
-            n(e) 
-          }) 
-        }) 
-      }, 
-      ajaxPost: function (e, n, t) {
-        var a = Email.createCORSRequest("POST", e); 
-        a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), 
-        a.onload = function () { 
-          var e = a.responseText; 
-          null != t && t(e) 
-        }, 
-        a.send(n) 
-      }, 
-      ajax: function (e, n) {
-        var t = Email.createCORSRequest("GET", e); 
-        t.onload = function () { 
-          var e = t.responseText; 
-          null != n && n(e) 
-        }, 
-        t.send() 
-      }, 
-      createCORSRequest: function (e, n) { 
-        var t = new XMLHttpRequest; 
-        return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new this.XDomainRequest).open(e, n) : t = null, t 
-      } 
-    }
     return {
       products: null,
       firstName: "",
@@ -114,34 +91,28 @@ export default {
       county: "",
       email: "",
       phoneNumber: "",
-      Email,
-      showCartInfo: false
+      showCartInfo: false,
     };
   },
   methods: {
     showCart() {
-      this.showCartInfo = !this.showCartInfo
+      this.showCartInfo = !this.showCartInfo;
     },
+
     finishCheckout() {
-      let message = this.fullName +
-      "\n" +
-      this.adress +
-      "\n" +
-      this.email +
-      "\n" +
-      this.phoneNumber
-      this.sendEmail(this.email, message, this.fullName)
-    },
-    sendEmail(email, msg, name) {
-      this.Email.send({
-        Host : "mail.gmx.com",
-        Username : "webstore496@gmx.com",
-        Password : "&KX*3aFz8vzo",
-        To : email,
-        From : "webstore496@gmx.com",
-        Subject : "Important message for Mr. "+name+"!",
-        Body : msg,
-      }).then(alert(msg));
+      var templateParams = {
+        userEmail: this.email,
+        fullName: this.fullName,
+        body: "<h1>Webstoreärbäst</h1>",
+      };
+      emailjs.send("service_c3b8enq", "template_35snhib", templateParams).then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
     },
   },
   computed: {
@@ -151,19 +122,18 @@ export default {
     adress() {
       return this.streetAdress + "\n" + this.zipCode + " " + this.county;
     },
-    totalSum(){
-      var sum = 0
-      for(let i = 0; i < this.products.length;i++){
-        sum += this.products[i].price
+    totalSum() {
+      var sum = 0;
+      for (let i = 0; i < this.products.length; i++) {
+        sum += this.products[i].price;
       }
-      return sum
-    }
+      return sum;
+    },
   },
 };
 </script>
 
 <style scoped>
-
 .show-cart-btn {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -184,7 +154,7 @@ export default {
 
 .cart-info {
   box-shadow: #0000001f 1px 2px 4px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: block;
   margin: 4px auto 0 auto;
   width: 90%;
@@ -251,7 +221,8 @@ export default {
   margin-bottom: 20px;
 }
 
-.cancel-btn, .checkout-btn {
+.cancel-btn,
+.checkout-btn {
   border: none;
   height: 100%;
   border-radius: 5px;
@@ -262,7 +233,6 @@ export default {
 .cancel-btn {
   background-color: rgba(245, 21, 21, 0.815);
   color: #000000;
-  
 }
 
 .cancel-btn:hover,
