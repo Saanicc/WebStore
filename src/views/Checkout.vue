@@ -130,7 +130,7 @@ export default {
         price: this.totalSum,
         streetAdress: this.streetAdress,
         zipCode: this.zipCode,
-        city: this.city,
+        city: this.county,
         phoneNumber: this.phoneNumber,
         estimatedDelivery: "Datum",
         orderNr: this.randomizedOrderNumber,
