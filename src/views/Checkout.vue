@@ -59,7 +59,7 @@
         </div>
         <div class="grid-item item8">
           <label>Kortnummer</label><br />
-          <input type="text">
+          <input type="text" v-model="cardNumber">
         </div>
         <div class="grid-item item9">
           <label>Månad</label><br />
@@ -114,6 +114,8 @@ export default {
       county: "",
       email: "",
       phoneNumber: "",
+      paymentMethod: "Kortbetalning",
+      cardNumber: "",
       showCartInfo: false,
     };
   },
@@ -132,7 +134,8 @@ export default {
         zipCode: this.zipCode,
         city: this.county,
         phoneNumber: this.phoneNumber,
-        estimatedDelivery: "Datum",
+        cardNumber: this.hiddenCardNumber,
+        paymentMethod: this.paymentMethod,
         orderNr: this.randomizedOrderNumber,
       };
       emailjs.send("service_c3b8enq", "template_35snhib", templateParams).then(
@@ -161,6 +164,13 @@ export default {
     },
     randomizedOrderNumber() {
       return Math.floor(100000 + Math.random() * 900000)
+    },
+    hiddenCardNumber() {
+      var shortCcNum = ""
+        for(var i = (this.cardNumber.length - 4); i < this.cardNumber.length; i++) {
+            shortCcNum += this.cardNumber.charAt(i)
+        }
+      return shortCcNum
     }
   },
 };
