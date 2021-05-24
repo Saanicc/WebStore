@@ -56,11 +56,6 @@ export default {
   margin-top: 2rem; 
 }
 
-.card-group {
-  
-}
-
-
 @media screen and (min-width: 575px) {
   .cards {
     display: grid;
