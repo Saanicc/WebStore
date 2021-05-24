@@ -124,9 +124,16 @@ export default {
 
     finishCheckout() {
       var templateParams = {
-        userEmail: this.email,
         fullName: this.fullName,
-        body: "<h1>Webstoreärbäst</h1>",
+        userEmail: this.email,
+        numberOfProducts: this.products.length,
+        price: this.totalSum,
+        streetAdress: this.streetAdress,
+        zipCode: this.zipCode,
+        city: this.city,
+        phoneNumber: this.phoneNumber,
+        estimatedDelivery: "Datum",
+        orderNr: this.randomizedOrderNumber,
       };
       emailjs.send("service_c3b8enq", "template_35snhib", templateParams).then(
         function (response) {
@@ -152,6 +159,9 @@ export default {
       }
       return sum;
     },
+    randomizedOrderNumber() {
+      return Math.floor(100000 + Math.random() * 900000)
+    }
   },
 };
 </script>

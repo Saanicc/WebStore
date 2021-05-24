@@ -48,8 +48,6 @@ export default {
 .cards {
   display: block;
   width: 90%;
-  /* display: grid;
-  grid-template-columns: auto auto auto; */
 }
 
 .cards:first-child {
