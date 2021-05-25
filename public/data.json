@@ -2,37 +2,42 @@
     "phones": [
         {
             "id": "001",
-            "name": "iPhone3",
+            "name": "iPhone 3",
             "price": "7999 kr",
             "color": "Black",
+            "description": "",
             "img": "https://picsum.photos/600/300/?image=25"
         },
         {
             "id": "002",
-            "name": "iPhone5",
+            "name": "iPhone 5",
             "price": "5999 kr",
             "color": "Rose",
+            "description": "",
             "img": "https://picsum.photos/600/300/?image=25"
         },
         {
             "id": "003",
-            "name": "iPhone7",
+            "name": "iPhone 7",
             "price": "8999 kr",
             "color": "Gold",
+            "description": "",
             "img": "https://picsum.photos/600/300/?image=25"
         },
         {
             "id": "004",
-            "name": "iPhoneX",
+            "name": "iPhone X",
             "price": "10999 kr",
             "color": "Red",
+            "description": "",
             "img": "https://picsum.photos/600/300/?image=25"
         },
         {
             "id": "005",
-            "name": "iPhone11",
+            "name": "iPhone 11",
             "price": "9999 kr",
             "color": "Grey",
+            "description": "",
             "img": "https://picsum.photos/600/300/?image=25"
         }
     ],
@@ -41,30 +46,35 @@
             "id": "006",
             "name": "iMac1",
             "price": "7999 kr",
+            "description": "",
             "img": "https://picsum.photos/600/300/?image=25"
         },
         {
             "id": "007",
             "name": "iMac2",
             "price": "5999 kr",
+            "description": "",
             "img": "https://picsum.photos/600/300/?image=25"
         },
         {
             "id": "008",
             "name": "iMac3",
             "price": "8999 kr",
+            "description": "",
             "img": "https://picsum.photos/600/300/?image=25"
         },
         {
             "id": "009",
             "name": "iMac4",
             "price": "10999 kr",
+            "description": "",
             "img": "https://picsum.photos/600/300/?image=25"
         },
         {
             "id": "010",
             "name": "iMac6",
             "price": "9999 kr",
+            "description": "",
             "img": "https://picsum.photos/600/300/?image=25"
         }
     ]
