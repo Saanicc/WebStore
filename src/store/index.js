@@ -7,10 +7,23 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     cart:[],
-    searchQuery: null,
+    filteredProducts: [],
     products: Data.phones,
+    searchQuery: null,
   },
   mutations: {
+    filterProductsByCategory(state, filteredProducts){
+      state.filteredProducts = filteredProducts
+      if(state.filteredProducts){
+        state.products = Data.phones.filter(product => {
+          return state.filteredProducts
+          .find(c => product.name.match(c))
+        })
+      } else {
+        state.products = Data.phones
+      }
+
+  },
     searchQuery(state, searchQuery){
       state.searchQuery = searchQuery
       if (state.searchQuery) {
