@@ -123,7 +123,6 @@ export default {
     showCart() {
       this.showCartInfo = !this.showCartInfo;
     },
-
     finishCheckout() {
       var templateParams = {
         fullName: this.fullName,
@@ -146,6 +145,19 @@ export default {
           console.log("FAILED...", error);
         }
       );
+      this.clearInputsAndCart();
+    },
+    clearInputsAndCart() {
+      this.$store.commit("clearCart");
+      this.firstName = "";
+      this.lastName = "";
+      this.email = "";
+      this.products = this.$store.state.cart;
+      this.streetAdress = "";
+      this.zipCode = "";
+      this.county = "";
+      this.phoneNumber = "";
+      this.cardNumber = "";
     },
   },
   computed: {
