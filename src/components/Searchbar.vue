@@ -1,7 +1,7 @@
 <template>
-  <div id="searchbar" style="display: flex;">
+  <div id="searchbar">
     <div id="searchfield">
-      <input v-model="searchQuery" placeholder="Search product">
+      <input v-model="searchQuery" placeholder="Sök efter produkter...">
     </div>
     <filter-drop-down />
   </div>
@@ -32,10 +32,16 @@ export default {
 </script>
 
 <style scoped>
-.searchbar{
-  position: absolute;
+#searchbar > input {
+  border: none;
+  box-shadow: #00000030 1px 2px 4px;
+  padding: 8px 10px;
+  width: 90%;
 }
-.searchfield{
-  height: 20px;
+
+@media screen and (min-width: 575px) {
+  #searchbar > input {
+    width: 500px;
+  }
 }
 </style>
