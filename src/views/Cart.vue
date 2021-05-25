@@ -8,7 +8,7 @@
           <tr>
             <th>Namn</th>
             <th>Antal</th>
-            <th>Pris</th>
+            <th>Pris (kr)</th>
             <th></th>
           </tr>
         </thead>
