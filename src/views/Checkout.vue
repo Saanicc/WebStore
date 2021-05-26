@@ -54,32 +54,32 @@
           <label>Telefonnummer</label><br />
           <input type="text" v-model="phoneNumber" />
         </div>
-        <div class="payment-header"> 
+        <div class="payment-header">
           <h6>Kortbetalning</h6>
         </div>
         <div class="grid-item item8">
           <label>Kortnummer</label><br />
-          <input type="text" v-model="cardNumber">
+          <input type="text" v-model="cardNumber" />
         </div>
         <div class="grid-item item9">
           <label>Månad</label><br />
-          <input type="text">
+          <input type="text" />
         </div>
         <div class="grid-item item10">
           <label>År</label><br />
-          <input type="text">
+          <input type="text" />
         </div>
         <div class="grid-item item11">
           <label>CVC2</label><br />
-          <input type="text">
+          <input type="text" />
         </div>
         <div class="grid-item item12">
           <label>Kortinnehavare</label><br />
-          <input type="text">
+          <input type="text" />
         </div>
       </div>
     </div>
-    
+
     <p class="price-total">Totala summan är: {{ totalSum }}kr</p>
     <div class="buttons">
       <router-link to="/" class="cancel-btn" tag="button">Avbryt</router-link>
@@ -123,12 +123,11 @@ export default {
     showCart() {
       this.showCartInfo = !this.showCartInfo;
     },
-
     finishCheckout() {
       var templateParams = {
         fullName: this.fullName,
         userEmail: this.email,
-        numberOfProducts: this.products.length,
+        products: this.productsOrdered,
         price: this.totalSum,
         streetAdress: this.streetAdress,
         zipCode: this.zipCode,
@@ -139,13 +138,26 @@ export default {
         orderNr: this.randomizedOrderNumber,
       };
       emailjs.send("service_c3b8enq", "template_35snhib", templateParams).then(
-        function (response) {
+        function(response) {
           console.log("SUCCESS!", response.status, response.text);
         },
-        function (error) {
+        function(error) {
           console.log("FAILED...", error);
         }
       );
+      this.clearInputsAndCart();
+    },
+    clearInputsAndCart() {
+      this.$store.commit("clearCart");
+      this.firstName = "";
+      this.lastName = "";
+      this.email = "";
+      this.products = this.$store.state.cart;
+      this.streetAdress = "";
+      this.zipCode = "";
+      this.county = "";
+      this.phoneNumber = "";
+      this.cardNumber = "";
     },
   },
   computed: {
@@ -158,20 +170,43 @@ export default {
     totalSum() {
       var sum = 0;
       for (let i = 0; i < this.products.length; i++) {
-        sum += this.products[i].price;
+        sum += this.products[i].price * this.products[i].quantity;
       }
       return sum;
     },
     randomizedOrderNumber() {
-      return Math.floor(100000 + Math.random() * 900000)
+      return Math.floor(100000 + Math.random() * 900000);
     },
     hiddenCardNumber() {
-      var shortCcNum = ""
-        for(var i = (this.cardNumber.length - 4); i < this.cardNumber.length; i++) {
-            shortCcNum += this.cardNumber.charAt(i)
-        }
-      return shortCcNum
-    }
+      var shortCcNum = "";
+      for (
+        var i = this.cardNumber.length - 4;
+        i < this.cardNumber.length;
+        i++
+      ) {
+        shortCcNum += this.cardNumber.charAt(i);
+      }
+      return shortCcNum;
+    },
+    productsOrdered() {
+      var orderedProductsHTML = [];
+      for (let i = 0; i < this.products.length; i++) {
+        orderedProductsHTML.push(
+          '<tr style="height: 24px;">' +
+            '<td style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;" align="left" width="75%">' +
+            this.products[i].name +
+            " x" +
+            this.products[i].quantity +
+            "</td>" +
+            '<td style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;" align="left" width="25%">' +
+            this.products[i].price +
+            " kr" +
+            "</td>" +
+            "<tr>"
+        );
+      }
+      return orderedProductsHTML.join("\n");
+    },
   },
 };
 </script>
@@ -347,14 +382,13 @@ export default {
     grid-row: 5;
   }
   .payment-header {
-   grid-column: 1 / span 2;
-   grid-row: 6;
+    grid-column: 1 / span 2;
+    grid-row: 6;
   }
   .item8 {
     grid-column: 1 / span 2;
     grid-row: 7;
   }
-
 }
 
 @media screen and (min-width: 900px) {
