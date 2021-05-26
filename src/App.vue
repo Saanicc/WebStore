@@ -5,8 +5,11 @@
       <router-link to="/cart" id="checkout">
         <b-icon icon="cart4" font-scale="1.5"></b-icon>
       </router-link>
+      <router-link to="/wishlist" id="wishlist"
+        ><b-icon icon="star" font-scale="1.5"></b-icon
+      ></router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -21,12 +24,12 @@
 
 #nav {
   padding: 30px;
-  background-color: #0D1821;
+  background-color: #0d1821;
 }
 
 #nav a {
   font-weight: bold;
-  color: #F0F4EF;
+  color: #f0f4ef;
 }
 
 #nav a.router-link-exact-active {
@@ -36,5 +39,10 @@
 #checkout {
   position: absolute;
   right: 25px;
+}
+
+#wishlist {
+  position: absolute;
+  right: 60px;
 }
 </style>

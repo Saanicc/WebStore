@@ -8,12 +8,22 @@
           border-variant="light"
           class="shadow-sm p-3 mb-4 bg-white rounded"
         >
+          <div class="wish">
+            <a href="#">
+              <b-icon
+                class="wish-icon"
+                icon="star-fill"
+                @click="addToWishList(product)"
+              ></b-icon>
+            </a>
+          </div>
           <b-card-body>
-            <!-- <b-card-img :src="product.img" :alt="product.name"></b-card-img> -->
             <b-card-title>{{ product.name }}</b-card-title>
             <b-card-sub-title>{{ product.price }}</b-card-sub-title>
             <b-card-text>Info</b-card-text>
-            <b-button class="add-btn" @click="addToCart(product)">Add to cart</b-button>
+            <b-button class="add-btn" @click="addToCart(product)"
+              >Add to cart</b-button
+            >
           </b-card-body>
         </b-card>
       </b-card-group>
@@ -21,25 +31,44 @@
   </div>
 </template>
 
-<!-- Hårdkodad data -->
 <script>
-
 export default {
   name: "Gallery",
-  computed:{
-    products(){
-      return this.$store.state.products
-    }
+  computed: {
+    products() {
+      return this.$store.state.products;
+    },
   },
   methods: {
     addToCart(product) {
-      this.$store.commit("addToCart", product)
+      this.$store.commit("addToCart", product);
+    },
+    addToWishList(product) {
+      console.log(product);
+      this.$store.commit("addToWishList", product);
     },
   },
 };
 </script>
 
 <style scoped>
+.wish {
+  position: absolute;
+  top: 1%;
+  left: 0;
+  z-index: 99;
+  right: 5px;
+  text-align: right;
+  padding-top: 0;
+}
+.wish .wish-icon {
+  color: grey;
+  font-size: 32px;
+}
+.wish .wish-icon:hover {
+  color: #fdc56b;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -51,7 +80,7 @@ export default {
 }
 
 .cards:first-child {
-  margin-top: 2rem; 
+  margin-top: 2rem;
 }
 
 @media screen and (min-width: 575px) {
