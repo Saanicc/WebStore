@@ -1,14 +1,14 @@
 <template>
   <div class="cart-page">
-    <h1 class="title">Din kundvagn</h1>
-    <p>Du har '{{ products.length }}' produkter i din kundvagn</p>
+    <h1 class="title">Kundvagn</h1>
+    <!-- <p>Du har '{{ products.length }}' produkter i kundvagnen</p> -->
     <div class="cart">
       <table class="table is-striped">
         <thead>
           <tr>
             <th>Namn</th>
             <th>Antal</th>
-            <th>Pris (kr)</th>
+            <th>Pris</th>
             <th></th>
           </tr>
         </thead>
@@ -22,7 +22,7 @@
                 <button @click="increaseQuantity(product)">+</button>
               </div>
             </td>
-            <td>{{ product.price }}</td>
+            <td>{{ product.price }} kr</td>
             <td>
               <button class="remove-btn" @click="removeFromCart(product)">
                 x
@@ -32,14 +32,25 @@
         </tbody>
         <tbody>
           <tr>
-            <td colspan="4">Totala summan: {{ totalSum }}kr</td>
+            <td colspan="4" v-if="this.products.length !== 0">
+              Totala summan: {{ totalSum }}kr
+            </td>
+            <td colspan="4" v-else>Kundvagnen är tom</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <router-link to="/cart/checkout" class="checkout"
-      >Fortsätt till kassan</router-link
+    <router-link
+      to="/cart/checkout"
+      tag="button"
+      class="checkout"
+      v-if="this.products.length !== 0"
     >
+      Fortsätt till kassan
+    </router-link>
+    <button class="checkout-disabled" v-else disabled>
+      Fortsätt till kassan
+    </button>
     <br />
     <br />
     <br />
@@ -164,6 +175,19 @@ export default {
   box-shadow: #00000050 1px 2px 4px;
 }
 
+.checkout-disabled {
+  position: absolute;
+  left: 50%;
+  width: 90%;
+  transform: translateX(-50%);
+  border: none;
+  color: #ffffff;
+  padding: 1em;
+  border-radius: 5px;
+  background-color: #42b9835d;
+  box-shadow: #00000050 1px 2px 4px;
+}
+
 .checkout:hover,
 .checkout:focus {
   text-decoration: none;
@@ -177,7 +201,8 @@ export default {
     width: 512px;
   }
 
-  .checkout {
+  .checkout,
+  .checkout-disabled {
     display: flex;
     justify-content: center;
     position: relative;
@@ -190,7 +215,8 @@ export default {
     width: 700px;
   }
 
-  .checkout {
+  .checkout,
+  .checkout-disabled {
     width: 200px;
   }
 }
