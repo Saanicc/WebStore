@@ -10,6 +10,7 @@
         {{product.name}} <input type="checkbox" :value="product.name" v-model="filteredProducts">
       </div>
     </div>
+    <!-- input knappen ska tas bort när funktionen funkar -->
       <input type="button" value="tryck" @click="changeFL">
   </div>
 </template>
@@ -38,9 +39,9 @@ export default {
     }
   },
   methods:{
+    // changeFL ska tas bort när funktionen funkar
     changeFL(){
       console.log(this.filteredProducts)
-      console.log(this.filterProductsByCategory)
     }
   },
 }

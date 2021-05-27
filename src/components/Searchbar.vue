@@ -24,9 +24,6 @@ export default {
         this.$store.commit('searchQuery', searchQuery)
       }
     },
-    products() {
-        return this.$store.state.products
-    },
   },
 };
 </script>

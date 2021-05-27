@@ -15,12 +15,21 @@ export default new Vuex.Store({
   mutations: {
     filterProductsByCategory(state, filteredProducts) {
       state.filteredProducts = filteredProducts;
-      if (state.filteredProducts) {
+      if (state.filteredProducts.length > 0 && !state.searchQuery) {
         state.products = Data.phones.filter((product) => {
           return state.filteredProducts.find((c) => product.name.match(c));
         });
       } else {
-        state.products = Data.phones;
+        if(!state.searchQuery){
+          state.products = Data.phones;
+        }else{
+          state.products = Data.phones.filter((product) => {
+            return state.searchQuery
+              .toLowerCase()
+              .split(" ")
+              .every((c) => product.name.toLowerCase().includes(c));
+          });
+        }
       }
     },
     searchQuery(state, searchQuery) {
@@ -33,7 +42,13 @@ export default new Vuex.Store({
             .every((c) => product.name.toLowerCase().includes(c));
         });
       } else {
-        state.products = Data.phones;
+        if(state.filteredProducts < 1){
+          state.products = Data.phones;
+        }else{
+          state.products = Data.phones.filter((product) => {
+            return state.filteredProducts.find((c) => product.name.match(c));
+          });
+        }
       }
     },
     addToCart(state, product) {
