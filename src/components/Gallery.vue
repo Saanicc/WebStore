@@ -3,33 +3,41 @@
     <div class="cards">
       <b-card-group deck v-for="product in products" :key="product.id">
         <b-card
-          :img-src="product.img"
-          img-top
           border-variant="light"
           class="shadow-sm p-3 mb-4 bg-white rounded"
         >
-          <div class="wish">
-            <a href="#">
-              <b-icon
-                class="wish-icon"
-                icon="star-fill"
-                @click="addToWishList(product)"
-              ></b-icon>
-            </a>
-          </div>
-          <b-card-body>
-            <b-card-title>{{ product.name }}</b-card-title>
-            <b-card-sub-title>{{ product.price }}</b-card-sub-title>
-            <b-card-text>Kortare information om produkten</b-card-text>
-            <b-button
-              class="add-btn"
-              :class="{ added: product.addedToCart }"
-              @click="addToCart(product)"
-            >
-              <p v-if="!product.addedToCart">Lägg till i kundvagnen</p>
-              <p v-if="product.addedToCart">Tillagd i kundvagnen</p>
-            </b-button>
-          </b-card-body>
+          <router-link
+            :to="{
+              path: '/product/' + product.name,
+              query: {
+                item: product,
+              },
+            }"
+          >
+            <div class="wish">
+              <a href="#">
+                <b-icon
+                  class="wish-icon"
+                  icon="star-fill"
+                  @click="addToWishList(product)"
+                ></b-icon>
+              </a>
+            </div>
+            <b-card-body>
+              <img :src="product.img" />
+              <b-card-title>{{ product.name }}</b-card-title>
+              <b-card-sub-title>{{ product.price }}</b-card-sub-title>
+              <b-card-text>Kortare information om produkten</b-card-text>
+            </b-card-body>
+          </router-link>
+          <b-button
+            class="add-btn"
+            :class="{ added: product.addedToCart }"
+            @click="addToCart(product)"
+          >
+            <p v-if="!product.addedToCart">Lägg till i kundvagnen</p>
+            <p v-if="product.addedToCart">Tillagd i kundvagnen</p>
+          </b-button>
         </b-card>
       </b-card-group>
     </div>
@@ -124,6 +132,24 @@ added:focus {
 
 .cards:first-child {
   margin-top: 2rem;
+}
+
+.card-body {
+  padding: 0 0 1.25rem 0;
+}
+
+.card-body > a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.card-body > img {
+  width: 100%;
+  height: 125px;
+}
+
+.card-title {
+  margin-top: 0.75rem;
 }
 
 @media screen and (min-width: 575px) {
