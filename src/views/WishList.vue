@@ -3,28 +3,30 @@
     <div id="wishList-heading">
       <h1>Favorites</h1>
     </div>
-    <div class="wished-products">
+    <div class="card">
       <b-card-group deck v-for="product in products" :key="product.id">
         <b-card
           no-body
           class="card overflow-hidden shadow-sm p-3 mb-5 bg-white rounded"
-          style="max-width: 460px"
         >
           <b-row no-gutters>
-            <b-col md="6">
+            <b-col md="5">
               <b-card-img
-                :src="products.img"
-                alt="Image"
+                :src="product.img"
+                :alt="product.name"
                 class="rounded-0"
               ></b-card-img>
             </b-col>
-            <b-col md="6">
-              <b-card-body :title="products.name">
-                <b-card-text>
-                  This is a wider card with supporting text as a natural lead-in
-                  to additional content. This content is a little bit longer.
-                </b-card-text>
+            <b-col md="5">
+              <b-card-body>
+                <b-card-title>{{ product.name }}</b-card-title>
+                <b-card-text>Kortare information om produkten</b-card-text>
               </b-card-body>
+            </b-col>
+            <b-col md="2">
+              <b-button class="remove-btn" @click="removeFromWishList(product)"
+                >Ta bort</b-button
+              >
             </b-col>
           </b-row>
         </b-card>
@@ -43,6 +45,11 @@ export default {
     return {
       products: null,
     };
+  },
+  methods: {
+    removeFromWishList(product) {
+      this.$store.commit("removeFromWishList", product);
+    },
   },
 };
 </script>
