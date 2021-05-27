@@ -16,7 +16,11 @@
           <tr class="table-item" v-for="product in products" :key="product.id">
             <td>{{ product.name }}</td>
             <td>
-              <input type="number" :value="product.quantity" width="75px" />
+              <div class="product-quantity">
+                <button @click="decreaseQuantity(product)">-</button>
+                <p>{{ product.quantity }}</p>
+                <button @click="increaseQuantity(product)">+</button>
+              </div>
             </td>
             <td>{{ product.price }}</td>
             <td>
@@ -54,6 +58,17 @@ export default {
     };
   },
   methods: {
+    increaseQuantity(product) {
+      product.quantity++;
+    },
+    decreaseQuantity(product) {
+      if (product.quantity !== 0) {
+        product.quantity--;
+      }
+      if (product.quantity === 0) {
+        this.removeFromCart(product);
+      }
+    },
     removeFromCart(product) {
       this.$store.commit("removeFromCart", product);
     },
@@ -62,7 +77,7 @@ export default {
     totalSum() {
       var sum = 0;
       for (let i = 0; i < this.products.length; i++) {
-        sum += this.products[i].price;
+        sum += this.products[i].price * this.products[i].quantity;
       }
       return sum;
     },
@@ -100,20 +115,33 @@ export default {
 }
 
 .table-item:hover {
-  background-color: rgba(107, 107, 107, 0.24);
+  background-color: rgba(202, 202, 202, 0.24);
 }
 
-.table-item > td > input {
-  width: 60px;
+.product-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-quantity p {
+  margin: 0;
+  padding: 0 10px;
+  align-items: center;
+}
+
+.product-quantity > button {
   border: none;
-  padding: 5px 5px 5px 10px;
-  border-radius: 5px;
-  box-shadow: #00000050 0px 0px 2px;
+  border-radius: 0.25rem;
+  background-color: #bbbbbb;
+  width: 2em;
+  height: 2em;
 }
 
 .remove-btn {
   border: none;
-  padding: 5px 15px;
+  width: 2.2em;
+  height: 2.2em;
   border-radius: 5px;
   background-color: #ff0000e5;
 }

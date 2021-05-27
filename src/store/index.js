@@ -53,8 +53,9 @@ export default new Vuex.Store({
     },
     addToCart(state, product) {
       if (state.cart.includes(product)) {
-        console.log("producten finns redan");
+        product.quantity += 1;
       } else {
+        product.quantity = 1;
         state.cart.push(product);
       }
     },
