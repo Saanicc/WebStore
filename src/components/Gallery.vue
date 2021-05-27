@@ -20,7 +20,7 @@
           <b-card-body>
             <b-card-title>{{ product.name }}</b-card-title>
             <b-card-sub-title>{{ product.price }}</b-card-sub-title>
-            <b-card-text>Info</b-card-text>
+            <b-card-text>Kortare information om produkten</b-card-text>
             <b-button class="add-btn" @click="addToCart(product)"
               >Add to cart</b-button
             >
@@ -34,6 +34,11 @@
 <script>
 export default {
   name: "Gallery",
+  data() {
+    return {
+      addedToWishList: null,
+    };
+  },
   computed: {
     products() {
       return this.$store.state.products;
@@ -44,8 +49,12 @@ export default {
       this.$store.commit("addToCart", product);
     },
     addToWishList(product) {
-      console.log(product);
-      this.$store.commit("addToWishList", product);
+      if (!this.$store.state.wishList.includes(product)) {
+        this.$store.commit("addToWishList", product);
+        this.addedToWishList = true;
+      } else {
+        this.addedToWishList = false;
+      }
     },
   },
 };

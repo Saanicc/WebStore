@@ -51,12 +51,19 @@ export default new Vuex.Store({
         }
       }
     },
-    addToWishList(state, product) {
-      state.wishList.push(product);
-      console.log(state.wishList.length)
-    },
     clearCart(state) {
       state.cart = [];
+    },
+    addToWishList(state, product) {
+      state.wishList.push(product);
+    },
+    removeFromWishList(state, product) {
+      console.log(state.wishList)
+      for (let i = 0; i < state.wishList.length; i++) {
+        if (state.wishList[i].id === product.id) {
+          state.wishList.splice(i, 1);
+        }
+      }
     },
   },
   actions: {},
