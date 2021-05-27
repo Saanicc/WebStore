@@ -5,7 +5,7 @@
       <p v-if="showCartInfo">Dölj kundvagnen</p>
       <p v-else>Visa kundvagnen</p>
     </button>
-    <div v-show="showCartInfo" class="cart-info">
+    <div v-show-slide="showCartInfo" class="cart-info">
       <table class="table is-striped">
         <thead>
           <tr>

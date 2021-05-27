@@ -41,7 +41,7 @@
       </table>
     </div>
     <router-link
-      to="/cart/checkout"
+      to="/checkout"
       tag="button"
       class="checkout"
       v-if="this.products.length !== 0"
@@ -144,9 +144,10 @@ export default {
 .product-quantity > button {
   border: none;
   border-radius: 0.25rem;
-  background-color: #bbbbbb;
+  background-color: #d1d1d19a;
   width: 2em;
   height: 2em;
+  box-shadow: #00000040 1px 1px 4px;
 }
 
 .remove-btn {
@@ -155,6 +156,7 @@ export default {
   height: 2.2em;
   border-radius: 5px;
   background-color: #ff0000e5;
+  box-shadow: #00000040 1px 1px 4px;
 }
 
 .remove-btn:hover,
