@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div id="wishList-heading">
       <h1>Favorites</h1>
     </div>
@@ -55,6 +55,10 @@ export default {
 </script>
 
 <style scoped>
+.wrapper {
+  padding-top: 100px;
+}
+
 #favorites-heading {
   margin: 12px;
 }

@@ -1,101 +1,111 @@
 {
-    "phones": [
-        {
-            "id": "001",
-            "name": "iPhone3",
-            "price": 7999,
-            "color": "Black",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "quantity": 0,
-            "in_Stock": true,
-            "img": "https://picsum.photos/600/300/?image=160"
-        },
-        {
-            "id": "002",
-            "name": "iPhone5",
-            "price": 5999,
-            "color": "Rose",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "quantity": 0,
-            "in_Stock": true,
-            "img": "https://picsum.photos/600/300/?image=3"
-        },
-        {
-            "id": "003",
-            "name": "iPhone7",
-            "price": 8999,
-            "color": "Gold",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "quantity": 0,
-            "in_Stock": true,
-            "img": "https://picsum.photos/600/300/?image=373"
-        },
-        {
-            "id": "004",
-            "name": "iPhoneX",
-            "price": 10999,
-            "color": "Red",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "quantity": 0,
-            "in_Stock": true,
-            "img": "https://picsum.photos/600/300/?image=816"
-        },
-        {
-            "id": "005",
-            "name": "iPhone11",
-            "price": 9999,
-            "color": "Grey",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "quantity": 0,
-            "in_Stock": true,
-            "img": "https://picsum.photos/600/300/?image=816"
-        }
-    ],
-    "computers": [
-        {
-            "id": "006",
-            "name": "iMac1",
-            "price": 7999,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "quantity": 0,
-            "in_Stock": true,
-            "img": "https://picsum.photos/600/300/?image=119"
-        },
-        {
-            "id": "007",
-            "name": "iMac2",
-            "price": 5999,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "quantity": 0,
-            "in_Stock": true,
-            "img": "https://picsum.photos/600/300/?image=2"
-        },
-        {
-            "id": "008",
-            "name": "iMac3",
-            "price": 8999,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "quantity": 0,
-            "in_Stock": true,
-            "img": "https://picsum.photos/600/300/?image=180"
-        },
-        {
-            "id": "009",
-            "name": "iMac4",
-            "price": 10999,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "quantity": 0,
-            "in_Stock": true,
-            "img": "https://picsum.photos/600/300/?image=201"
-        },
-        {
-            "id": "010",
-            "name": "iMac6",
-            "price": 9999,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "quantity": 0,
-            "in_Stock": true,
-            "img": "https://picsum.photos/600/300/?image=445"
-        }
-    ]
+  "phones": [
+    {
+      "id": "001",
+      "name": "iPhone3",
+      "price": 7999,
+      "color": "Black",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "quantity": 0,
+      "in_Stock": true,
+      "img": "https://picsum.photos/600/300/?image=160",
+      "addedToCart": false
+    },
+    {
+      "id": "002",
+      "name": "iPhone5",
+      "price": 5999,
+      "color": "Rose",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "quantity": 0,
+      "in_Stock": true,
+      "img": "https://picsum.photos/600/300/?image=3",
+      "addedToCart": false
+    },
+    {
+      "id": "003",
+      "name": "iPhone7",
+      "price": 8999,
+      "color": "Gold",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "quantity": 0,
+      "in_Stock": true,
+      "img": "https://picsum.photos/600/300/?image=373",
+      "addedToCart": false
+    },
+    {
+      "id": "004",
+      "name": "iPhoneX",
+      "price": 10999,
+      "color": "Red",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "quantity": 0,
+      "in_Stock": true,
+      "img": "https://picsum.photos/600/300/?image=816",
+      "addedToCart": false
+    },
+    {
+      "id": "005",
+      "name": "iPhone11",
+      "price": 9999,
+      "color": "Grey",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "quantity": 0,
+      "in_Stock": true,
+      "img": "https://picsum.photos/600/300/?image=816",
+      "addedToCart": false
+    }
+  ],
+  "computers": [
+    {
+      "id": "006",
+      "name": "iMac1",
+      "price": 7999,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "quantity": 0,
+      "in_Stock": true,
+      "img": "https://picsum.photos/600/300/?image=119",
+      "addedToCart": false
+    },
+    {
+      "id": "007",
+      "name": "iMac2",
+      "price": 5999,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "quantity": 0,
+      "in_Stock": true,
+      "img": "https://picsum.photos/600/300/?image=2",
+      "addedToCart": false
+    },
+    {
+      "id": "008",
+      "name": "iMac3",
+      "price": 8999,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "quantity": 0,
+      "in_Stock": true,
+      "img": "https://picsum.photos/600/300/?image=180",
+      "addedToCart": false
+    },
+    {
+      "id": "009",
+      "name": "iMac4",
+      "price": 10999,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "quantity": 0,
+      "in_Stock": true,
+      "img": "https://picsum.photos/600/300/?image=201",
+      "addedToCart": false
+    },
+    {
+      "id": "010",
+      "name": "iMac6",
+      "price": 9999,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "quantity": 0,
+      "in_Stock": true,
+      "img": "https://picsum.photos/600/300/?image=445",
+      "addedToCart": false
+    }
+  ]
 }

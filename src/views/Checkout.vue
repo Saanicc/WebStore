@@ -212,6 +212,10 @@ export default {
 </script>
 
 <style scoped>
+.cart-page {
+  padding-top: 100px;
+}
+
 .show-cart-btn {
   margin-top: 10px;
   margin-bottom: 20px;

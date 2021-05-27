@@ -10,7 +10,7 @@ export default new Vuex.Store({
     filteredProducts: [],
     products: Data.phones,
     searchQuery: null,
-    wishList: []
+    wishList: [],
   },
   mutations: {
     filterProductsByCategory(state, filteredProducts) {
@@ -20,9 +20,9 @@ export default new Vuex.Store({
           return state.filteredProducts.find((c) => product.name.match(c));
         });
       } else {
-        if(!state.searchQuery){
+        if (!state.searchQuery) {
           state.products = Data.phones;
-        }else{
+        } else {
           state.products = Data.phones.filter((product) => {
             return state.searchQuery
               .toLowerCase()
@@ -42,9 +42,9 @@ export default new Vuex.Store({
             .every((c) => product.name.toLowerCase().includes(c));
         });
       } else {
-        if(state.filteredProducts < 1){
+        if (state.filteredProducts < 1) {
           state.products = Data.phones;
-        }else{
+        } else {
           state.products = Data.phones.filter((product) => {
             return state.filteredProducts.find((c) => product.name.match(c));
           });
@@ -73,7 +73,7 @@ export default new Vuex.Store({
       state.wishList.push(product);
     },
     removeFromWishList(state, product) {
-      console.log(state.wishList)
+      console.log(state.wishList);
       for (let i = 0; i < state.wishList.length; i++) {
         if (state.wishList[i].id === product.id) {
           state.wishList.splice(i, 1);

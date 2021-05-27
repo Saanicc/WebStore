@@ -21,9 +21,14 @@
             <b-card-title>{{ product.name }}</b-card-title>
             <b-card-sub-title>{{ product.price }}</b-card-sub-title>
             <b-card-text>Kortare information om produkten</b-card-text>
-            <b-button class="add-btn" @click="addToCart(product)"
-              >Add to cart</b-button
+            <b-button
+              class="add-btn"
+              :class="{ added: product.addedToCart }"
+              @click="addToCart(product)"
             >
+              <p v-if="!product.addedToCart">Lägg till i kundvagnen</p>
+              <p v-if="product.addedToCart">Tillagd i kundvagnen</p>
+            </b-button>
           </b-card-body>
         </b-card>
       </b-card-group>
@@ -46,6 +51,10 @@ export default {
   },
   methods: {
     addToCart(product) {
+      product.addedToCart = true;
+      setTimeout(() => {
+        product.addedToCart = false;
+      }, 2500);
       this.$store.commit("addToCart", product);
     },
     addToWishList(product) {
@@ -61,6 +70,31 @@ export default {
 </script>
 
 <style scoped>
+.add-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  outline: none;
+}
+
+.add-btn > p {
+  padding: 5px 0;
+  margin: 0;
+}
+
+.added {
+  background-color: #42b983;
+  outline: none;
+}
+
+.added:focus-within,
+added:focus-visible,
+added:focus {
+  background-color: #42b983;
+  outline: none;
+}
+
 .wish {
   position: absolute;
   top: 1%;
