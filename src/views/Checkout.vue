@@ -5,7 +5,7 @@
       <p v-if="showCartInfo">Dölj kundvagnen</p>
       <p v-else>Visa kundvagnen</p>
     </button>
-    <div v-if="showCartInfo" class="cart-info">
+    <div v-show-slide="showCartInfo" class="cart-info">
       <table class="table is-striped">
         <thead>
           <tr>
@@ -18,7 +18,7 @@
           <tr class="table-item" v-for="product in products" :key="product.id">
             <td>{{ product.name }}</td>
             <td>{{ product.quantity }}</td>
-            <td>{{ product.price }}</td>
+            <td>{{ product.price }} kr</td>
           </tr>
         </tbody>
       </table>
@@ -212,6 +212,10 @@ export default {
 </script>
 
 <style scoped>
+.cart-page {
+  padding-top: 100px;
+}
+
 .show-cart-btn {
   margin-top: 10px;
   margin-bottom: 20px;

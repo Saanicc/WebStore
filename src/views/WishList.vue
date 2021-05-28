@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div id="wishList-heading">
       <h1>Favorites</h1>
     </div>
@@ -23,7 +23,7 @@
                 <b-card-text>Kortare information om produkten</b-card-text>
               </b-card-body>
             </b-col>
-            <b-col md="2">
+            <b-col md="2" align-self="center">
               <b-button class="remove-btn" @click="removeFromWishList(product)"
                 >Ta bort</b-button
               >
@@ -55,6 +55,10 @@ export default {
 </script>
 
 <style scoped>
+.wrapper {
+  padding-top: 100px;
+}
+
 #favorites-heading {
   margin: 12px;
 }
@@ -64,5 +68,11 @@ export default {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
+}
+
+.rm-btn {
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 </style>
