@@ -11,7 +11,7 @@
       </div>
     </div>
     <!-- input knappen ska tas bort när funktionen funkar -->
-      <input type="button" value="tryck" @click="changeFL">
+      <!-- <input type="button" value="tryck" @click="changeFL"> -->
   </div>
 </template>
 
