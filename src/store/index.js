@@ -42,7 +42,7 @@ export default new Vuex.Store({
             .every((c) => product.name.toLowerCase().includes(c));
         });
       } else {
-        if(state.filteredProducts < 1){
+        if(state.filteredProducts.length < 1){
           state.products = Data.phones;
         }else{
           state.products = Data.phones.filter((product) => {
