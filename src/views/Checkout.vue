@@ -54,9 +54,27 @@
           <label>Telefonnummer</label><br />
           <input type="text" v-model="phoneNumber" />
         </div>
-        <div class="payment-header">
-          <h6>Kortbetalning</h6>
-        </div>
+      </div>
+    </div>
+    <div class="payment-header">
+      <h6>Betalning</h6>
+
+      <div>
+        <b-dropdown
+          id="dropdown-1"
+          :text="payment"
+          class="m-md-2"
+          variant="outline-dark"
+        >
+          <b-dropdown-item dropdown-item="false" @click="cardPayment()"
+            >Kortbetalning</b-dropdown-item
+          >
+          <b-dropdown-item @click="swishPayment()">Swish</b-dropdown-item>
+        </b-dropdown>
+      </div>
+    </div>
+    <div class="input-wrapper">
+      <div class="payment-inputs" v-if="paymentMethod === 'CARDPAYMENT'">
         <div class="grid-item item8">
           <label>Kortnummer</label><br />
           <input type="text" v-model="cardNumber" />
@@ -76,6 +94,12 @@
         <div class="grid-item item12">
           <label>Kortinnehavare</label><br />
           <input type="text" />
+        </div>
+      </div>
+      <div class="payment-inputs" v-if="paymentMethod === 'SWISH'">
+        <div class="grid-item item8">
+          <label>Telefonnummer</label><br />
+          <input type="text" v-model="swishNumber" />
         </div>
       </div>
     </div>
@@ -114,12 +138,23 @@
         county: '',
         email: '',
         phoneNumber: '',
-        paymentMethod: 'Kortbetalning',
+        paymentMethod: '',
         cardNumber: '',
-        showCartInfo: false
+        showCartInfo: false,
+        payment: 'Välj betalningsalternativ',
+        swishNumber: ''
       }
     },
     methods: {
+      cardPayment() {
+        this.paymentMethod = 'CARDPAYMENT'
+        this.payment = 'Kortbetalning'
+      },
+      swishPayment() {
+        this.paymentMethod = 'SWISH'
+        this.payment = 'Swish'
+      },
+
       showCart() {
         this.showCartInfo = !this.showCartInfo
       },
@@ -134,8 +169,9 @@
           city: this.county,
           phoneNumber: this.phoneNumber,
           cardNumber: this.hiddenCardNumber,
-          paymentMethod: this.paymentMethod,
-          orderNr: this.randomizedOrderNumber
+          paymentMethod: this.payment,
+          orderNr: this.randomizedOrderNumber,
+          swishNumber: this.swishNumber
         }
         emailjs
           .send('service_c3b8enq', 'template_35snhib', templateParams)
@@ -160,6 +196,7 @@
         this.county = ''
         this.phoneNumber = ''
         this.cardNumber = ''
+        this.swishNumber = ''
       }
     },
     computed: {
@@ -180,15 +217,21 @@
         return Math.floor(100000 + Math.random() * 900000)
       },
       hiddenCardNumber() {
-        var shortCcNum = ''
-        for (
-          var i = this.cardNumber.length - 4;
-          i < this.cardNumber.length;
-          i++
-        ) {
-          shortCcNum += this.cardNumber.charAt(i)
+        var payment = null
+        if (this.paymentMethod === 'SWISH') {
+          payment = this.swishNumber
+        } else if (this.paymentMethod === 'CARDPAYMENT') {
+          var shortCcNum = 'Kortet slutar med '
+          for (
+            var i = this.cardNumber.length - 4;
+            i < this.cardNumber.length;
+            i++
+          ) {
+            shortCcNum += this.cardNumber.charAt(i)
+          }
+          payment = shortCcNum
         }
-        return shortCcNum
+        return payment
       },
       productsOrdered() {
         var orderedProductsHTML = []
@@ -268,15 +311,33 @@
     grid-template-columns: auto;
     /* border: 1px red solid; */
     width: 90%;
-    justify-items: start;
   }
 
   .payment-header {
     display: block;
     margin: 20px auto;
   }
+
   .payment-header h6 {
     font-size: 1.4rem;
+  }
+
+  .payment {
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #157a6e;
+  }
+  ::v-deep .dropdown-item:hover,
+  .dropdown-item.hover {
+    color: #000000;
+    text-decoration: none;
+    background-color: #00000020 !important;
+  }
+
+  .payment-inputs {
+    display: grid;
+    grid-template-columns: auto;
+    width: 90%;
   }
 
   .grid-item {
@@ -347,7 +408,8 @@
       width: 480px;
     }
 
-    .inputs {
+    .inputs,
+    .payment-inputs {
       grid-template-columns: auto auto;
       grid-gap: 10px;
       width: 480px;
@@ -391,9 +453,21 @@
       grid-column: 1 / span 2;
       grid-row: 6;
     }
+    .payment-inputs {
+      display: grid;
+      grid-template-columns: auto auto auto;
+    }
     .item8 {
-      grid-column: 1 / span 2;
-      grid-row: 7;
+      grid-column: 1 / span 3;
+      grid-row: 1;
+    }
+    .item9 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .item12 {
+      grid-column: 1 / span 3;
+      grid-row: 3;
     }
   }
 
@@ -405,6 +479,9 @@
     .inputs {
       grid-template-columns: auto auto;
       grid-gap: 10px;
+      width: 500px;
+    }
+    .payment-inputs {
       width: 500px;
     }
   }
