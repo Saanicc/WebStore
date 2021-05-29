@@ -2,10 +2,7 @@
   <div class="container">
     <div class="cards">
       <b-card-group deck v-for="product in products" :key="product.id">
-        <b-card
-          border-variant="light"
-          class="shadow-sm p-3 mb-4 bg-white rounded"
-        >
+        <b-card class="shadow-sm p-3 mb-4 rounded" bg-variant="card-bg">
           <router-link
             :to="{
               path: '/product/' + product.name,
@@ -33,6 +30,7 @@
           <b-button
             class="add-btn"
             :class="{ added: product.addedToCart }"
+            variant="card-btn-bg"
             @click="addToCart(product)"
           >
             <p v-if="!product.addedToCart">Lägg till i kundvagnen</p>
@@ -62,7 +60,7 @@
         product.addedToCart = true
         setTimeout(() => {
           product.addedToCart = false
-        }, 2500)
+        }, 1000)
         this.$store.commit('addToCart', product)
       },
       addToWishList(product) {
@@ -83,7 +81,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    outline: none;
+    border: none;
   }
 
   .add-btn > p {
@@ -92,14 +90,7 @@
   }
 
   .added {
-    background-color: #42b983;
-    outline: none;
-  }
-
-  .added:focus-within,
-  added:focus-visible,
-  added:focus {
-    background-color: #42b983;
+    background-color: #bfcc94;
     outline: none;
   }
 
@@ -117,7 +108,7 @@
     font-size: 32px;
   }
   .wish .wish-icon:hover {
-    color: #fdc56b;
+    color: #f4ce00;
   }
 
   .container {

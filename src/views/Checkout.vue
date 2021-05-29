@@ -280,8 +280,8 @@
   }
 
   .cart-info {
-    box-shadow: #0000001f 1px 2px 4px;
-    background-color: #ffffff;
+    box-shadow: #00000010 1px 2px 4px;
+    background-color: #f3eff5;
     display: block;
     margin: 4px auto 0 auto;
     width: 90%;
@@ -295,7 +295,7 @@
   }
 
   .table > thead {
-    background-color: #0000001a;
+    background-color: #00000015;
   }
 
   .input-wrapper {
@@ -360,6 +360,7 @@
     border-radius: 5px;
     width: 100%;
     box-shadow: #0000001f 1px 2px 4px;
+    background-color: #f3eff5;
   }
 
   .price-total {
@@ -384,8 +385,9 @@
   }
 
   .cancel-btn {
-    background-color: rgba(245, 21, 21, 0.815);
+    background-color: #db0d0d;
     color: #000000;
+    text-shadow: #ffffff50 1px 1px 2px;
   }
 
   .cancel-btn:hover,
@@ -395,12 +397,12 @@
   }
 
   .checkout-btn {
-    background-color: #42b983;
+    background-color: #bfcc94;
   }
 
   .checkout-btn:hover,
   .checkout-btn:focus {
-    background-color: #289061;
+    background-color: #b0c07a;
   }
 
   @media screen and (min-width: 513px) {

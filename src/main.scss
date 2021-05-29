@@ -1,5 +1,5 @@
 // Bootstrap body background
-$body-bg: #F0F4EF;
+$body-bg: #e3e3e3;
 
 // Bootstrap body foreground
 $body-color: seashell;
@@ -7,7 +7,9 @@ $body-color: seashell;
 // Bootstrap theme colors
 $theme-colors: (
   'primary': #b4654a,
-  'secondary': #157a6e
+  'secondary': #157a6e,
+  'card-bg': #f3eff5,
+  'card-btn-bg': #bfcc94
 );
 
 // Sass imports (The variables need to be set prior to importing)

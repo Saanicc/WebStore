@@ -32,10 +32,11 @@
 
   #nav {
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1000;
     padding: 30px;
-    background-color: #0d1821;
+    background-color: #353535;
   }
 
   #nav a {
@@ -44,7 +45,7 @@
   }
 
   #nav a.router-link-exact-active {
-    color: #42b983;
+    color: #3c6e71;
   }
 
   #checkout {
@@ -61,16 +62,16 @@
 
   #cart > div {
     position: absolute;
-    right: 0;
-    top: 0;
-    background-color: rgb(0, 140, 255);
+    right: -5px;
+    top: -2px;
+    background-color: #f4ce00;
     border-radius: 10px;
     width: 1.1rem;
     height: 1.1rem;
   }
 
   #cart > div > p {
-    color: #ffffff;
+    color: #000000;
     font-size: 0.8rem;
   }
 </style>

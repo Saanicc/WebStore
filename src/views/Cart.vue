@@ -185,10 +185,10 @@
     width: 90%;
     transform: translateX(-50%);
     border: none;
-    color: #ffffff;
+    color: #212529;
     padding: 1em;
     border-radius: 5px;
-    background-color: #42b983;
+    background-color: #bfcc94;
     box-shadow: #00000050 1px 2px 4px;
   }
 
@@ -208,7 +208,7 @@
   .checkout:hover,
   .checkout:focus {
     text-decoration: none;
-    background-color: #289061;
+    background-color: #b0c07a;
   }
 
   @media screen and (min-width: 513px) and (max-width: 900px) {
