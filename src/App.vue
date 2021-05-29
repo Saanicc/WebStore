@@ -17,59 +17,60 @@
       ></router-link>
     </div>
     <router-view />
+    <Footer />
   </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #000000;
-}
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #000000;
+  }
 
-#nav {
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  padding: 30px;
-  background-color: #0d1821;
-}
+  #nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 30px;
+    background-color: #0d1821;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #f0f4ef;
-}
+  #nav a {
+    font-weight: bold;
+    color: #f0f4ef;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
 
-#checkout {
-  position: absolute;
-  right: 25px;
-  top: 25px;
-}
+  #checkout {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+  }
 
-#wishlist {
-  position: absolute;
-  right: 65px;
-  top: 25px;
-}
+  #wishlist {
+    position: absolute;
+    right: 65px;
+    top: 25px;
+  }
 
-#cart > div {
-  position: absolute;
-  right: 0;
-  top: 0;
-  background-color: rgb(0, 140, 255);
-  border-radius: 10px;
-  width: 1.1rem;
-  height: 1.1rem;
-}
+  #cart > div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgb(0, 140, 255);
+    border-radius: 10px;
+    width: 1.1rem;
+    height: 1.1rem;
+  }
 
-#cart > div > p {
-  color: #ffffff;
-  font-size: 0.8rem;
-}
+  #cart > div > p {
+    color: #ffffff;
+    font-size: 0.8rem;
+  }
 </style>
