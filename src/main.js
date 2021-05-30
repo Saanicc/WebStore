@@ -1,22 +1,24 @@
-import Vue from "vue";
-import App from "./App.vue";
-import "./registerServiceWorker";
-import router from "./router";
-import store from "./store";
+import Vue from 'vue'
+import App from './App.vue'
+import './registerServiceWorker'
+import router from './router'
+import store from './store'
+import Vuelidate from 'vuelidate'
 
-import "./main.scss";
+import './main.scss'
 
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-import VShowSlide from "v-show-slide";
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import VShowSlide from 'v-show-slide'
 
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
-Vue.use(VShowSlide);
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
+Vue.use(VShowSlide)
+Vue.use(Vuelidate)
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
 
 new Vue({
   router,
   store,
-  render: (h) => h(App),
-}).$mount("#app");
+  render: (h) => h(App)
+}).$mount('#app')
