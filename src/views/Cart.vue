@@ -14,13 +14,11 @@
         </thead>
         <tbody>
           <tr class="table-item" v-for="product in products" :key="product.id">
-            <td>
-              <img
-                :src="product.img[0]"
-                width="100px"
-                style="margin-right: 0.5rem;"
-              />
-              {{ product.name }}
+            <td class="product-column">
+              <div>
+                <img :src="product.img[0]" width="100px" />
+                <p>{{ product.name }}</p>
+              </div>
             </td>
             <td>
               <div class="product-quantity">
@@ -132,11 +130,15 @@
     vertical-align: middle;
   }
 
+  .product-column p {
+    margin: 0;
+  }
+
   .table-item:hover {
     background-color: rgba(202, 202, 202, 0.24);
   }
 
-  .table-item > td > img {
+  .product-column > div > img {
     display: none;
   }
 
@@ -215,11 +217,25 @@
     .cart {
       display: block;
       margin: auto;
-      width: 512px;
+      width: 513px;
     }
 
-    .table-item > td > img {
+    .product-column > div > img {
       display: inline;
+      height: 100%;
+      margin: 0;
+    }
+
+    .product-column {
+      padding: 1em 1em 0.4em 1em;
+    }
+
+    .product-column p {
+      margin: 0.5em 0 0 0;
+      word-wrap: none;
+    }
+
+    .product-column > div {
     }
 
     .checkout,
@@ -236,8 +252,13 @@
       width: 700px;
     }
 
-    .table-item > td > img {
+    .product-column > div > img {
       display: inline;
+    }
+
+    .product-column {
+      /* text-align: left; */
+      padding: 1em 1em 0.4em 1em;
     }
 
     .checkout,

@@ -16,7 +16,12 @@
         </thead>
         <tbody>
           <tr class="table-item" v-for="product in products" :key="product.id">
-            <td>{{ product.name }}</td>
+            <td class="product-column">
+              <div>
+                <img :src="product.img[0]" width="100px" />
+                <p>{{ product.name }}</p>
+              </div>
+            </td>
             <td>{{ product.quantity }}</td>
             <td>{{ product.price }} kr</td>
           </tr>
@@ -33,7 +38,12 @@
           }"
         >
           <label>Förnamn</label><br />
-          <b-form-input name="firstName" type="text" v-model="$v.firstName.$model" autofocus/>
+          <b-form-input
+            name="firstName"
+            type="text"
+            v-model="$v.firstName.$model"
+            autofocus
+          />
           <div class="error-label" v-if="!$v.firstName.required">
             Fyll i ditt namn
           </div>
@@ -48,7 +58,11 @@
           }"
         >
           <label>Efternamn</label><br />
-          <b-form-input name="lastName" type="text" v-model="$v.lastName.$model" />
+          <b-form-input
+            name="lastName"
+            type="text"
+            v-model="$v.lastName.$model"
+          />
           <div class="error-label" v-if="!$v.lastName.required">
             Fyll i ditt efternamn
           </div>
@@ -97,7 +111,11 @@
           }"
         >
           <label>Email</label><br />
-          <b-form-input name="user_email" type="text" v-model="$v.mail.$model" />
+          <b-form-input
+            name="user_email"
+            type="text"
+            v-model="$v.mail.$model"
+          />
           <div class="error" v-if="!$v.mail.required.email">
             Fyll i din email
           </div>
@@ -243,7 +261,7 @@
     <p class="price-total">Totala summan är: {{ totalSum }}kr</p>
     <div class="buttons">
       <router-link to="/" class="cancel-btn" tag="button">Avbryt</router-link>
-      <b-form-input
+      <input
         class="checkout-btn"
         type="button"
         @click="finishCheckout()"
@@ -504,6 +522,18 @@
     margin: 0;
   }
 
+  .table-item td {
+    vertical-align: middle;
+  }
+
+  .product-column p {
+    margin: 0;
+  }
+
+  .product-column > div > img {
+    display: none;
+  }
+
   .table > thead {
     background-color: #00000015;
   }
@@ -631,6 +661,24 @@
   @media screen and (min-width: 513px) {
     .cart-info {
       width: 480px;
+    }
+
+    .product-column > div > img {
+      display: inline;
+      height: 100%;
+      margin: 0;
+    }
+
+    .product-column {
+      padding: 0.5em;
+    }
+
+    .product-column p {
+      margin: 0.5em 0 0 0;
+      word-wrap: none;
+    }
+
+    .product-column > div {
     }
 
     .inputs,
