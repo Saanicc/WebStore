@@ -7,12 +7,14 @@ import Vuelidate from 'vuelidate'
 
 import './main.scss'
 
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import { BootstrapVue, IconsPlugin, FormRatingPlugin } from 'bootstrap-vue'
+
 import VShowSlide from 'v-show-slide'
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VShowSlide)
+Vue.use(FormRatingPlugin)
 Vue.use(Vuelidate)
 
 Vue.config.productionTip = false
