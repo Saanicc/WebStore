@@ -33,7 +33,7 @@
           }"
         >
           <label>Förnamn</label><br />
-          <input name="firstName" type="text" v-model="$v.firstName.$model" />
+          <b-form-input name="firstName" type="text" v-model="$v.firstName.$model" autofocus/>
           <div class="error-label" v-if="!$v.firstName.required">
             Fyll i ditt namn
           </div>
@@ -48,7 +48,7 @@
           }"
         >
           <label>Efternamn</label><br />
-          <input name="lastName" type="text" v-model="$v.lastName.$model" />
+          <b-form-input name="lastName" type="text" v-model="$v.lastName.$model" />
           <div class="error-label" v-if="!$v.lastName.required">
             Fyll i ditt efternamn
           </div>
@@ -63,7 +63,7 @@
           }"
         >
           <label>Gatuadress</label><br />
-          <input
+          <b-form-input
             name="streetAdress"
             type="text"
             v-model="$v.streetAdress.$model"
@@ -74,7 +74,7 @@
         </div>
         <div class="grid-item item4" :class="{ error: $v.zipCode.$error }">
           <label>Postnummer</label><br />
-          <input type="text" v-model="$v.zipCode.$model" />
+          <b-form-input type="text" v-model="$v.zipCode.$model" />
           <div class="error-label" v-if="!$v.zipCode.required.numeric">
             Fyll i ditt postnummer
           </div>
@@ -85,7 +85,7 @@
         </div>
         <div class="grid-item item5" :class="{ error: $v.county.$error }">
           <label>Ort</label><br />
-          <input type="text" v-model="$v.county.$model" />
+          <b-form-input type="text" v-model="$v.county.$model" />
           <div class="error" v-if="!$v.county.required">
             Du måste fylla i din ort
           </div>
@@ -97,7 +97,7 @@
           }"
         >
           <label>Email</label><br />
-          <input name="user_email" type="text" v-model="$v.mail.$model" />
+          <b-form-input name="user_email" type="text" v-model="$v.mail.$model" />
           <div class="error" v-if="!$v.mail.required.email">
             Fyll i din email
           </div>
@@ -110,7 +110,7 @@
           }"
         >
           <label>Telefonnummer</label><br />
-          <input type="text" v-model="$v.phoneNumber.$model" />
+          <b-form-input type="text" v-model="$v.phoneNumber.$model" />
           <div class="error" v-if="!$v.phoneNumber.required.numeric">
             Fyll i ditt nummer
           </div>
@@ -146,7 +146,7 @@
           }"
         >
           <label>Kortnummer</label><br />
-          <input type="text" v-model="$v.cardNumber.$model" />
+          <b-form-input type="text" v-model="$v.cardNumber.$model" />
           <div class="error" v-if="!$v.cardNumber.numeric">
             Måste innehålla siffror
           </div>
@@ -164,7 +164,7 @@
           }"
         >
           <label>Månad</label><br />
-          <input type="text" v-model="$v.cardMonth.$model" />
+          <b-form-input type="text" v-model="$v.cardMonth.$model" />
           <div class="error" v-if="!$v.cardMonth.numeric">
             Måste innehålla siffror
           </div>
@@ -179,7 +179,7 @@
           }"
         >
           <label>År</label><br />
-          <input type="text" v-model="$v.cardYear.$model" />
+          <b-form-input type="text" v-model="$v.cardYear.$model" />
           <div class="error" v-if="!$v.cardYear.numeric">
             Måste innehålla siffror
           </div>
@@ -197,7 +197,7 @@
           }"
         >
           <label>CVC2</label><br />
-          <input type="text" v-model="$v.cvc.$model" />
+          <b-form-input type="text" v-model="$v.cvc.$model" />
           <div class="error" v-if="!$v.cvc.numeric">
             Måste innehålla siffror
           </div>
@@ -215,7 +215,7 @@
           }"
         >
           <label>Kortinnehavare</label><br />
-          <input type="text" v-model="$v.cardHolder.$model" />
+          <b-form-input type="text" v-model="$v.cardHolder.$model" />
           <div class="error" v-if="!$v.cardHolder.numeric">
             Skriv ditt namn
           </div>
@@ -229,7 +229,7 @@
           }"
         >
           <label>Telefonnummer</label><br />
-          <input type="text" v-model="$v.swishNumber.$model" />
+          <b-form-input type="text" v-model="$v.swishNumber.$model" />
           <div class="error" v-if="!$v.swishNumber.numeric">
             Måste innehålla siffror
           </div>
@@ -243,7 +243,7 @@
     <p class="price-total">Totala summan är: {{ totalSum }}kr</p>
     <div class="buttons">
       <router-link to="/" class="cancel-btn" tag="button">Avbryt</router-link>
-      <input
+      <b-form-input
         class="checkout-btn"
         type="button"
         @click="finishCheckout()"

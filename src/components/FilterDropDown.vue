@@ -10,10 +10,10 @@
     </div>
     <div class="sub-menu" v-if="isOpen">
       <div v-for="(product, i) in products" :key="i">
-        {{ product.name }}
+        {{ product.creator }}
         <input
           type="checkbox"
-          :value="product.name"
+          :value="product.creator"
           v-model="filteredProducts"
         />
       </div>

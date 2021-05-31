@@ -3,11 +3,10 @@
     <b-carousel
     id="carousel-no-animation"
     style="text-shadow: 0px 0px 2px #000"
-    no-animation
     controls
-    background="#fffff"
-    img-width="200px"
-    img-height="200px"
+    background="white"
+    img-width="200"
+    img-height="300"
   >
     <b-carousel-slide :img-src="product.img[0]"></b-carousel-slide>
     <b-carousel-slide :img-src="product.img[1]"></b-carousel-slide>

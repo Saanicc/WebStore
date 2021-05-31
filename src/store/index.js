@@ -9,7 +9,7 @@ export default new Vuex.Store({
     cart: [],
     filteredProducts: [],
     filteredProducts2: [],
-    products: Data.samsung,
+    products: Data.products,
     searchQuery: null,
     wishList: []
   },
@@ -53,7 +53,7 @@ export default new Vuex.Store({
         return state.searchQuery
           .toLowerCase()
           .split(' ')
-          .every((c) => product.name.toLowerCase().includes(c))
+          .every((c) => product.creator.toLowerCase().includes(c))
       })
     },
     addToCart(state, product) {
