@@ -9,7 +9,7 @@ export default new Vuex.Store({
     cart: [],
     filteredProducts: [],
     filteredProducts2: [],
-    products: Data.phones,
+    products: Data.samsung,
     searchQuery: null,
     wishList: []
   },
@@ -19,7 +19,7 @@ export default new Vuex.Store({
       if (state.filteredProducts.length > 0 && !state.searchQuery) {
         this.commit('checkboxFilter')
       } else if (state.filteredProducts < 1 && !state.searchQuery) {
-        state.products = Data.phones
+        state.products = Data.samsung
       }
     },
     searchQuery(state, searchQuery) {
@@ -31,17 +31,17 @@ export default new Vuex.Store({
       } else if (!state.searchQuery && state.filteredProducts.length > 1) {
         this.commit('checkboxFilter')
       } else if (!state.searchQuery && state.filteredProducts.length < 1) {
-        state.products = Data.phones
+        state.products = Data.samsung
       }
     },
     checkboxFilter(state) {
-      state.products = Data.phones.filter((product) => {
+      state.products = Data.samsung.filter((product) => {
         return state.filteredProducts.find((c) => product.name.match(c))
       })
       state.filteredProducts2 = state.products
     },
     lettersFilter(state) {
-      state.products = Data.phones.filter((product) => {
+      state.products = Data.samsung.filter((product) => {
         return state.searchQuery
           .toLowerCase()
           .split(' ')

@@ -21,10 +21,10 @@
               </a>
             </div>
             <b-card-body>
-              <img :src="product.img" />
+              <img :src="product.img[0]" />
               <b-card-title>{{ product.name }}</b-card-title>
               <b-card-sub-title>{{ product.price }}</b-card-sub-title>
-              <b-card-text>Kortare information om produkten</b-card-text>
+              <b-card-text>{{ product.short }}</b-card-text>
             </b-card-body>
           </router-link>
           <b-button
@@ -134,10 +134,10 @@
     text-decoration: none;
   }
 
-  .card-body > img {
-    width: 100%;
-    height: 125px;
-  }
+.card-body > img {
+  max-width: 100%;
+  height: 125px;
+}
 
   .card-title {
     margin-top: 0.75rem;

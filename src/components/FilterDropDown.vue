@@ -40,7 +40,7 @@
       Data
       return {
         isOpen: false,
-        products: Data.phones
+        products: Data.samsung
       }
     }
   }
