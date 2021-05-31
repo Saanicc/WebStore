@@ -8,7 +8,7 @@ export default new Vuex.Store({
   state: {
     cart: [],
     filteredProducts: [],
-    products: Data.phones,
+    products: Data.samsung,
     searchQuery: null,
     wishList: []
   },

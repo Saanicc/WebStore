@@ -1,111 +1,264 @@
 {
-  "phones": [
-    {
-      "id": "001",
-      "name": "iPhone3",
-      "price": 7999,
-      "color": "Black",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "quantity": 0,
-      "inStock": true,
-      "img": "https://picsum.photos/600/300/?image=160",
-      "addedToCart": false
-    },
-    {
-      "id": "002",
-      "name": "iPhone5",
-      "price": 5999,
-      "color": "Rose",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "quantity": 0,
-      "inStock": true,
-      "img": "https://picsum.photos/600/300/?image=3",
-      "addedToCart": false
-    },
-    {
-      "id": "003",
-      "name": "iPhone7",
-      "price": 8999,
-      "color": "Gold",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "quantity": 0,
-      "inStock": true,
-      "img": "https://picsum.photos/600/300/?image=373",
-      "addedToCart": false
-    },
-    {
-      "id": "004",
-      "name": "iPhoneX",
-      "price": 10999,
-      "color": "Red",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "quantity": 0,
-      "inStock": true,
-      "img": "https://picsum.photos/600/300/?image=816",
-      "addedToCart": false
-    },
-    {
-      "id": "005",
-      "name": "iPhone11",
-      "price": 9999,
-      "color": "Grey",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "quantity": 0,
-      "inStock": true,
-      "img": "https://picsum.photos/600/300/?image=816",
-      "addedToCart": false
-    }
-  ],
-  "computers": [
-    {
-      "id": "006",
-      "name": "iMac1",
-      "price": 7999,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "quantity": 0,
-      "inStock": true,
-      "img": "https://picsum.photos/600/300/?image=119",
-      "addedToCart": false
-    },
-    {
-      "id": "007",
-      "name": "iMac2",
-      "price": 5999,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "quantity": 0,
-      "inStock": true,
-      "img": "https://picsum.photos/600/300/?image=2",
-      "addedToCart": false
-    },
-    {
-      "id": "008",
-      "name": "iMac3",
-      "price": 8999,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "quantity": 0,
-      "inStock": true,
-      "img": "https://picsum.photos/600/300/?image=180",
-      "addedToCart": false
-    },
-    {
-      "id": "009",
-      "name": "iMac4",
-      "price": 10999,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "quantity": 0,
-      "inStock": true,
-      "img": "https://picsum.photos/600/300/?image=201",
-      "addedToCart": false
-    },
-    {
-      "id": "010",
-      "name": "iMac6",
-      "price": 9999,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "quantity": 0,
-      "inStock": true,
-      "img": "https://picsum.photos/600/300/?image=445",
-      "addedToCart": false
-    }
-  ]
+    "apple": [
+        {
+            "id": "001",
+            "name": "iPhone XR",
+            "price": 6299,
+            "color": "Black",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/apple-iphone-xr-64gb-black-2020(1015976)_410011_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "002",
+            "name": "iPhone 12 Pro",
+            "price": 11999,
+            "color": "Black",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/apple-iphone-12-pro-128gb-5g-pacific-blue(1015076)_400431_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "003",
+            "name": "iPhone SE 128 GB",
+            "price": 5999,
+            "color": "Gold",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/apple-iphone-se-128gb-white-2020(1015893)_409488_4_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "004",
+            "name": "iPhone 12 mini",
+            "price": 7299,
+            "color": "Red",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/apple-iphone-12-mini-64gb-5g-black(1015066)_400421_2_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "005",
+            "name": "iPhone 7",
+            "price": 4999,
+            "color": "Grey",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/apple-iphone-7-32gb-silver(236635)_254390_3_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        }
+    ],
+    "samsung": [
+        {
+            "id": "006",
+            "name": "Galaxy S21 Ultra",
+            "price": 14999,
+            "color": "Grey",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/samsung-galaxy-s21-ultra-256gb-phantom-black(1016254)_412130_5_Normal_Large.webp", "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/samsung-galaxy-s21-ultra-256gb-phantom-black(1016254)_412131_6_Normal_Large-0.webp", "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/samsung-galaxy-s21-ultra-256gb-phantom-black(1016254)_412132_7_Normal_Large-1.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "007",
+            "name": "Galaxy A21s",
+            "price": 1999,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/samsung-galaxy-a21s-black(1013227)_387025_4_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "008",
+            "name": "S20",
+            "price": 8999,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/samsung-galaxy-s20-fe-4g-128gb-cloud-navy(1014312)_395923_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "009",
+            "name": "Galaxy S21+",
+            "price": 10999,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/samsung-galaxy-s21-128-gb-phantom-silver(1016261)_412323_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "010",
+            "name": "Galaxy A72",
+            "price": 9999,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/samsung-galaxy-a72-lte-128gb-black(1017049)_422721_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        }
+    ],
+    "oneplus": [
+        {
+            "id": "011",
+            "name": "OnePlus Nord",
+            "price": 3999,
+            "color": "Grey",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/oneplus-nord-gray-onyx-8gb128gb-eu(1013788)_391519_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "012",
+            "name": "OnePlus 9 Pro",
+            "price": 12899,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/oneplus-oneplus-9-pro-12256gb-stellar-black(1017645)_423986_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "013",
+            "name": "OnePlus Nord N100",
+            "price": 2999,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/oneplus-nord-n100-midnight-frost-4gb64gb-eu-be2013(1015904)_408990_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        }
+    ],
+    "xiaomi": [
+        {
+            "id": "014",
+            "name": "Xiaomi Mi 11",
+            "price": 9899,
+            "color": "Grey",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/xiaomi/xiaomi-mi-11-8256g-horizon-blue(1017464)_422102_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "015",
+            "name": "Xiaomi Redmi Note 9",
+            "price": 5699,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/xiaomi/xiaomi-redmi-note-9-4128gb-forest-green(1013162)_386153_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "016",
+            "name": "Xiaomi Mi 10T Pro",
+            "price": 2999,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/xiaomi-mi-10t-pro-8256gb-cosmic-black(1014971)_399663_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        }
+    ],
+    "sony": [
+        {
+            "id": "017",
+            "name": "Sony Xperia 5 II 5G",
+            "price": 6799,
+            "color": "Grey",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/sony-xperia-5-ii-5g-blue(1014788)_398342_2_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "018",
+            "name": "Sony Xperia L4",
+            "price": 5699,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/sony-xperia-l4-svart(1013569)_389223_9_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        }
+    ],
+    "motorola": [
+        {
+            "id": "019",
+            "name": "Motorola Moto G100 8+",
+            "price": 6799,
+            "color": "Grey",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/motorola-moto-g100-8128-gb-magic-white(1016354)_424857_11_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        },
+        {
+            "id": "020",
+            "name": "Motorola Moto E7 Plus",
+            "price": 5699,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "short": "Lorem ipsum dolor sit amet",
+            "quantity": 0,
+            "inStock": true,
+            "img": ["https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/motorola-moto-e7-plus-464gb-misty-blue(1013802)_396309_1_Normal_Large.webp"],
+            "addedToCart": false,
+            "reviews": []
+        }
+    ]
 }

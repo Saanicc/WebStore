@@ -1,54 +1,61 @@
 <template>
   <div>
     <div class="filter" @click="isOpen = !isOpen">
-    <svg viewBox="0 0 1030 638" width="25">
-      <path d="M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z" fill="#777"></path>
-    </svg>
+      <svg viewBox="0 0 1030 638" width="25">
+        <path
+          d="M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z"
+          fill="#777"
+        ></path>
+      </svg>
     </div>
     <div class="sub-menu" v-if="isOpen">
       <div v-for="(product, i) in products" :key="i">
-        {{product.name}} <input type="checkbox" :value="product.name" v-model="filteredProducts">
+        {{ product.name }}
+        <input
+          type="checkbox"
+          :value="product.name"
+          v-model="filteredProducts"
+        />
       </div>
     </div>
     <!-- input knappen ska tas bort när funktionen funkar -->
-      <!-- <input type="button" value="tryck" @click="changeFL"> -->
+    <input type="button" value="tryck" @click="changeFL" />
   </div>
 </template>
 
 <script>
-
-import Data from "../../public/data.json"
+import Data from "../../public/data.json";
 
 export default {
-  name: 'FilterDropDOwn',
-  computed:{
+  name: "FilterDropDOwn",
+  computed: {
     filteredProducts: {
-      get(){
-        return this.$store.state.filteredProducts
+      get() {
+        return this.$store.state.filteredProducts;
       },
-      set(filteredProducts){
-        this.$store.commit('filterProductsByCategory', filteredProducts)
-      }
+      set(filteredProducts) {
+        this.$store.commit("filterProductsByCategory", filteredProducts);
+      },
     },
   },
-  data(){
-    Data
+  data() {
+    Data;
     return {
       isOpen: false,
-      products: Data.phones
-    }
+      products: Data.apple,
+    };
   },
-  methods:{
+  methods: {
     // changeFL ska tas bort när funktionen funkar
-    changeFL(){
-      console.log(this.filteredProducts)
-    }
+    changeFL() {
+      console.log(this.filteredProducts);
+    },
   },
-}
+};
 </script>
 
 <style scoped>
-.subMenu{
+.subMenu {
   position: absolute;
   background-color: #444;
   top: calc(100% - 18px);
@@ -57,7 +64,7 @@ export default {
   width: max-content;
 }
 
-svg:hover{
-  background: #CCC;
+svg:hover {
+  background: #ccc;
 }
 </style>
