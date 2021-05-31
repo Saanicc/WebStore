@@ -3,6 +3,15 @@
     <div class="cards">
       <b-card-group deck v-for="product in products" :key="product.id">
         <b-card class="shadow-sm p-3 mb-4 rounded" bg-variant="card-bg">
+          <div class="wish">
+              <a href="#">
+                <b-icon
+                  class="wish-icon"
+                  icon="heart-fill"
+                  @click="addToWishList(product)"
+                ></b-icon>
+              </a>
+            </div>
           <router-link
             :to="{
               path: '/product/' + product.name,
@@ -11,15 +20,7 @@
               }
             }"
           >
-            <div class="wish">
-              <a href="#">
-                <b-icon
-                  class="wish-icon"
-                  icon="star-fill"
-                  @click="addToWishList(product)"
-                ></b-icon>
-              </a>
-            </div>
+          
             <b-card-body>
               <img :src="product.img[0]" />
               <b-card-title>{{ product.name }}</b-card-title>
@@ -43,13 +44,9 @@
 </template>
 
 <script>
+
   export default {
     name: 'Gallery',
-    data() {
-      return {
-        addedToWishList: null
-      }
-    },
     computed: {
       products() {
         return this.$store.state.products
@@ -66,9 +63,7 @@
       addToWishList(product) {
         if (!this.$store.state.wishList.includes(product)) {
           this.$store.commit('addToWishList', product)
-          this.addedToWishList = true
-        } else {
-          this.addedToWishList = false
+          this.$store.addedToWishList = true
         }
       }
     }
@@ -98,17 +93,22 @@
     position: absolute;
     top: 1%;
     left: 0;
-    z-index: 99;
+    z-index: 100;
     right: 5px;
     text-align: right;
     padding-top: 0;
   }
+.wish-icon {
+  z-index: 100;
+}
+
   .wish .wish-icon {
     color: grey;
     font-size: 32px;
+    z-index: 100;
   }
   .wish .wish-icon:hover {
-    color: #f4ce00;
+    color: #DB0D0D;
   }
 
   .container {

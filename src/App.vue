@@ -13,7 +13,7 @@
         </div>
       </router-link>
       <router-link to="/wishlist" id="wishlist"
-        ><b-icon icon="star" font-scale="1.9"></b-icon
+        ><b-icon icon="heart" font-scale="1.9"></b-icon
       ></router-link>
     </div>
     <router-view />
