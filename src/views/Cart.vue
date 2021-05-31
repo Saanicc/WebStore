@@ -16,7 +16,7 @@
           <tr class="table-item" v-for="product in products" :key="product.id">
             <td>
               <img
-                :src="product.img"
+                :src="product.img[0]"
                 width="100px"
                 style="margin-right: 0.5rem;"
               />

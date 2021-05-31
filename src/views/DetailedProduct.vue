@@ -1,6 +1,17 @@
 <template>
   <div class="wrapper">
-    <img :src="product.img" />
+    <b-carousel
+    id="carousel-no-animation"
+    style="text-shadow: 0px 0px 2px #000"
+    controls
+    background="white"
+    img-width="200"
+    img-height="300"
+  >
+    <b-carousel-slide :img-src="product.img[0]"></b-carousel-slide>
+    <b-carousel-slide :img-src="product.img[1]"></b-carousel-slide>
+    <b-carousel-slide :img-src="product.img[2]"></b-carousel-slide>
+  </b-carousel>
     <div class="product-info">
       <h3>{{ product.name }}</h3>
       <p>{{ product.description }}</p>

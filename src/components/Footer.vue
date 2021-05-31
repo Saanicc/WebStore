@@ -10,16 +10,16 @@
       <div class="social-media">
         <p>Kontakta oss</p>
         <a href="https://www.facebook.com">
-          <img src="..\assets\facebook.png" width="40px" height="40px" />
+          <img src="../assets/facebook.png" width="40px" height="40px" />
         </a>
         <a href="https://www.instagram.com">
-          <img src="..\assets\instagram.png" width="40px" height="40px" />
+          <img src="../assets/instagram.png" width="40px" height="40px" />
         </a>
         <a href="https://www.twitter.com">
-          <img src="..\assets\twitter.png" width="40px" height="40px" />
+          <img src="../assets/twitter.png" width="40px" height="40px" />
         </a>
         <a href="mailto:webstore.iths@gmail.com">
-          <img src="..\assets\mail.png" width="40px" height="40px" />
+          <img src="../assets/mail.png" width="40px" height="40px" />
         </a>
       </div>
       <div id="copyright">

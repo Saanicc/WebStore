@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
     cart: [],
     filteredProducts: [],
-    products: Data.phones,
+    filteredProducts2: [],
+    products: Data.products,
     searchQuery: null,
     wishList: []
   },
@@ -17,37 +18,42 @@ export default new Vuex.Store({
       state.filteredProducts = filteredProducts
       if (state.filteredProducts.length > 0 && !state.searchQuery) {
         this.commit('checkboxFilter')
-      } else {
-        if (!state.searchQuery) {
-          state.products = Data.phones
-        } else {
-          this.commit('lettersFilter')
-        }
+      } else if (state.filteredProducts < 1 && !state.searchQuery) {
+        state.products = Data.samsung
       }
     },
     searchQuery(state, searchQuery) {
       state.searchQuery = searchQuery
-      if (state.searchQuery) {
+      if (state.searchQuery && state.filteredProducts.length < 1) {
         this.commit('lettersFilter')
-      } else {
-        if (state.filteredProducts.length < 1) {
-          state.products = Data.phones
-        } else {
-          this.commit('checkboxFilter')
-        }
+      } else if (state.searchQuery && state.filteredProducts.length > 0) {
+        this.commit('lettersFilter2')
+      } else if (!state.searchQuery && state.filteredProducts.length > 1) {
+        this.commit('checkboxFilter')
+      } else if (!state.searchQuery && state.filteredProducts.length < 1) {
+        state.products = Data.samsung
       }
     },
     checkboxFilter(state) {
-      state.products = Data.phones.filter((product) => {
+      state.products = Data.samsung.filter((product) => {
         return state.filteredProducts.find((c) => product.name.match(c))
       })
+      state.filteredProducts2 = state.products
     },
     lettersFilter(state) {
-      state.products = Data.phones.filter((product) => {
+      state.products = Data.samsung.filter((product) => {
         return state.searchQuery
           .toLowerCase()
           .split(' ')
           .every((c) => product.name.toLowerCase().includes(c))
+      })
+    },
+    lettersFilter2(state) {
+      state.products = state.filteredProducts2.filter((product) => {
+        return state.searchQuery
+          .toLowerCase()
+          .split(' ')
+          .every((c) => product.creator.toLowerCase().includes(c))
       })
     },
     addToCart(state, product) {
