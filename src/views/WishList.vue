@@ -12,7 +12,7 @@
           <b-row no-gutters>
             <b-col md="5">
               <b-card-img
-                :src="product.img"
+                :src="product.img[0]"
                 :alt="product.name"
                 class="rounded-0"
               ></b-card-img>

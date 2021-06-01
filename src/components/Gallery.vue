@@ -5,11 +5,22 @@
         <b-card class="shadow-sm p-3 mb-4 rounded" bg-variant="card-bg">
           <div class="wish">
               <a href="#">
+                <div v-if="!product.addedToWishList">
                 <b-icon
                   class="wish-icon"
-                  icon="heart-fill"
+                  icon="heart"
+                  font-scale="1.6"
                   @click="addToWishList(product)"
                 ></b-icon>
+                </div>
+                <div v-if="product.addedToWishList">
+                <b-icon
+                  id="wish-icon"
+                  icon="heart-fill"
+                  font-scale="1.6"
+                  @click="addToWishList(product)"
+                ></b-icon>
+                </div>
               </a>
             </div>
           <router-link
@@ -63,9 +74,16 @@
       addToWishList(product) {
         if (!this.$store.state.wishList.includes(product)) {
           this.$store.commit('addToWishList', product)
-          this.$store.addedToWishList = true
-        }
-      }
+          }
+          if(!product.addedToWishList){
+          product.addedToWishList = true
+          console.log(product.addedToWishList)
+          } else {
+            product.addedToWishList = false
+            this.$store.commit("removeFromWishList", product);
+            console.log(product.addedToWishList)
+          }
+      },
     }
   }
 </script>
@@ -98,6 +116,11 @@
     text-align: right;
     padding-top: 0;
   }
+
+#wish-icon {
+  color: #DB0D0D
+}
+
 .wish-icon {
   z-index: 100;
 }
