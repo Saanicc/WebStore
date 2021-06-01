@@ -9,21 +9,15 @@
       </svg>
     </div>
     <div class="sub-menu" v-if="isOpen">
-      <div v-for="(product, i) in products" :key="i">
-        {{ product.creator }}
-        <input
-          type="checkbox"
-          :value="product.creator"
-          v-model="filteredProducts"
-        />
+      <div v-for="(brand, i) in brands" :key="i">
+        {{ brand }}
+        <input type="checkbox" :value="brand" v-model="filteredProducts" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import Data from '../../public/data.json'
-
   export default {
     name: 'FilterDropDOwn',
     computed: {
@@ -37,10 +31,9 @@
       }
     },
     data() {
-      Data
       return {
         isOpen: false,
-        products: Data.samsung
+        brands: ['Apple', 'Motorola', 'Oneplus', 'Samsung', 'Sony', 'Xiaomi']
       }
     }
   }
