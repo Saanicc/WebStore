@@ -16,7 +16,27 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/apple-iphone-xr-64gb-black-2020(1015976)_410012_2_Normal_Large-0.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Adam",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
+
       "addedToWishList": false
     },
     {
@@ -35,7 +55,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/apple-iphone-12-pro-128gb-5g-graphite(1015068)_400393_3_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Mattias",
+          "message": "Superbra telefon, smidig att använda",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Jennie",
+          "message": "Tycker telefonen har för kort batteri tid",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Olle",
+          "message": "Tycker telefonen var väldigt svåranvänd",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -54,7 +93,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/apple-iphone-se-128gb-white-2020(1015893)_409490_5_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jacob",
+          "message": "Jag är nöjd med produkten, gillar att kameran är så bra",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Maria",
+          "message": "Väldigt liten och praktiskt telefon",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Olof",
+          "message": "Inte värt pengarna för fem öre",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -73,7 +131,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/apple-iphone-12-mini-64gb-5g-black(1015066)_400423_3_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jens",
+          "message": "Har alltid använt märket, kommer alltid att använda det",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Sara",
+          "message": "Riktigt snygg telefon",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Elias",
+          "message": "Kostar för mycket i förhållande till vad den erbjuder",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -92,7 +169,26 @@
         "https://www.netonnet.se/GetFile/ProductImagePrimary/telefoner/mobiltelefoner/apple-iphone-7-32gb-silver(236635)_254390_3_Normal_Large.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Kalle",
+          "message": "Jag är nöjd med luren",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Kristoffer",
+          "message": "Kanske inte den bästa jag haft, men inte långt ifrån",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Stalin",
+          "message": "Tycker den var alldeles för dyr, plus att kameran har en tendens att krångla",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -111,7 +207,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/samsung-galaxy-s21-ultra-256gb-phantom-black(1016254)_412132_7_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "William",
+          "message": "Gillade produkten, enkel att använda",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Sanna",
+          "message": "Simpelt och bra, duger till i princip allt",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Juan",
+          "message": "Usch och fy va dålig den var, jag är missnöjd",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -129,7 +244,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/samsung-galaxy-a21s-black(1013227)_387027_6_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "John",
+          "message": "Prisvärd och enkel att använda",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Britt-Marie",
+          "message": "Gillar att telefonen har en sån lång betteri tid",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Michael",
+          "message": "Får skylla mig själv för att jag köpte kinesisk produkt",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -147,7 +281,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/samsung-galaxy-s20-fe-4g-128gb-cloud-navy(1014312)_395925_3_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jonas",
+          "message": "Supernöjd, har enbart positiva saker att säga om telefonen",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Frida",
+          "message": "Gillar att den är så liten, passar jättebra i väskan",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Billy",
+          "message": "Fy fasen, hur kan dom sälja sånt här till folk",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -165,7 +318,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/samsung-galaxy-s21-128-gb-phantom-silver(1016261)_412325_3_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -183,7 +355,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/samsung-galaxy-a72-lte-128gb-black(1017049)_422723_3_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -202,7 +393,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/oneplus-nord-gray-onyx-8gb128gb-eu(1013788)_391522_4_Normal_Large-2.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -220,7 +430,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/oneplus-oneplus-9-pro-8128gb-stellar-black(1017644)_423970_4_Normal_Large-2.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -238,7 +467,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/oneplus-nord-n100-midnight-frost-4gb64gb-eu-be2013(1015904)_408992_3_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -257,7 +505,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/xiaomi/xiaomi-mi-11-8256g-horizon-blue(1017464)_422104_3_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -275,7 +542,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/xiaomi/xiaomi-redmi-note-9-4128gb-forest-green(1013162)_386156_4_Normal_Large-2.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -293,7 +579,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/xiaomi-mi-10t-8128gb-cosmic-black(1014970)_399988_14_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -312,7 +617,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/sony-xperia-5-ii-5g-blue(1014788)_398345_5_Normal_Large-2.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -330,7 +654,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/sony-xperia-l4-svart(1013569)_389216_2_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -349,7 +692,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/motorola-moto-g100-8128-gb-magic-white(1016354)_424854_8_Normal_Large-1.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     },
     {
@@ -367,7 +729,26 @@
         "https://www.netonnet.se/GetFile/ProductImage/telefoner/mobiltelefoner/motorola-moto-e7-plus-464gb-misty-blue(1013802)_396314_6_Normal_Large-4.webp"
       ],
       "addedToCart": false,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": 1,
+          "name": "Jesper",
+          "message": "Jag är supernöjd med produkten",
+          "ratings": "5/5"
+        },
+        {
+          "id": 2,
+          "name": "Matilda",
+          "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
+          "ratings": "4/5"
+        },
+        {
+          "id": 3,
+          "name": "Oscar",
+          "message": "Produkten var bristfällig",
+          "ratings": "1/5"
+        }
+      ],
       "addedToWishList": false
     }
   ]

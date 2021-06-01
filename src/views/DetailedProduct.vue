@@ -58,6 +58,28 @@
         <p v-if="product.addedToCart">Tillagd i kundvagnen</p>
       </button>
     </div>
+    <br />
+    <br />
+    <h3>REVIEWS</h3>
+    <b-container>
+      <b-card v-for="review in product.reviews" :key="review.id">
+        <b-row deck>
+          <b-col cols="2"
+            ><b-card-img
+              srs="../img/user.png"
+              class="rounded-0"
+              thumbnail
+              fluid-grow
+            ></b-card-img
+          ></b-col>
+          <b-col cols="10"
+            ><b>{{ review.name }} - {{ review.ratings }} </b><br />{{
+              review.message
+            }}</b-col
+          >
+        </b-row>
+      </b-card>
+    </b-container>
 
     <div class="rating-view">
       <form>
