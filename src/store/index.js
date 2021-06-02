@@ -16,23 +16,12 @@ export default new Vuex.Store({
   mutations: {
     filterProductsByCategory(state, filteredProducts) {
       state.filteredProducts = filteredProducts
-      if (state.filteredProducts.length > 0 && !state.searchQuery) {
-        this.commit('checkboxFilter')
-      } else if (state.filteredProducts < 1 && !state.searchQuery) {
-        state.products = Data.products
-      }
+      state.lettersFilter2 = filteredProducts
+      this.commit('filterOptions')
     },
     searchQuery(state, searchQuery) {
       state.searchQuery = searchQuery
-      if (state.searchQuery && state.filteredProducts.length < 1) {
-        this.commit('lettersFilter')
-      } else if (state.searchQuery && state.filteredProducts.length > 0) {
-        this.commit('lettersFilter2')
-      } else if (!state.searchQuery && state.filteredProducts.length > 1) {
-        this.commit('checkboxFilter')
-      } else if (!state.searchQuery && state.filteredProducts.length < 1) {
-        state.products = Data.products
-      }
+      this.commit('filterOptions')
     },
     checkboxFilter(state) {
       state.products = Data.products.filter((product) => {
@@ -49,12 +38,24 @@ export default new Vuex.Store({
       })
     },
     lettersFilter2(state) {
+      this.commit('checkboxFilter')
       state.products = state.filteredProducts2.filter((product) => {
         return state.searchQuery
           .toLowerCase()
           .split(' ')
           .every((c) => product.name.toLowerCase().includes(c))
       })
+    },
+    filterOptions(state) {
+      if (state.filteredProducts.length > 0 && !state.searchQuery) {
+        this.commit('checkboxFilter')
+      } else if (state.filteredProducts.length < 1 && state.searchQuery) {
+        this.commit('lettersFilter')
+      } else if (state.filteredProducts.length > 0 && state.searchQuery) {
+        this.commit('lettersFilter2')
+      } else if (state.filteredProducts.length < 1 && !state.searchQuery) {
+        state.products = Data.products
+      }
     },
     addToCart(state, product) {
       if (state.cart.includes(product)) {
