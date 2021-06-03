@@ -51,7 +51,11 @@
             Fyll i ditt namn
           </div>
           <div class="error-label" v-if="!$v.firstName.minLength">
-            Måste ha {{ $v.firstName.$params.minLength.min }} bokstäver
+            Måste innehålla minst
+            {{ $v.firstName.$params.minLength.min }} bokstäver
+          </div>
+          <div class="error-label" v-if="!$v.firstName.alpha">
+            Ditt namn får inte innehålla siffror
           </div>
         </div>
         <div
@@ -66,11 +70,15 @@
             type="text"
             v-model="$v.lastName.$model"
           />
-          <div class="error-label" v-if="!$v.lastName.required">
+          <div class="error-label" v-if="!$v.lastName.required.alpha">
             Fyll i ditt efternamn
           </div>
           <div class="error-label" v-if="!$v.lastName.minLength">
-            Måste ha {{ $v.firstName.$params.minLength.min }} bokstäver
+            Måste innehålla minst
+            {{ $v.firstName.$params.minLength.min }} bokstäver
+          </div>
+          <div class="error-label" v-if="!$v.lastName.alpha">
+            Ditt efternamn får inte innehålla siffror
           </div>
         </div>
         <div
@@ -85,9 +93,17 @@
             type="text"
             v-model="$v.streetAdress.$model"
           />
-          <div class="error" v-if="!$v.streetAdress.required">
+          <div class="error-label" v-if="!$v.streetAdress.required">
             Du måste fylla i din adress
           </div>
+          <div class="error-label" v-if="!$v.streetAdress.minLength">
+            Måste innehålla minst
+            {{ $v.streetAdress.$params.minLength.min }} bokstäver
+          </div>
+        </div>
+        <div class="error-label" v-if="!$v.streetAdress.minLength.min">
+          Måste innehålla minst
+          {{ $v.streetAdress.$params.minLength.min }} siffra
         </div>
         <div class="grid-item item4" :class="{ error: $v.zipCode.$error }">
           <label>Postnummer</label><br />
@@ -103,8 +119,11 @@
         <div class="grid-item item5" :class="{ error: $v.county.$error }">
           <label>Ort</label><br />
           <b-form-input type="text" v-model="$v.county.$model" />
-          <div class="error" v-if="!$v.county.required">
+          <div class="error-label" v-if="!$v.county.required">
             Du måste fylla i din ort
+          </div>
+          <div class="error-label" v-if="!$v.county.alpha">
+            Ort får inte innehålla siffror
           </div>
         </div>
         <div
@@ -119,10 +138,12 @@
             type="text"
             v-model="$v.mail.$model"
           />
-          <div class="error" v-if="!$v.mail.required.email">
+          <div class="error-label" v-if="!$v.mail.required">
             Fyll i din email
           </div>
-          <div class="error" v-if="!$v.mail"></div>
+          <div class="error-label" v-if="!$v.mail.email">
+            Du måste ange en giltig email
+          </div>
         </div>
         <div
           class="grid-item item7"
@@ -132,10 +153,10 @@
         >
           <label>Telefonnummer</label><br />
           <b-form-input type="text" v-model="$v.phoneNumber.$model" />
-          <div class="error" v-if="!$v.phoneNumber.required.numeric">
+          <div class="error-label" v-if="!$v.phoneNumber.required">
             Fyll i ditt nummer
           </div>
-          <div class="error" v-if="!$v.phoneNumber.minLength">
+          <div class="error-label" v-if="!$v.phoneNumber.minLength">
             Måste ha {{ $v.phoneNumber.$params.minLength.min }} siffror
           </div>
         </div>
@@ -168,11 +189,11 @@
         >
           <label>Kortnummer</label><br />
           <b-form-input type="text" v-model="$v.cardNumber.$model" />
-          <div class="error" v-if="!$v.cardNumber.numeric">
+          <div class="error" v-if="!$v.cardNumber">
             Måste innehålla siffror
           </div>
           <div class="error" v-if="!$v.cardNumber.minLength">
-            Måste ha {{ $v.cardNumber.$params.minLength.min }} siffror
+            Måste innehålla {{ $v.cardNumber.$params.minLength.min }} siffror
           </div>
           <div class="error" v-if="!$v.cardNumber.maxLength">
             Får max {{ $v.cardNumber.$params.maxLength.max }} siffror
@@ -189,8 +210,14 @@
           <div class="error" v-if="!$v.cardMonth.numeric">
             Måste innehålla siffror
           </div>
-          <div class="error" v-if="!$v.cardMonth.maxLength">
-            Får max ha {{ $v.cardMonth.$params.maxLength.max }} siffror
+          <div class="error" v-if="!$v.cardMonth.maxValue">
+            Det finns bara 12 månader
+          </div>
+          <div class="error" v-if="!$v.cardMonth.numeric">
+            Måste innehålla siffror
+          </div>
+          <div class="error" v-if="!$v.cardMonth.minValue">
+            Det finns ingen månad som börjar på 0
           </div>
         </div>
         <div
@@ -237,7 +264,7 @@
         >
           <label>Kortinnehavare</label><br />
           <b-form-input type="text" v-model="$v.cardHolder.$model" />
-          <div class="error" v-if="!$v.cardHolder.numeric">
+          <div class="error" v-if="!$v.cardHolder.alpha">
             Skriv ditt namn
           </div>
         </div>
@@ -251,7 +278,7 @@
         >
           <label>Telefonnummer</label><br />
           <b-form-input type="text" v-model="$v.swishNumber.$model" />
-          <div class="error" v-if="!$v.swishNumber.numeric">
+          <div class="error" v-if="!$v.swishNumber">
             Måste innehålla siffror
           </div>
           <div class="error" v-if="!$v.swishNumber.minLength">
@@ -270,18 +297,31 @@
         @click="finishCheckout()"
         value="Slutför betalning"
         v-b-modal.modal-thanks
+        v-if="!checkoutEnabled"
+        disabled
+      />
+      <input
+        class="checkout-btn"
+        type="button"
+        @click="finishCheckout()"
+        value="Slutför betalning"
+        v-b-modal.modal-thanks
+        v-else
       />
       <b-modal
         id="modal-thanks"
         header-class="modal-thanks"
         ref="modal"
-        title="Thank you for shopping!"
+        title="Tack för din beställning!"
         centered
+        header-text-variant="dark"
+        cancel-title="Avbryt"
+        ok-title="Skicka"
+        ok-variant="submit"
+        cancel-variant="delete"
       >
         <form ref="form" class="modal-form">
-          <label class="input-modal"
-            >How did you like your shopping here?</label
-          >
+          <label class="input-modal">Vad tyckte om våra webshop?</label>
           <b-form-input
             id="type-range"
             v-model="value"
@@ -291,7 +331,7 @@
             step="0.5"
           >
           </b-form-input>
-          <div class="div-modal">Your rating: {{ value }}</div>
+          <div class="div-modal">Ditt betyg: {{ value }}/5</div>
         </form>
       </b-modal>
     </div>
@@ -309,7 +349,10 @@
     minLength,
     numeric,
     maxLength,
-    email
+    email,
+    alpha,
+    maxValue,
+    minValue
   } from 'vuelidate/lib/validators'
 
   export default {
@@ -342,10 +385,12 @@
     validations: {
       firstName: {
         required,
+        alpha,
         minLength: minLength(2)
       },
       lastName: {
         required,
+        alpha,
         minLength: minLength(2)
       },
       cardNumber: {
@@ -364,10 +409,12 @@
         minLength: minLength(10)
       },
       streetAdress: {
-        required
+        required,
+        minLength: minLength(2)
       },
       county: {
-        required
+        required,
+        alpha
       },
       zipCode: {
         required,
@@ -377,13 +424,14 @@
       cardMonth: {
         required,
         numeric,
-        maxLength: maxLength(2)
+        minValue: minValue(1),
+        maxValue: maxValue(12)
       },
       cardYear: {
         required,
         numeric,
         minLength: minLength(2),
-        maxLength: maxLength(4)
+        maxLength: maxLength(2)
       },
       cvc: {
         required,
@@ -392,7 +440,8 @@
         maxLength: maxLength(3)
       },
       cardHolder: {
-        required
+        required,
+        alpha
       },
       swishNumber: {
         required,
@@ -459,6 +508,42 @@
       }
     },
     computed: {
+      checkoutEnabled() {
+        var bool
+        if (this.paymentMethod === 'SWISH') {
+          if (
+            this.firstName !== '' &&
+            this.lastName !== '' &&
+            this.streetAdress !== '' &&
+            this.zipCode !== '' &&
+            this.county !== '' &&
+            this.mail !== '' &&
+            this.phoneNumber !== '' &&
+            this.swishNumber !== ''
+          ) {
+            bool = true
+          }
+        } else if (this.paymentMethod === 'CARDPAYMENT') {
+          if (
+            this.firstName !== '' &&
+            this.lastName !== '' &&
+            this.streetAdress !== '' &&
+            this.zipCode !== '' &&
+            this.county !== '' &&
+            this.mail !== '' &&
+            this.phoneNumber !== '' &&
+            this.cardNumber !== '' &&
+            this.cardMonth !== '' &&
+            this.cardYear !== '' &&
+            this.cvc !== '' &&
+            this.cardHolder !== ''
+          ) {
+            bool = true
+          }
+        }
+        return bool
+      },
+
       fullName() {
         return this.firstName + ' ' + this.lastName
       },
@@ -525,16 +610,29 @@
 </script>
 
 <style scoped>
-  .modal-thanks {
-    color: #000000;
+  .custom-range::-webkit-slider-thumb {
+    background: #353535;
   }
 
-  .input-modal {
-    color: #000000;
+  .custom-range::-moz-range-thumb {
+    background: #353535;
   }
+
+  .custom-range::-ms-thumb {
+    background: #353535;
+  }
+  -webkit-slider-thumb:active {
+    background-color: #35353531;
+  }
+  -webkit-slider-thumb {
+    box-shadow: 0px 0px 4px #35353531;
+  }
+
+  .input-modal,
   .div-modal {
     color: #000000;
   }
+
   .cart-page {
     padding-top: 100px;
   }
@@ -607,6 +705,8 @@
   }
   .error > div {
     color: #db0d0d;
+    font-size: 0.8em;
+    display: initial;
   }
   .error > input {
     border: none;
@@ -614,6 +714,9 @@
   }
   .error-input {
     outline: 1px solid #db0d0d;
+  }
+  .error-label {
+    display: none;
   }
 
   .payment-header {
