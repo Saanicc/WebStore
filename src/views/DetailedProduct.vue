@@ -18,12 +18,12 @@
         icon="heart-fill"
         font-scale="2"
         style="color: #db0d0d;"
-        @click="addToFavorites()"
+        @click="addToFavorites(product)"
         v-if="favorited"
       ></b-icon>
       <b-icon
         class="favorite-btn"
-        @click="addToFavorites()"
+        @click="addToFavorites(product)"
         icon="heart"
         font-scale="2"
         color="black"
@@ -106,7 +106,7 @@
     data() {
       return {
         product: this.$route.query.item,
-        favorited: false,
+        favorited: this.$route.query.item.addedToWishList,
         rating: 0,
         color: 'Svart'
       }
@@ -127,13 +127,13 @@
         }, 2500)
         this.$store.commit('addToCart', product)
       },
-      addToFavorites() {
-        // if (product.addToFavorites) {
-        //   !product.addToFavorites
-        // } else {
-        //   product.addedToFavorites = true
-        //   this.$store.commit('addToFavorites', product)
-        // }
+      addToFavorites(product) {
+        if (product.addToFavorites) {
+          !product.addToFavorites
+        } else {
+          product.addedToFavorites = true
+          this.$store.commit('isAddedToWishList', product)
+        }
 
         this.favorited = !this.favorited
       },
