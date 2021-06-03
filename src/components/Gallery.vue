@@ -4,25 +4,25 @@
       <b-card-group deck v-for="product in products" :key="product.id">
         <b-card class="shadow-sm p-3 mb-4 rounded" bg-variant="card-bg">
           <div class="wish">
-              <a href="#">
-                <div v-if="!product.addedToWishList">
+            <a href="#">
+              <div v-if="!product.addedToWishList">
                 <b-icon
                   class="wish-icon"
                   icon="heart"
                   font-scale="1.6"
-                  @click="addToWishList(product)"
+                  @click="changeWishList(product)"
                 ></b-icon>
-                </div>
-                <div v-if="product.addedToWishList">
+              </div>
+              <div v-if="product.addedToWishList">
                 <b-icon
                   id="wish-icon"
                   icon="heart-fill"
                   font-scale="1.6"
-                  @click="addToWishList(product)"
+                  @click="changeWishList(product)"
                 ></b-icon>
-                </div>
-              </a>
-            </div>
+              </div>
+            </a>
+          </div>
           <router-link
             :to="{
               path: '/product/' + product.name,
@@ -31,7 +31,6 @@
               }
             }"
           >
-          
             <b-card-body>
               <img :src="product.img[0]" />
               <b-card-title>{{ product.name }}</b-card-title>
@@ -55,7 +54,6 @@
 </template>
 
 <script>
-
   export default {
     name: 'Gallery',
     computed: {
@@ -71,19 +69,10 @@
         }, 1000)
         this.$store.commit('addToCart', product)
       },
-      addToWishList(product) {
-        if (!this.$store.state.wishList.includes(product)) {
-          this.$store.commit('addToWishList', product)
-          }
-          if(!product.addedToWishList){
-          product.addedToWishList = true
-          console.log(product.addedToWishList)
-          } else {
-            product.addedToWishList = false
-            this.$store.commit("removeFromWishList", product);
-            console.log(product.addedToWishList)
-          }
-      },
+
+      changeWishList(product) {
+        this.$store.commit('isAddedToWishList', product)
+      }
     }
   }
 </script>
@@ -117,13 +106,13 @@
     padding-top: 0;
   }
 
-#wish-icon {
-  color: #DB0D0D
-}
+  #wish-icon {
+    color: #db0d0d;
+  }
 
-.wish-icon {
-  z-index: 100;
-}
+  .wish-icon {
+    z-index: 100;
+  }
 
   .wish .wish-icon {
     color: grey;
@@ -131,7 +120,7 @@
     z-index: 100;
   }
   .wish .wish-icon:hover {
-    color: #DB0D0D;
+    color: #db0d0d;
   }
 
   .container {
@@ -157,10 +146,10 @@
     text-decoration: none;
   }
 
-.card-body > img {
-  max-width: 100%;
-  height: 125px;
-}
+  .card-body > img {
+    max-width: 100%;
+    height: 125px;
+  }
 
   .card-title {
     margin-top: 0.75rem;
