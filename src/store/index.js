@@ -26,6 +26,7 @@ export default new Vuex.Store({
     },
     price(state, price) {
       state.price = price
+      this.commit('priceFilter')
     },
     checkboxFilter(state) {
       state.products = Data.products.filter((product) => {
@@ -40,6 +41,7 @@ export default new Vuex.Store({
           .split(' ')
           .every((c) => product.name.toLowerCase().includes(c))
       })
+      state.filteredProducts2 = state.products
     },
     lettersFilter2(state) {
       this.commit('checkboxFilter')
@@ -49,6 +51,11 @@ export default new Vuex.Store({
           .split(' ')
           .every((c) => product.name.toLowerCase().includes(c))
       })
+    },
+    priceFilter(state) {
+      state.products = state.filteredProducts2.filter(
+        (product) => product.price < state.price
+      )
     },
     filterOptions(state) {
       if (state.filteredProducts.length > 0 && !state.searchQuery) {
