@@ -66,7 +66,7 @@
         <b-row deck>
           <b-col cols="2"
             ><b-card-img
-              srs="../img/user.png"
+              src="../img/user.png"
               class="rounded-0"
               thumbnail
               fluid-grow
