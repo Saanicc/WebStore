@@ -1,7 +1,6 @@
 <template>
   <div class="cart-page">
     <h1 class="title">Kundvagn</h1>
-    <!-- <p>Du har '{{ products.length }}' produkter i kundvagnen</p> -->
     <div class="cart">
       <table class="table is-striped">
         <thead>
@@ -18,6 +17,7 @@
               <div>
                 <img :src="product.img[0]" width="100px" />
                 <p>{{ product.name }}</p>
+                <p style="font-size: 0.8em;">Färg: {{ product.color }}</p>
               </div>
             </td>
             <td>
@@ -233,9 +233,6 @@
     .product-column p {
       margin: 0.5em 0 0 0;
       word-wrap: none;
-    }
-
-    .product-column > div {
     }
 
     .checkout,

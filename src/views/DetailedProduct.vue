@@ -13,94 +13,94 @@
       <b-carousel-slide :img-src="product.img[2]"></b-carousel-slide>
     </b-carousel>
     <div class="product-info">
-      <button class="favorite-btn" @click="addToFavorites()" v-if="favorited">
-        <b-icon
-          icon="star-fill"
-          font-scale="1.25"
-          style="margin-right: 0.25em; color: #F4CE00;"
-        ></b-icon>
-        Ta bort från favoriter
-      </button>
-      <button class="favorite-btn" @click="addToFavorites()" v-else>
-        <b-icon
-          icon="star"
-          font-scale="1.25"
-          color="black"
-          style="margin-right: 0.25em; color: ;"
-        ></b-icon>
-        Lägg till i favoriter
-      </button>
+      <b-icon
+        class="favorite-btn"
+        icon="heart-fill"
+        font-scale="2"
+        style="color: #db0d0d;"
+        @click="addToFavorites()"
+        v-if="favorited"
+      ></b-icon>
+      <b-icon
+        class="favorite-btn"
+        @click="addToFavorites()"
+        icon="heart"
+        font-scale="2"
+        color="black"
+        v-else
+      ></b-icon>
       <h3>{{ product.name }}</h3>
       <h4>{{ product.price }} kr</h4>
       <p v-if="product.inStock" id="in-stock">Finns i lager</p>
       <p v-else id="out-of-stock">Slut i lager</p>
       <p>{{ product.description }}</p>
-      <p>Välj färg</p>
-      <b-dropdown
-        id="dropdown-1"
-        :text="color"
-        class="m-md-2 p-3"
-        variant="outline-dark"
-      >
-        <b-dropdown-item @click="changeProductColor('BLACK')"
-          >Svart</b-dropdown-item
+      <div class="colorAndAddToCart">
+        <p id="color-picker">Välj färg</p>
+        <b-dropdown
+          id="dropdown-1"
+          :text="color"
+          class="m-md-2 p-3"
+          variant="outline-dark"
         >
-        <b-dropdown-item @click="changeProductColor('WHITE')"
-          >Vit</b-dropdown-item
+          <b-dropdown-item @click="changeProductColor('BLACK')"
+            >Svart</b-dropdown-item
+          >
+          <b-dropdown-item @click="changeProductColor('WHITE')"
+            >Vit</b-dropdown-item
+          >
+        </b-dropdown>
+        <button
+          class="add-btn"
+          :class="{ added: product.addedToCart }"
+          @click="addToCart(product)"
         >
-      </b-dropdown>
-      <button
-        class="add-btn"
-        :class="{ added: product.addedToCart }"
-        @click="addToCart(product)"
-      >
-        <p v-if="!product.addedToCart">Lägg till i kundvagnen</p>
-        <p v-if="product.addedToCart">Tillagd i kundvagnen</p>
-      </button>
+          <p v-if="!product.addedToCart">Lägg till i kundvagnen</p>
+          <p v-if="product.addedToCart">Tillagd i kundvagnen</p>
+        </button>
+      </div>
     </div>
     <br />
     <br />
-    <h3>REVIEWS</h3>
-    <b-container>
-      <b-card v-for="review in product.reviews" :key="review.id">
+    <h3>Recensioner</h3>
+    <b-container class="mb-3">
+      <b-card
+        bg-variant="card-bg"
+        v-for="review in product.reviews"
+        :key="review.id"
+      >
         <b-row deck>
-          <b-col cols="2"
-            ><b-card-img
-              src="../img/user.png"
-              class="rounded-0"
-              thumbnail
-              fluid-grow
-            ></b-card-img
-          ></b-col>
-          <b-col cols="10"
-            ><b>{{ review.name }} - {{ review.ratings }} </b><br />{{
-              review.message
-            }}</b-col
-          >
+          <b-col cols="12">
+            <b>
+              {{ review.name }}
+              <div class="rating-view">
+                <form>
+                  <b-form-rating
+                    precision="1"
+                    inline
+                    :value="review.ratings"
+                    variant="favorite"
+                    readonly
+                    no-border
+                    class="rating"
+                  ></b-form-rating>
+                </form>
+              </div>
+            </b>
+            {{ review.message }}
+          </b-col>
         </b-row>
       </b-card>
     </b-container>
-
-    <div class="rating-view">
-      <form>
-        <b-form-rating
-          show-value
-          show-value-max
-          slot="icon-half"
-          precision="1"
-          inline
-          v-model="rating"
-          variant="favorite"
-        ></b-form-rating>
-      </form>
-    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
+  import Footer from '../components/Footer.vue'
   // @ is an alias to /src
 
   export default {
+    components: { Footer },
     name: 'DetailedProduct',
     created() {},
     data() {
@@ -113,6 +113,14 @@
     },
     methods: {
       addToCart(product) {
+        switch (this.color) {
+          case 'Svart':
+            product.color = 'Svart'
+            break
+          case 'Vit':
+            product.color = 'Vit'
+            break
+        }
         product.addedToCart = true
         setTimeout(() => {
           product.addedToCart = false
@@ -183,15 +191,32 @@
 
   .favorite-btn {
     float: right;
-    border: none;
-    padding: 0.5em 1em;
+    margin-top: -0.3em;
+    margin-right: -0.25em;
     background-color: #e3e3e3;
-    border: 1px solid #000000;
-    border-radius: 20px;
+    padding: 10px 0 4px 0;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
   }
 
   .favorite-btn:hover {
     background-color: #dadada;
+  }
+
+  .colorAndAddToCart {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #color-picker {
+    margin: 2em 0 0 0;
+    font-weight: 600;
+  }
+
+  #dropdown-1 {
+    padding: 1em 0 1em 0 !important;
   }
 
   .add-btn {
@@ -201,6 +226,8 @@
     border-radius: 5px;
     background-color: #bfcc94;
     box-shadow: #00000050 1px 2px 4px;
+    width: 100%;
+    height: 56px;
   }
 
   .add-btn > p {
@@ -221,6 +248,10 @@
   added:focus-visible,
   added:focus {
     background-color: #b0c07a;
+  }
+
+  .rating {
+    box-shadow: none !important;
   }
 
   @media screen and (min-width: 520px) {

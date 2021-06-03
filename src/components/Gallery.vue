@@ -83,7 +83,8 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    border: none;
+    box-shadow: none !important;
+    border: none !important;
   }
 
   .add-btn > p {
@@ -93,7 +94,7 @@
 
   .added {
     background-color: #bfcc94;
-    outline: none;
+    border: none !important;
   }
 
   .wish {

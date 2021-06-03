@@ -20,6 +20,9 @@
               <div>
                 <img :src="product.img[0]" width="100px" />
                 <p>{{ product.name }}</p>
+                <p style="font-size: 0.8em; margin: 0;">
+                  Färg: {{ product.color }}
+                </p>
               </div>
             </td>
             <td>{{ product.quantity }}</td>
@@ -495,9 +498,18 @@
           orderedProductsHTML.push(
             '<tr style="height: 24px;">' +
               '<td style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;" align="left" width="75%">' +
+              '<div>' +
+              '<p style="margin: 0">' +
               this.products[i].name +
-              ' x' +
+              '</p>' +
+              '<p style="font-size: 0.8em;">' +
+              'Antal: ' +
               this.products[i].quantity +
+              '<br>' +
+              'Färg: ' +
+              this.products[i].color +
+              '</p>' +
+              '</div>' +
               '</td>' +
               '<td style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;" align="left" width="25%">' +
               this.products[i].price +
