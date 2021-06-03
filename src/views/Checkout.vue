@@ -333,7 +333,7 @@
         cardYear: '',
         cvc: '',
         cardHolder: '',
-        value: '2.5'
+        value: 2.5
       }
     },
     validations: {
@@ -513,14 +513,14 @@
 </script>
 
 <style scoped>
-  /deep/ .modal-thanks {
+  .modal-thanks {
     color: #000000;
   }
 
-  /deep/ .input-modal {
+  .input-modal {
     color: #000000;
   }
-  /deep/ .div-modal {
+  .div-modal {
     color: #000000;
   }
   .cart-page {
@@ -714,9 +714,6 @@
     .product-column p {
       margin: 0.5em 0 0 0;
       word-wrap: none;
-    }
-
-    .product-column > div {
     }
 
     .inputs,

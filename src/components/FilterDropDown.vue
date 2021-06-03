@@ -13,13 +13,18 @@
         {{ brand }}
         <input type="checkbox" :value="brand" v-model="filteredProducts" />
       </div>
+      <price-slider />
     </div>
   </div>
 </template>
 
 <script>
+  import PriceSlider from './PriceSlider.vue'
   export default {
     name: 'FilterDropDOwn',
+    components: {
+      PriceSlider
+    },
     computed: {
       filteredProducts: {
         get() {

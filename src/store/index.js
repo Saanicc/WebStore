@@ -11,7 +11,8 @@ export default new Vuex.Store({
     filteredProducts2: [],
     products: Data.products,
     searchQuery: null,
-    wishList: []
+    wishList: [],
+    price: 5000
   },
   mutations: {
     filterProductsByCategory(state, filteredProducts) {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
     searchQuery(state, searchQuery) {
       state.searchQuery = searchQuery
       this.commit('filterOptions')
+    },
+    price(state, price) {
+      state.price = price
     },
     checkboxFilter(state) {
       state.products = Data.products.filter((product) => {
