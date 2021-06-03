@@ -266,7 +266,31 @@
         type="button"
         @click="finishCheckout()"
         value="Slutför betalning"
+        v-b-modal.modal-thanks
       />
+      <b-modal
+        id="modal-thanks"
+        header-class="modal-thanks"
+        ref="modal"
+        title="Thank you for shopping!"
+        centered
+      >
+        <form ref="form" class="modal-form">
+          <label class="input-modal"
+            >How did you like your shopping here?</label
+          >
+          <b-form-input
+            id="type-range"
+            v-model="value"
+            type="range"
+            min="0"
+            max="5"
+            step="0.5"
+          >
+          </b-form-input>
+          <div class="div-modal">Your rating: {{ value }}</div>
+        </form>
+      </b-modal>
     </div>
   </div>
 </template>
@@ -308,7 +332,8 @@
         cardMonth: '',
         cardYear: '',
         cvc: '',
-        cardHolder: ''
+        cardHolder: '',
+        value: '2.5'
       }
     },
     validations: {
@@ -425,6 +450,9 @@
         this.phoneNumber = ''
         this.cardNumber = ''
         this.swishNumber = ''
+      },
+      sentBackToHome() {
+        this.$router.push({ path: '/' })
       }
     },
     computed: {
@@ -485,6 +513,16 @@
 </script>
 
 <style scoped>
+  /deep/ .modal-thanks {
+    color: #000000;
+  }
+
+  /deep/ .input-modal {
+    color: #000000;
+  }
+  /deep/ .div-modal {
+    color: #000000;
+  }
   .cart-page {
     padding-top: 100px;
   }
