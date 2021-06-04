@@ -296,50 +296,27 @@
         type="button"
         @click="finishCheckout()"
         value="Slutför betalning"
-        v-b-modal.modal-thanks
         v-if="!checkoutEnabled"
         disabled
       />
       <input
         class="checkout-btn"
         type="button"
-        @click="finishCheckout()"
+        @click="
+          finishCheckout()
+          showModal()
+        "
         value="Slutför betalning"
-        v-b-modal.modal-thanks
         v-else
       />
-      <b-modal
-        id="modal-thanks"
-        header-class="modal-thanks"
-        ref="modal"
-        title="Tack för din beställning!"
-        centered
-        header-text-variant="dark"
-        cancel-title="Avbryt"
-        ok-title="Skicka"
-        ok-variant="submit"
-        cancel-variant="delete"
-      >
-        <form ref="form" class="modal-form">
-          <label class="input-modal">Vad tyckte om våra webshop?</label>
-          <b-form-input
-            id="type-range"
-            v-model="value"
-            type="range"
-            min="0"
-            max="5"
-            step="0.5"
-          >
-          </b-form-input>
-          <div class="div-modal">Ditt betyg: {{ value }}/5</div>
-        </form>
-      </b-modal>
+      <Modal v-show="isModalVisible" @close="closeModal" />
     </div>
   </div>
 </template>
 
 <script>
   import emailjs from 'emailjs-com'
+  import Modal from '../components/Modal'
 
   import { init } from 'emailjs-com'
   init('user_TiTSwezkNDuf6XB9cHtHU')
@@ -357,6 +334,9 @@
 
   export default {
     name: 'Checkout',
+    components: {
+      Modal
+    },
     created() {
       this.products = this.$store.state.cart
     },
@@ -379,7 +359,7 @@
         cardYear: '',
         cvc: '',
         cardHolder: '',
-        value: 2.5
+        isModalVisible: false
       }
     },
     validations: {
@@ -451,6 +431,12 @@
     },
 
     methods: {
+      showModal() {
+        this.isModalVisible = true
+      },
+      closeModal() {
+        this.isModalVisible = false
+      },
       cardPayment() {
         this.paymentMethod = 'CARDPAYMENT'
         this.payment = 'Kortbetalning'
@@ -502,9 +488,6 @@
         this.phoneNumber = ''
         this.cardNumber = ''
         this.swishNumber = ''
-      },
-      sentBackToHome() {
-        this.$router.push({ path: '/' })
       }
     },
     computed: {
@@ -626,11 +609,6 @@
   }
   -webkit-slider-thumb {
     box-shadow: 0px 0px 4px #35353531;
-  }
-
-  .input-modal,
-  .div-modal {
-    color: #000000;
   }
 
   .cart-page {
