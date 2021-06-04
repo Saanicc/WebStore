@@ -11,6 +11,7 @@ export default new Vuex.Store({
     filteredProducts2: [],
     products: Data.products,
     searchQuery: null,
+    sortBy: null,
     wishList: [],
     price: 5000
   },
@@ -53,9 +54,27 @@ export default new Vuex.Store({
       })
     },
     priceFilter(state) {
-      state.products = state.filteredProducts2.filter(
-        (product) => product.price < state.price
-      )
+      if (state.filteredProducts2.length > 0) {
+        state.products = state.filteredProducts2.filter(
+          (product) => product.price < state.price
+        )
+      } else {
+        state.products = Data.products.filter(
+          (product) => product.price < state.price
+        )
+      }
+    },
+    sortPrice(state, sortBy) {
+      state.sortBy = sortBy
+      if (state.filteredProducts2.length > 0) {
+        state.products = state.filteredProducts2.sort((a, b) =>
+          a[sortBy] > b[sortBy] ? 1 : -1
+        )
+      } else {
+        state.products = Data.products.sort((a, b) =>
+          a[sortBy] > b[sortBy] ? 1 : -1
+        )
+      }
     },
     filterOptions(state) {
       if (state.filteredProducts.length > 0 && !state.searchQuery) {
