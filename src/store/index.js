@@ -12,7 +12,6 @@ export default new Vuex.Store({
     products: Data.products,
     searchQuery: null,
     sortBy: null,
-    wishList: [],
     price: 5000
   },
   mutations: {
@@ -106,14 +105,15 @@ export default new Vuex.Store({
     clearCart(state) {
       state.cart = []
     },
-    addToWishList(state, product) {
-      state.wishList.push(product)
-    },
-    removeFromWishList(state, product) {
-      console.log(state.wishList)
-      for (let i = 0; i < state.wishList.length; i++) {
-        if (state.wishList[i].id === product.id) {
-          state.wishList.splice(i, 1)
+    isAddedToWishList(state, product) {
+      for (let i = 0; i < state.products.length; i++) {
+        let checkProduct = state.products[i]
+        if (checkProduct.id === product.id) {
+          if (checkProduct.addedToWishList === false) {
+            checkProduct.addedToWishList = true
+          } else {
+            checkProduct.addedToWishList = false
+          }
         }
       }
     }
