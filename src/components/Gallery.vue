@@ -128,6 +128,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 80px;
   }
   .cards {
     display: block;
@@ -135,7 +136,7 @@
   }
 
   .cards:first-child {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   .card-body {

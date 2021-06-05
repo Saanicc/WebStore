@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="filter" @click="isOpen = !isOpen">
+  <div id="wrapper">
+    <div class="filter" @click="isOpen = !isOpen" v-if="!phone">
       <svg viewBox="0 0 1030 638" width="25">
         <path
           d="M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z"
@@ -9,21 +9,48 @@
       </svg>
     </div>
     <div class="sub-menu" v-if="isOpen">
-      <div v-for="(brand, i) in brands" :key="i">
-        {{ brand }}
-        <input type="checkbox" :value="brand" v-model="filteredProducts" />
+      <div class="items">
+        <div v-for="(brand, i) in brands" :key="i">
+          {{ brand }}
+          <input type="checkbox" :value="brand" v-model="filteredProducts" />
+        </div>
       </div>
-      <price-slider />
+      <div>
+        <price-slider />
+        <p style="font-size: 1em;">
+          Sortera
+        </p>
+        <Sort />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
   import PriceSlider from './PriceSlider.vue'
+  import Sort from '@/components/Sort.vue'
+
   export default {
     name: 'FilterDropDOwn',
     components: {
-      PriceSlider
+      PriceSlider,
+      Sort
+    },
+    created() {
+      if (screen.width <= 650) {
+        this.isOpen = true
+        this.phone = true
+      } else {
+        !this.isOpen
+        !this.phone
+      }
+    },
+    data() {
+      return {
+        isOpen: false,
+        phone: false,
+        brands: ['Apple', 'Motorola', 'Oneplus', 'Samsung', 'Sony', 'Xiaomi']
+      }
     },
     computed: {
       filteredProducts: {
@@ -34,27 +61,59 @@
           this.$store.commit('filterProductsByCategory', filteredProducts)
         }
       }
-    },
-    data() {
-      return {
-        isOpen: false,
-        brands: ['Apple', 'Motorola', 'Oneplus', 'Samsung', 'Sony', 'Xiaomi']
-      }
     }
   }
 </script>
 
 <style scoped>
-  .subMenu {
-    position: absolute;
-    background-color: #444;
-    top: calc(100% - 18px);
-    left: 50%;
-    transform: translateX(50);
-    width: max-content;
+  .filter {
+    width: 50px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .sub-menu > div {
+    padding: 0 10px;
   }
 
   svg:hover {
     background: #ccc;
+  }
+
+  @media screen and (min-width: 650px) {
+    .sub-menu {
+      position: absolute;
+      top: 55px;
+      left: 0;
+      padding: 5px;
+      background-color: #494949;
+      display: flex;
+      flex-direction: row;
+      color: #ffffff;
+      width: 100%;
+    }
+
+    .sub-menu p {
+      margin: 0.75em 0 0 0;
+    }
+
+    .sub-menu > .items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    .items > div {
+      margin: 0 1em 0 0;
+    }
+
+    .sub-menu > div:nth-last-child(1) {
+      position: absolute;
+      left: 0;
+      top: 34px;
+      width: 100%;
+      background-color: #494949;
+    }
   }
 </style>

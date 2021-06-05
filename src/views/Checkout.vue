@@ -635,7 +635,7 @@
 
   .cart-info {
     box-shadow: #00000010 1px 2px 4px;
-    background-color: #f3eff5;
+    background-color: #ffffff;
     display: block;
     margin: 4px auto 0 auto;
     width: 90%;
@@ -661,7 +661,7 @@
   }
 
   .table > thead {
-    background-color: #00000015;
+    background-color: #0000001a;
   }
 
   .input-wrapper {
@@ -744,7 +744,7 @@
     border-radius: 5px;
     width: 100%;
     box-shadow: #0000001f 1px 2px 4px;
-    background-color: #f3eff5;
+    background-color: #ffffff;
   }
 
   .price-total {

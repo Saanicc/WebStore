@@ -3,18 +3,13 @@
     <div id="searchfield">
       <input v-model="searchQuery" placeholder="Sök efter produkter..." />
     </div>
-    <filter-drop-down />
   </div>
 </template>
 
 <script>
-  import FilterDropDown from './FilterDropDown.vue'
-
   export default {
     name: 'Searchbar',
-    components: {
-      FilterDropDown
-    },
+    components: {},
     computed: {
       searchQuery: {
         get() {
@@ -29,10 +24,10 @@
 </script>
 
 <style scoped>
-  #searchfield {
+  /* #searchfield {
     margin-top: 84px;
     padding-top: 1.3em;
-  }
+  } */
 
   #searchbar > input {
     border: none;

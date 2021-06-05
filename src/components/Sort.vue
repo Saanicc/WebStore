@@ -1,5 +1,5 @@
 <template>
-  <div class="sort">
+  <div class="sort" style="margin-bottom: 5px;">
     <select v-model="sortBy">
       <option value="price">Price</option>
       <option value="name">Name</option>
