@@ -57,19 +57,44 @@
           <p v-if="!product.addedToCart">Lägg till i kundvagnen</p>
           <p v-if="product.addedToCart">Tillagd i kundvagnen</p>
         </button>
+        <p class="delivery">Leverans inom 3-5 arbetsdagar</p>
       </div>
     </div>
     <br />
     <br />
-    <h3>Recensioner</h3>
-    <b-container class="mb-3">
+    <h4>Skriv en recension</h4>
+    <b-container class="mb-3" id="review-container">
+      <div class="add-review">
+        <label>Ditt namn</label>
+        <b-form-input type="text" v-model="name" />
+        <label>Ditt betyg</label>
+        <b-form-rating
+          precision="1"
+          inline
+          v-model="rating"
+          variant="favorite"
+          no-border
+          class="rating"
+          change
+          @change="rating"
+        ></b-form-rating>
+        <label>Din recension</label>
+        <b-form-textarea type="text" v-model="message" />
+        <b-button
+          variant="card-btn-bg"
+          class="send-review-btn"
+          @click="sendReview()"
+          >Skicka</b-button
+        >
+      </div>
+      <h4>Recensioner</h4>
       <b-card
         bg-variant="card-bg"
         v-for="review in product.reviews"
         :key="review.id"
       >
         <b-row deck>
-          <b-col cols="12">
+          <b-col cols="12" class="test">
             <b>
               {{ review.name }}
               <div class="rating-view">
@@ -86,7 +111,7 @@
                 </form>
               </div>
             </b>
-            {{ review.message }}
+            <p class="review-text">{{ review.message }}</p>
           </b-col>
         </b-row>
       </b-card>
@@ -107,8 +132,10 @@
       return {
         product: this.$route.query.item,
         favorited: this.$route.query.item.addedToWishList,
+        color: 'Svart',
+        name: '',
         rating: 0,
-        color: 'Svart'
+        message: ''
       }
     },
     methods: {
@@ -146,6 +173,16 @@
             this.color = 'Vit'
             break
         }
+      },
+      sendReview() {
+        var review = {
+          id: 4,
+          name: this.name,
+          message: this.message,
+          ratings: this.rating
+        }
+        this.product.reviews.push(review)
+        this.$store.commit('addReview', this.product)
       }
     }
   }
@@ -155,15 +192,17 @@
   .wrapper {
     padding-top: 84px;
     display: grid;
-  }
-
-  .product {
-    width: 100%;
+    max-width: 100%;
   }
 
   .wrapper #carousel-1 {
     width: 100%;
-    max-width: 400px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .wrapper > h4 {
+    margin: 0 auto;
   }
 
   .product-info {
@@ -250,8 +289,56 @@
     background-color: #b0c07a;
   }
 
+  .delivery {
+    margin-top: 0.25em;
+    font-size: 0.8em;
+    color: #000000ad;
+  }
+
+  .add-review {
+    background-color: #e3e3e3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .add-review > input,
+  .b-rating,
+  textarea {
+    margin: 0 0 10px 0;
+    border: none;
+  }
+
+  .add-review > .send-review-btn {
+    padding: 10px;
+    margin: 0 0 20px 0;
+    border: none;
+    box-shadow: none !important;
+  }
+
+  .add-review > label {
+    margin: 0;
+    text-align: left;
+  }
+
+  .add-review > input,
+  textarea {
+    box-shadow: none !important;
+  }
+
+  .review-text {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
   .rating {
     box-shadow: none !important;
+  }
+
+  @media screen and (min-width: 380px) {
+    .review-text {
+      max-width: 300px;
+    }
   }
 
   @media screen and (min-width: 520px) {
@@ -277,11 +364,36 @@
     .add-btn {
       height: 50px;
     }
+
+    #review-container {
+      max-width: 520px;
+    }
   }
 
-  @media screen and (min-width: 990px) {
-  }
+  @media screen and (min-width: 1366px) {
+    .wrapper > * {
+      width: 700px;
+    }
 
-  @media screen and (min-width: 1200px) {
+    #carousel-1 {
+      max-width: 700px !important;
+    }
+
+    .colorAndAddToCart {
+      width: 300px;
+    }
+
+    .wrapper h3 {
+      margin: 0 auto 0.5em auto;
+    }
+
+    #review-container {
+      max-width: 700px !important;
+      padding: 0;
+    }
+
+    .wrapper > :last-child {
+      width: 100%;
+    }
   }
 </style>

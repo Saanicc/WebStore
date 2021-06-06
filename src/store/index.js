@@ -116,6 +116,14 @@ export default new Vuex.Store({
           }
         }
       }
+    },
+    addReview(state, product) {
+      for (let i = 0; i < state.products.length; i++) {
+        var checkProduct = state.products[i]
+        if (checkProduct.id === product.id) {
+          checkProduct.reviews.push(product.reviews[product.reviews.length - 1])
+        }
+      }
     }
   },
   actions: {},
