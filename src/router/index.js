@@ -5,6 +5,8 @@ import Cart from '../views/Cart.vue'
 import Checkout from '../views/Checkout.vue'
 import WishList from '../views/WishList.vue'
 import DetailedProduct from '../views/DetailedProduct.vue'
+import Contact from '../views/Contact.vue'
+import Faq from '../views/Faq.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +35,16 @@ const routes = [
     path: '/product/:product',
     name: 'DetailedProduct',
     component: DetailedProduct
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
+  {
+    path: '/faq',
+    name: 'Faq',
+    component: Faq
   }
 ]
 

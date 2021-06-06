@@ -4,6 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import Vuelidate from 'vuelidate'
+import Notifications from 'vue-notification'
 
 import './main.scss'
 
@@ -16,6 +17,7 @@ Vue.use(IconsPlugin)
 Vue.use(VShowSlide)
 Vue.use(FormRatingPlugin)
 Vue.use(Vuelidate)
+Vue.use(Notifications)
 
 Vue.config.productionTip = false
 

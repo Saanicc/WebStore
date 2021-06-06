@@ -18,9 +18,9 @@
         <a href="https://www.twitter.com">
           <img src="../assets/twitter.png" width="40px" height="40px" />
         </a>
-        <a href="mailto:webstore.iths@gmail.com">
+        <router-link to="/contact">
           <img src="../assets/mail.png" width="40px" height="40px" />
-        </a>
+        </router-link>
       </div>
       <div id="copyright">
         <p>© 2021 Webstore, alla rättigheter reserverade</p>
