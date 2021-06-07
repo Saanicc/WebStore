@@ -87,6 +87,7 @@ export default new Vuex.Store({
         this.commit('lettersFilter2')
       } else if (state.filteredProducts.length < 1 && !state.searchQuery) {
         state.products = Data.products
+        state.filteredProducts2 = []
       }
       console.log('Körs det här?')
       this.commit('priceFilter')
