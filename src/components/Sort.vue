@@ -4,8 +4,8 @@
       Sortera
     </p>
     <select v-model="sortBy">
-      <option value="price">Price</option>
-      <option value="name">Name</option>
+      <option value="price">Pris</option>
+      <option value="name">Namn</option>
     </select>
   </div>
 </template>
