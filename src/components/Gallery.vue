@@ -5,18 +5,11 @@
         <b-card class="shadow-sm p-3 mb-4 rounded" bg-variant="card-bg">
           <div class="wish">
             <a href="#">
-              <div v-if="!product.addedToWishList">
+              <div>
                 <b-icon
                   class="wish-icon"
-                  icon="heart"
-                  font-scale="1.6"
-                  @click="changeWishList(product)"
-                ></b-icon>
-              </div>
-              <div v-if="product.addedToWishList">
-                <b-icon
-                  id="wish-icon"
-                  icon="heart-fill"
+                  :icon="product.addedToWishList ? 'heart-fill' : 'heart'"
+                  :color="product.addedToWishList ? '#db0d0d' : 'grey'"
                   font-scale="1.6"
                   @click="changeWishList(product)"
                 ></b-icon>
@@ -107,16 +100,11 @@
     padding-top: 0;
   }
 
-  #wish-icon {
-    color: #db0d0d;
-  }
-
   .wish-icon {
     z-index: 100;
   }
 
   .wish .wish-icon {
-    color: grey;
     font-size: 32px;
     z-index: 100;
   }
