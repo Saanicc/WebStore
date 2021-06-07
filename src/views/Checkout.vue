@@ -390,8 +390,7 @@
       },
       streetAdress: {
         required,
-        minLength: minLength(5),
-        alpha
+        minLength: minLength(5)
       },
       county: {
         required,
