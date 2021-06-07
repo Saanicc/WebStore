@@ -1,60 +1,67 @@
 <template>
+  <div id="wrapper">
     <div class="contact-container">
       <div class="container">
         <p v-if="errors.length">
-          <b>Please correct the following error(s):</b>
+          <b>Vänligen fixa felen:</b>
           <ul>
             <li v-for="error in errors" v-bind:key="error" v-bind:error="error">{{ error }}</li>
           </ul>
         </p>
           <form @submit.prevent="sendEmail">
-              <label>Name</label>
+              <label>Namn</label>
               <input
                 type="text"
                 v-model="name"
                 name="name"
-                placeholder="Your Name"
+                placeholder="Ditt namn"
               >
               <label>Email</label>
               <input
                 type="email"
                 v-model="email"
                 name="email"
-                placeholder="Your Email"
+                placeholder="Din email"
                 >
-              <label>Message</label>
+              <label>Meddelande</label>
               <textarea
                 name="message"
                 v-model="message"
                 cols="30" rows="5"
-                placeholder="Message">
+                placeholder="Meddelande">
               </textarea>
               <input type="submit" value="Send">
           </form>
       </div>
       <notifications group="notification" />
-      <Footer />
     </div>
+    <Footer />
+  </div>
 </template>
 
 <style scoped>
 
 .contact-container {
-    padding-top: 100px;
+  display: block;
+  margin: 100px 0 -100px 0;
+  height: 100vh;
+  /* margin-top: 100px; */
+  /* margin-bottom: -100px; */
 }
 
 .container {
   display: block;
-  margin:auto;
+  margin: auto;
   text-align: center;
   border-radius: 5px;
   background-color: #f2f2f2;
-  width: 50%;
+  width: 95%;
   padding: 20px;
 }
 
 label {
   float: left;
+  margin: 0;
 }
 
 input[type=text], [type=email], textarea {
@@ -128,16 +135,16 @@ export default {
       this.errors = [];
 
       if (!this.name) {
-        this.errors.push('Name required.');
+        this.errors.push('Namn krävs.');
       } else if (!this.email) {
-        this.errors.push('Email required.');
+        this.errors.push('Email Krävs.');
       } else if (!this.message) {
-        this.errors.push('Message required.');
+        this.errors.push('Meddelande krävs.');
       } else {
         Vue.notify({
         group: 'notification',
-        title: 'Success',
-        text: 'Ditt meddelande har registrerats\nVi kommer att kontakta dig snarast'
+        title: 'Ditt meddelande har skickats!',
+        text: ' Vi kommer att kontakta dig så snart vi kan.'
       })
 
       this.name = ''

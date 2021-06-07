@@ -1,69 +1,78 @@
 <template>
-  <div class="cart-page">
-    <h1 class="title">Kundvagn</h1>
-    <div class="cart">
-      <table class="table is-striped">
-        <thead>
-          <tr>
-            <th>Produkt</th>
-            <th>Antal</th>
-            <th>Pris</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-item" v-for="product in products" :key="product.id">
-            <td class="product-column">
-              <div>
-                <img :src="product.img[0]" width="100px" />
-                <p>{{ product.name }}</p>
-                <p style="font-size: 0.8em;">Färg: {{ product.color }}</p>
-              </div>
-            </td>
-            <td>
-              <div class="product-quantity">
-                <button @click="decreaseQuantity(product)">-</button>
-                <p>{{ product.quantity }}</p>
-                <button @click="increaseQuantity(product)">+</button>
-              </div>
-            </td>
-            <td>{{ product.price }} kr</td>
-            <td>
-              <button class="remove-btn" @click="removeFromCart(product)">
-                <b-icon icon="trash" font-scale="1.3"></b-icon>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td colspan="5" v-if="this.products.length !== 0">
-              Totala summan: {{ totalSum }}kr
-            </td>
-            <td colspan="5" v-else>Kundvagnen är tom</td>
-          </tr>
-        </tbody>
-      </table>
+  <div>
+    <div class="cart-page">
+      <h1 class="title">Kundvagn</h1>
+      <div class="cart">
+        <table class="table is-striped">
+          <thead>
+            <tr>
+              <th>Produkt</th>
+              <th>Antal</th>
+              <th>Pris</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="table-item"
+              v-for="product in products"
+              :key="product.id"
+            >
+              <td class="product-column">
+                <div>
+                  <img :src="product.img[0]" width="100px" />
+                  <p>{{ product.name }}</p>
+                  <p style="font-size: 0.8em;">Färg: {{ product.color }}</p>
+                </div>
+              </td>
+              <td>
+                <div class="product-quantity">
+                  <button @click="decreaseQuantity(product)">-</button>
+                  <p>{{ product.quantity }}</p>
+                  <button @click="increaseQuantity(product)">+</button>
+                </div>
+              </td>
+              <td>{{ product.price }} kr</td>
+              <td>
+                <button class="remove-btn" @click="removeFromCart(product)">
+                  <b-icon icon="trash" font-scale="1.3"></b-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td colspan="5" v-if="this.products.length !== 0">
+                Totala summan: {{ totalSum }}kr
+              </td>
+              <td colspan="5" v-else>Kundvagnen är tom</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <router-link
+        to="/checkout"
+        tag="button"
+        class="checkout"
+        v-if="this.products.length !== 0"
+      >
+        Fortsätt till kassan
+      </router-link>
+      <button class="checkout-disabled" v-else disabled>
+        Fortsätt till kassan
+      </button>
+      <br />
+      <br />
+      <br />
     </div>
-    <router-link
-      to="/checkout"
-      tag="button"
-      class="checkout"
-      v-if="this.products.length !== 0"
-    >
-      Fortsätt till kassan
-    </router-link>
-    <button class="checkout-disabled" v-else disabled>
-      Fortsätt till kassan
-    </button>
-    <br />
-    <br />
-    <br />
+    <Footer />
   </div>
 </template>
 
 <script>
+  import Footer from '../components/Footer.vue'
   export default {
+    components: { Footer },
     name: 'Cart',
     created() {
       this.products = this.$store.state.cart
@@ -105,6 +114,7 @@
   .cart-page {
     padding-top: 100px;
     width: 100%;
+    min-height: 100vh;
   }
 
   .cart {

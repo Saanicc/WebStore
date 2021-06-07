@@ -1,47 +1,49 @@
 <template>
-  <div class="container">
-    <div class="cards">
-      <b-card-group deck v-for="product in products" :key="product.id">
-        <b-card class="shadow-sm p-3 mb-4 rounded" bg-variant="card-bg">
-          <div class="wish">
-            <a href="#">
-              <div>
-                <b-icon
-                  class="wish-icon"
-                  :icon="product.addedToWishList ? 'heart-fill' : 'heart'"
-                  :color="product.addedToWishList ? '#db0d0d' : 'grey'"
-                  font-scale="1.6"
-                  @click="changeWishList(product)"
-                ></b-icon>
-              </div>
-            </a>
-          </div>
-          <router-link
-            :to="{
-              path: '/product/' + product.name,
-              query: {
-                item: product
-              }
-            }"
-          >
-            <b-card-body>
-              <img :src="product.img[0]" />
-              <b-card-title>{{ product.name }}</b-card-title>
-              <b-card-sub-title>{{ product.price }}</b-card-sub-title>
-              <b-card-text>{{ product.short }}</b-card-text>
-            </b-card-body>
-          </router-link>
-          <b-button
-            class="add-btn"
-            :class="{ added: product.addedToCart }"
-            variant="card-btn-bg"
-            @click="addToCart(product)"
-          >
-            <p v-if="!product.addedToCart">Lägg till i kundvagnen</p>
-            <p v-if="product.addedToCart">Tillagd i kundvagnen</p>
-          </b-button>
-        </b-card>
-      </b-card-group>
+  <div id="wrapper">
+    <div class="container">
+      <div class="cards">
+        <b-card-group deck v-for="product in products" :key="product.id">
+          <b-card class="shadow-sm p-3 mb-4 rounded" bg-variant="card-bg">
+            <div class="wish">
+              <a href="#">
+                <div>
+                  <b-icon
+                    class="wish-icon"
+                    :icon="product.addedToWishList ? 'heart-fill' : 'heart'"
+                    :color="product.addedToWishList ? '#db0d0d' : 'grey'"
+                    font-scale="1.6"
+                    @click="changeWishList(product)"
+                  ></b-icon>
+                </div>
+              </a>
+            </div>
+            <router-link
+              :to="{
+                path: '/product/' + product.name,
+                query: {
+                  item: product
+                }
+              }"
+            >
+              <b-card-body>
+                <img :src="product.img[0]" />
+                <b-card-title>{{ product.name }}</b-card-title>
+                <b-card-sub-title>{{ product.price }}</b-card-sub-title>
+                <b-card-text>{{ product.short }}</b-card-text>
+              </b-card-body>
+            </router-link>
+            <b-button
+              class="add-btn"
+              :class="{ added: product.addedToCart }"
+              variant="card-btn-bg"
+              @click="addToCart(product)"
+            >
+              <p v-if="!product.addedToCart">Lägg till i kundvagnen</p>
+              <p v-if="product.addedToCart">Tillagd i kundvagnen</p>
+            </b-button>
+          </b-card>
+        </b-card-group>
+      </div>
     </div>
   </div>
 </template>
@@ -70,6 +72,9 @@
 </script>
 
 <style scoped>
+  #wrapper {
+    min-height: 100vh;
+  }
   .add-btn {
     position: absolute;
     bottom: 0;

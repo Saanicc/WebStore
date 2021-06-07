@@ -1,316 +1,320 @@
 <template>
-  <div class="cart-page">
-    <h1 class="title">Checkout</h1>
-    <button @click="showCart()" class="show-cart-btn">
-      <p v-if="showCartInfo">Dölj kundvagnen</p>
-      <p v-else>Visa kundvagnen</p>
-    </button>
-    <div v-show-slide="showCartInfo" class="cart-info">
-      <table class="table is-striped">
-        <thead>
-          <tr>
-            <th>Produkt</th>
-            <th>Antal</th>
-            <th>Pris</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-item" v-for="product in products" :key="product.id">
-            <td class="product-column">
-              <div>
-                <img :src="product.img[0]" width="100px" />
-                <p>{{ product.name }}</p>
-                <p style="font-size: 0.8em; margin: 0;">
-                  Färg: {{ product.color }}
-                </p>
-              </div>
-            </td>
-            <td>{{ product.quantity }}</td>
-            <td>{{ product.price }} kr</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="input-wrapper">
-      <div class="inputs">
-        <div
-          class="grid-item item1"
-          :class="{
-            error: $v.firstName.$error
-          }"
-        >
-          <label>Förnamn</label><br />
-          <b-form-input
-            name="firstName"
-            type="text"
-            v-model="$v.firstName.$model"
-            autofocus
-          />
-          <div class="error-label" v-if="!$v.firstName.required">
-            Fyll i ditt namn
-          </div>
-          <div class="error-label" v-if="!$v.firstName.minLength">
-            Måste innehålla minst
-            {{ $v.firstName.$params.minLength.min }} bokstäver
-          </div>
-          <div class="error-label" v-if="!$v.firstName.alpha">
-            Ditt namn får inte innehålla siffror
-          </div>
-        </div>
-        <div
-          class="grid-item item2"
-          :class="{
-            error: $v.lastName.$error
-          }"
-        >
-          <label>Efternamn</label><br />
-          <b-form-input
-            name="lastName"
-            type="text"
-            v-model="$v.lastName.$model"
-          />
-          <div class="error-label" v-if="!$v.lastName.required.alpha">
-            Fyll i ditt efternamn
-          </div>
-          <div class="error-label" v-if="!$v.lastName.minLength">
-            Måste innehålla minst
-            {{ $v.firstName.$params.minLength.min }} bokstäver
-          </div>
-          <div class="error-label" v-if="!$v.lastName.alpha">
-            Ditt efternamn får inte innehålla siffror
-          </div>
-        </div>
-        <div
-          class="grid-item item3"
-          :class="{
-            error: $v.streetAdress.$error
-          }"
-        >
-          <label>Gatuadress</label><br />
-          <b-form-input
-            name="streetAdress"
-            type="text"
-            v-model="$v.streetAdress.$model"
-          />
-          <div class="error-label" v-if="!$v.streetAdress.required">
-            Du måste fylla i din adress
-          </div>
-          <div class="error-label" v-if="!$v.streetAdress.minLength">
-            Måste innehålla minst
-            {{ $v.streetAdress.$params.minLength.min }} bokstäver
-          </div>
-        </div>
-        <div class="error-label" v-if="!$v.streetAdress.minLength.min">
-          Måste innehålla minst
-          {{ $v.streetAdress.$params.minLength.min }} siffra
-        </div>
-        <div class="grid-item item4" :class="{ error: $v.zipCode.$error }">
-          <label>Postnummer</label><br />
-          <b-form-input type="text" v-model="$v.zipCode.$model" />
-          <div class="error-label" v-if="!$v.zipCode.required.numeric">
-            Fyll i ditt postnummer
-          </div>
-          <div class="error-label" v-if="!$v.zipCode.minLength">
-            Postnumret måste innehålla
-            {{ $v.zipCode.$params.minLength.min }} siffror
-          </div>
-        </div>
-        <div class="grid-item item5" :class="{ error: $v.county.$error }">
-          <label>Ort</label><br />
-          <b-form-input type="text" v-model="$v.county.$model" />
-          <div class="error-label" v-if="!$v.county.required">
-            Du måste fylla i din ort
-          </div>
-          <div class="error-label" v-if="!$v.county.alpha">
-            Ort får inte innehålla siffror
-          </div>
-        </div>
-        <div
-          class="grid-item item6"
-          :class="{
-            error: $v.mail.$error
-          }"
-        >
-          <label>Email</label><br />
-          <b-form-input
-            name="user_email"
-            type="text"
-            v-model="$v.mail.$model"
-          />
-          <div class="error-label" v-if="!$v.mail.required">
-            Fyll i din email
-          </div>
-          <div class="error-label" v-if="!$v.mail.email">
-            Du måste ange en giltig email
-          </div>
-        </div>
-        <div
-          class="grid-item item7"
-          :class="{
-            error: $v.phoneNumber.$error
-          }"
-        >
-          <label>Telefonnummer</label><br />
-          <b-form-input type="text" v-model="$v.phoneNumber.$model" />
-          <div class="error-label" v-if="!$v.phoneNumber.required">
-            Fyll i ditt nummer
-          </div>
-          <div class="error-label" v-if="!$v.phoneNumber.minLength">
-            Måste ha {{ $v.phoneNumber.$params.minLength.min }} siffror
-          </div>
-        </div>
+  <div>
+    <div class="cart-page">
+      <h1 class="title">Checkout</h1>
+      <button @click="showCart()" class="show-cart-btn">
+        <p v-if="showCartInfo">Dölj kundvagnen</p>
+        <p v-else>Visa kundvagnen</p>
+      </button>
+      <div v-show-slide="showCartInfo" class="cart-info">
+        <table class="table is-striped">
+          <thead>
+            <tr>
+              <th>Produkt</th>
+              <th>Antal</th>
+              <th>Pris</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="table-item"
+              v-for="product in products"
+              :key="product.id"
+            >
+              <td class="product-column">
+                <div>
+                  <img :src="product.img[0]" width="100px" />
+                  <p>{{ product.name }}</p>
+                  <p style="font-size: 0.8em; margin: 0;">
+                    Färg: {{ product.color }}
+                  </p>
+                </div>
+              </td>
+              <td>{{ product.quantity }}</td>
+              <td>{{ product.price }} kr</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-    <div class="payment-header">
-      <h6>Betalning</h6>
-
-      <div>
-        <b-dropdown
-          id="dropdown-1"
-          :text="payment"
-          class="m-md-2"
-          variant="outline-dark"
-        >
-          <b-dropdown-item dropdown-item="false" @click="cardPayment()"
-            >Kortbetalning</b-dropdown-item
+      <div class="input-wrapper">
+        <div class="inputs">
+          <div
+            class="grid-item item1"
+            :class="{
+              error: $v.firstName.$error
+            }"
           >
-          <b-dropdown-item @click="swishPayment()">Swish</b-dropdown-item>
-        </b-dropdown>
+            <label>Förnamn</label><br />
+            <b-form-input
+              name="firstName"
+              type="text"
+              v-model="$v.firstName.$model"
+              autofocus
+            />
+            <div class="error-label" v-if="!$v.firstName.required">
+              Fyll i ditt namn
+            </div>
+            <div class="error-label" v-if="!$v.firstName.minLength">
+              Måste innehålla minst
+              {{ $v.firstName.$params.minLength.min }} bokstäver
+            </div>
+            <div class="error-label" v-if="!$v.firstName.alpha">
+              Ditt namn får inte innehålla siffror
+            </div>
+          </div>
+          <div
+            class="grid-item item2"
+            :class="{
+              error: $v.lastName.$error
+            }"
+          >
+            <label>Efternamn</label><br />
+            <b-form-input
+              name="lastName"
+              type="text"
+              v-model="$v.lastName.$model"
+            />
+            <div class="error-label" v-if="!$v.lastName.required.alpha">
+              Fyll i ditt efternamn
+            </div>
+            <div class="error-label" v-if="!$v.lastName.minLength">
+              Måste innehålla minst
+              {{ $v.firstName.$params.minLength.min }} bokstäver
+            </div>
+            <div class="error-label" v-if="!$v.lastName.alpha">
+              Ditt efternamn får inte innehålla siffror
+            </div>
+          </div>
+          <div
+            class="grid-item item3"
+            :class="{
+              error: $v.streetAdress.$error
+            }"
+          >
+            <label>Gatuadress</label><br />
+            <b-form-input
+              name="streetAdress"
+              type="text"
+              v-model="$v.streetAdress.$model"
+            />
+            <div class="error-label" v-if="!$v.streetAdress.required">
+              Du måste fylla i din adress
+            </div>
+            <div class="error-label" v-if="!$v.streetAdress.minLength">
+              Måste innehålla minst
+              {{ $v.streetAdress.$params.minLength.min }} bokstäver
+            </div>
+          </div>
+          <div class="error-label" v-if="!$v.streetAdress.minLength.min">
+            Måste innehålla minst
+            {{ $v.streetAdress.$params.minLength.min }} siffra
+          </div>
+          <div class="grid-item item4" :class="{ error: $v.zipCode.$error }">
+            <label>Postnummer</label><br />
+            <b-form-input type="text" v-model="$v.zipCode.$model" />
+            <div class="error-label" v-if="!$v.zipCode.required.numeric">
+              Fyll i ditt postnummer
+            </div>
+            <div class="error-label" v-if="!$v.zipCode.minLength">
+              Postnumret måste innehålla
+              {{ $v.zipCode.$params.minLength.min }} siffror
+            </div>
+          </div>
+          <div class="grid-item item5" :class="{ error: $v.county.$error }">
+            <label>Ort</label><br />
+            <b-form-input type="text" v-model="$v.county.$model" />
+            <div class="error-label" v-if="!$v.county.required">
+              Du måste fylla i din ort
+            </div>
+            <div class="error-label" v-if="!$v.county.alpha">
+              Ort får inte innehålla siffror
+            </div>
+          </div>
+          <div
+            class="grid-item item6"
+            :class="{
+              error: $v.mail.$error
+            }"
+          >
+            <label>Email</label><br />
+            <b-form-input
+              name="user_email"
+              type="text"
+              v-model="$v.mail.$model"
+            />
+            <div class="error-label" v-if="!$v.mail.required">
+              Fyll i din email
+            </div>
+            <div class="error-label" v-if="!$v.mail.email">
+              Du måste ange en giltig email
+            </div>
+          </div>
+          <div
+            class="grid-item item7"
+            :class="{
+              error: $v.phoneNumber.$error
+            }"
+          >
+            <label>Telefonnummer</label><br />
+            <b-form-input type="text" v-model="$v.phoneNumber.$model" />
+            <div class="error-label" v-if="!$v.phoneNumber.required">
+              Fyll i ditt nummer
+            </div>
+            <div class="error-label" v-if="!$v.phoneNumber.minLength">
+              Måste ha {{ $v.phoneNumber.$params.minLength.min }} siffror
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="payment-header">
+        <h6>Betalning</h6>
+        <div>
+          <b-dropdown
+            id="dropdown-1"
+            :text="payment"
+            class="m-md-2"
+            variant="outline-dark"
+          >
+            <b-dropdown-item dropdown-item="false" @click="cardPayment()"
+              >Kortbetalning</b-dropdown-item
+            >
+            <b-dropdown-item @click="swishPayment()">Swish</b-dropdown-item>
+          </b-dropdown>
+        </div>
+      </div>
+      <div class="input-wrapper">
+        <div class="payment-inputs" v-if="paymentMethod === 'CARDPAYMENT'">
+          <div
+            class="grid-item item8"
+            :class="{
+              error: $v.cardNumber.$error
+            }"
+          >
+            <label>Kortnummer</label><br />
+            <b-form-input type="text" v-model="$v.cardNumber.$model" />
+            <div class="error" v-if="!$v.cardNumber">
+              Måste innehålla siffror
+            </div>
+            <div class="error" v-if="!$v.cardNumber.minLength">
+              Måste innehålla {{ $v.cardNumber.$params.minLength.min }} siffror
+            </div>
+            <div class="error" v-if="!$v.cardNumber.maxLength">
+              Får max {{ $v.cardNumber.$params.maxLength.max }} siffror
+            </div>
+          </div>
+          <div
+            class="grid-item item9"
+            :class="{
+              error: $v.cardMonth.$error
+            }"
+          >
+            <label>Månad</label><br />
+            <b-form-input type="text" v-model="$v.cardMonth.$model" />
+            <div class="error" v-if="!$v.cardMonth.numeric">
+              Måste innehålla siffror
+            </div>
+            <div class="error" v-if="!$v.cardMonth.maxValue">
+              Det finns bara 12 månader
+            </div>
+            <div class="error" v-if="!$v.cardMonth.numeric">
+              Måste innehålla siffror
+            </div>
+            <div class="error" v-if="!$v.cardMonth.minValue">
+              Det finns ingen månad som börjar på 0
+            </div>
+          </div>
+          <div
+            class="grid-item item10"
+            :class="{
+              error: $v.cardYear.$error
+            }"
+          >
+            <label>År</label><br />
+            <b-form-input type="text" v-model="$v.cardYear.$model" />
+            <div class="error" v-if="!$v.cardYear.numeric">
+              Måste innehålla siffror
+            </div>
+            <div class="error" v-if="!$v.cardYear.minLength">
+              Måste ha minst {{ $v.cardYear.$params.minLength.min }} siffror
+            </div>
+            <div class="error" v-if="!$v.cardYear.maxLength">
+              Får max ha {{ $v.cardYear.$params.maxLength.max }} siffror
+            </div>
+          </div>
+          <div
+            class="grid-item item11"
+            :class="{
+              error: $v.cvc.$error
+            }"
+          >
+            <label>CVC2</label><br />
+            <b-form-input type="text" v-model="$v.cvc.$model" />
+            <div class="error" v-if="!$v.cvc.numeric">
+              Måste innehålla siffror
+            </div>
+            <div class="error" v-if="!$v.cvc.minLength">
+              Måste ha minst {{ $v.cvc.$params.minLength.min }} siffror
+            </div>
+            <div class="error" v-if="!$v.cvc.maxLength">
+              Får max ha {{ $v.cvc.$params.maxLength.max }} siffror
+            </div>
+          </div>
+          <div
+            class="grid-item item12"
+            :class="{
+              error: $v.cardHolder.$error
+            }"
+          >
+            <label>Kortinnehavare</label><br />
+            <b-form-input type="text" v-model="$v.cardHolder.$model" />
+            <div class="error" v-if="!$v.cardHolder.alpha">
+              Skriv ditt namn
+            </div>
+          </div>
+        </div>
+        <div class="payment-inputs" v-if="paymentMethod === 'SWISH'">
+          <div
+            class="grid-item item8"
+            :class="{
+              error: $v.swishNumber.$error
+            }"
+          >
+            <label>Telefonnummer</label><br />
+            <b-form-input type="text" v-model="$v.swishNumber.$model" />
+            <div class="error" v-if="!$v.swishNumber">
+              Måste innehålla siffror
+            </div>
+            <div class="error" v-if="!$v.swishNumber.minLength">
+              Måste innehålla {{ $v.swishNumber.$params.minLength.min }} siffror
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="price-total">Totala summan är: {{ totalSum }}kr</p>
+      <div class="buttons">
+        <router-link to="/" class="cancel-btn" tag="button">Avbryt</router-link>
+        <input
+          class="checkout-btn"
+          type="button"
+          @click="finishCheckout()"
+          value="Slutför betalning"
+          v-if="!checkoutEnabled"
+          disabled
+        />
+        <input
+          class="checkout-btn"
+          type="button"
+          @click="
+            finishCheckout()
+            showModal()
+          "
+          value="Slutför betalning"
+          v-else
+        />
+        <Modal v-show="isModalVisible" @close="closeModal" />
       </div>
     </div>
-    <div class="input-wrapper">
-      <div class="payment-inputs" v-if="paymentMethod === 'CARDPAYMENT'">
-        <div
-          class="grid-item item8"
-          :class="{
-            error: $v.cardNumber.$error
-          }"
-        >
-          <label>Kortnummer</label><br />
-          <b-form-input type="text" v-model="$v.cardNumber.$model" />
-          <div class="error" v-if="!$v.cardNumber">
-            Måste innehålla siffror
-          </div>
-          <div class="error" v-if="!$v.cardNumber.minLength">
-            Måste innehålla {{ $v.cardNumber.$params.minLength.min }} siffror
-          </div>
-          <div class="error" v-if="!$v.cardNumber.maxLength">
-            Får max {{ $v.cardNumber.$params.maxLength.max }} siffror
-          </div>
-        </div>
-        <div
-          class="grid-item item9"
-          :class="{
-            error: $v.cardMonth.$error
-          }"
-        >
-          <label>Månad</label><br />
-          <b-form-input type="text" v-model="$v.cardMonth.$model" />
-          <div class="error" v-if="!$v.cardMonth.numeric">
-            Måste innehålla siffror
-          </div>
-          <div class="error" v-if="!$v.cardMonth.maxValue">
-            Det finns bara 12 månader
-          </div>
-          <div class="error" v-if="!$v.cardMonth.numeric">
-            Måste innehålla siffror
-          </div>
-          <div class="error" v-if="!$v.cardMonth.minValue">
-            Det finns ingen månad som börjar på 0
-          </div>
-        </div>
-        <div
-          class="grid-item item10"
-          :class="{
-            error: $v.cardYear.$error
-          }"
-        >
-          <label>År</label><br />
-          <b-form-input type="text" v-model="$v.cardYear.$model" />
-          <div class="error" v-if="!$v.cardYear.numeric">
-            Måste innehålla siffror
-          </div>
-          <div class="error" v-if="!$v.cardYear.minLength">
-            Måste ha minst {{ $v.cardYear.$params.minLength.min }} siffror
-          </div>
-          <div class="error" v-if="!$v.cardYear.maxLength">
-            Får max ha {{ $v.cardYear.$params.maxLength.max }} siffror
-          </div>
-        </div>
-        <div
-          class="grid-item item11"
-          :class="{
-            error: $v.cvc.$error
-          }"
-        >
-          <label>CVC2</label><br />
-          <b-form-input type="text" v-model="$v.cvc.$model" />
-          <div class="error" v-if="!$v.cvc.numeric">
-            Måste innehålla siffror
-          </div>
-          <div class="error" v-if="!$v.cvc.minLength">
-            Måste ha minst {{ $v.cvc.$params.minLength.min }} siffror
-          </div>
-          <div class="error" v-if="!$v.cvc.maxLength">
-            Får max ha {{ $v.cvc.$params.maxLength.max }} siffror
-          </div>
-        </div>
-        <div
-          class="grid-item item12"
-          :class="{
-            error: $v.cardHolder.$error
-          }"
-        >
-          <label>Kortinnehavare</label><br />
-          <b-form-input type="text" v-model="$v.cardHolder.$model" />
-          <div class="error" v-if="!$v.cardHolder.alpha">
-            Skriv ditt namn
-          </div>
-        </div>
-      </div>
-      <div class="payment-inputs" v-if="paymentMethod === 'SWISH'">
-        <div
-          class="grid-item item8"
-          :class="{
-            error: $v.swishNumber.$error
-          }"
-        >
-          <label>Telefonnummer</label><br />
-          <b-form-input type="text" v-model="$v.swishNumber.$model" />
-          <div class="error" v-if="!$v.swishNumber">
-            Måste innehålla siffror
-          </div>
-          <div class="error" v-if="!$v.swishNumber.minLength">
-            Måste innehålla {{ $v.swishNumber.$params.minLength.min }} siffror
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <p class="price-total">Totala summan är: {{ totalSum }}kr</p>
-    <div class="buttons">
-      <router-link to="/" class="cancel-btn" tag="button">Avbryt</router-link>
-      <input
-        class="checkout-btn"
-        type="button"
-        @click="finishCheckout()"
-        value="Slutför betalning"
-        v-if="!checkoutEnabled"
-        disabled
-      />
-      <input
-        class="checkout-btn"
-        type="button"
-        @click="
-          finishCheckout()
-          showModal()
-        "
-        value="Slutför betalning"
-        v-else
-      />
-      <Modal v-show="isModalVisible" @close="closeModal" />
-    </div>
+    <Footer />
   </div>
 </template>
 
@@ -331,11 +335,13 @@
     maxValue,
     minValue
   } from 'vuelidate/lib/validators'
+  import Footer from '../components/Footer.vue'
 
   export default {
     name: 'Checkout',
     components: {
-      Modal
+      Modal,
+      Footer
     },
     created() {
       this.products = this.$store.state.cart
@@ -611,6 +617,7 @@
 
   .cart-page {
     padding-top: 100px;
+    min-height: 100vh;
   }
 
   .show-cart-btn {
