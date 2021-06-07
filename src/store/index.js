@@ -12,7 +12,7 @@ export default new Vuex.Store({
     products: Data.products,
     searchQuery: null,
     sortBy: null,
-    price: 5000
+    price: 20000
   },
   mutations: {
     filterProductsByCategory(state, filteredProducts) {
@@ -51,6 +51,7 @@ export default new Vuex.Store({
           .split(' ')
           .every((c) => product.name.toLowerCase().includes(c))
       })
+      state.filteredProducts2 = state.products
     },
     priceFilter(state) {
       if (state.filteredProducts2.length > 0) {
@@ -87,6 +88,8 @@ export default new Vuex.Store({
       } else if (state.filteredProducts.length < 1 && !state.searchQuery) {
         state.products = Data.products
       }
+      console.log('Körs det här?')
+      this.commit('priceFilter')
     },
     addToCart(state, product) {
       if (state.cart.includes(product)) {
