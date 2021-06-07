@@ -69,11 +69,13 @@ export default new Vuex.Store({
         state.products = state.filteredProducts2.sort((a, b) =>
           a[sortBy] > b[sortBy] ? 1 : -1
         )
+        this.commit('priceFilter')
       } else {
         state.products = Data.products.sort((a, b) =>
           a[sortBy] > b[sortBy] ? 1 : -1
         )
       }
+      this.commit('priceFilter')
     },
     filterOptions(state) {
       if (state.filteredProducts.length > 0 && !state.searchQuery) {
