@@ -1,43 +1,46 @@
 <template>
   <div class="wrapper">
-    <div id="wishList-heading">
-      <h1>Favorites</h1>
+    <div class="back-btn">
+      <router-link to="/" id="back-btn">Tillbaka</router-link>
     </div>
-    <div class="card">
+    <div id="wishList-heading">
+      <h1>Favoriter</h1>
+    </div>
+    <div>
       <b-card-group deck v-for="product in wishList" :key="product.id">
         <b-card
           no-body
-          class="card overflow-hidden shadow-sm p-3 mb-5 bg-white rounded"
+          class="overflow-hidden shadow-sm p-3 mb-5 bg-white rounded"
         >
           <b-row no-gutters>
-            <b-col md="5">
+            <b-col sm="5">
               <b-card-img
                 :src="product.img[0]"
                 :alt="product.name"
                 class="rounded-0"
               ></b-card-img>
             </b-col>
-            <b-col md="5">
+            <b-col sm="5">
               <b-card-body>
                 <b-card-title>{{ product.name }}</b-card-title>
-                <b-card-text>Kortare information om produkten</b-card-text>
               </b-card-body>
             </b-col>
-            <b-col md="2" align-self="center">
+            <b-col sm="1" align-self="center">
               <b-button
                 pill
                 class="add-to-cart-btn"
                 @click="addToCart(product)"
-                variant="card-btn-bg"
+                variant="submit"
               >
-                Lägg till i kundvagn
+                <b-icon icon="cart4" font-scale="1.3"></b-icon>
               </b-button>
-              <br />
+            </b-col>
+            <b-col sm="1" align-self="center">
               <b-button
                 pill
                 class="remove-btn"
                 @click="removeFromWishList(product)"
-                variant="delete"
+                variant="danger"
               >
                 <b-icon icon="trash" font-scale="1.3"></b-icon>
               </b-button>
@@ -69,6 +72,9 @@
     methods: {
       removeFromWishList(product) {
         this.$store.commit('isAddedToWishList', product)
+      },
+      addToCart(product) {
+        this.$store.commit('addToCart', product)
       }
     }
   }
@@ -83,6 +89,12 @@
     margin: 12px;
   }
 
+  #back-btn {
+    display: flex;
+    text-align: left;
+    margin-left: 2.5em;
+    color: #157a6e;
+  }
   .card {
     display: flex;
     margin-left: 20px;
