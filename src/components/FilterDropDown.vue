@@ -17,9 +17,6 @@
       </div>
       <div>
         <price-slider />
-        <p style="font-size: 1em;">
-          Sortera
-        </p>
         <Sort />
       </div>
     </div>
@@ -86,7 +83,7 @@
       top: 55px;
       left: 0;
       padding: 5px;
-      background-color: #494949;
+      background-color: #494949cc;
       display: flex;
       flex-direction: row;
       color: #ffffff;
@@ -113,7 +110,7 @@
       left: 0;
       top: 34px;
       width: 100%;
-      background-color: #494949;
+      background-color: #494949cc;
     }
   }
 </style>

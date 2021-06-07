@@ -317,7 +317,6 @@
 <script>
   import emailjs from 'emailjs-com'
   import Modal from '../components/Modal'
-
   import { init } from 'emailjs-com'
   init('user_TiTSwezkNDuf6XB9cHtHU')
 
@@ -429,7 +428,6 @@
         minLength: minLength(10)
       }
     },
-
     methods: {
       showModal() {
         this.isModalVisible = true
@@ -445,7 +443,6 @@
         this.paymentMethod = 'SWISH'
         this.payment = 'Swish'
       },
-
       showCart() {
         this.showCartInfo = !this.showCartInfo
       },
@@ -526,7 +523,6 @@
         }
         return bool
       },
-
       fullName() {
         return this.firstName + ' ' + this.lastName
       },
@@ -669,13 +665,11 @@
     justify-content: center;
     width: 100%;
     margin: 25px auto 0 auto;
-    /* border: 1px solid black */
   }
 
   .inputs {
     display: grid;
     grid-template-columns: auto;
-    /* border: 1px red solid; */
     width: 90%;
   }
   .error > label {
@@ -726,7 +720,6 @@
 
   .grid-item {
     position: relative;
-    /* border: 1px blue solid; */
     width: 100%;
     padding: 0;
     margin-bottom: 10px;

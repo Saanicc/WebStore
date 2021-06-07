@@ -254,7 +254,6 @@
     }
 
     .product-column {
-      /* text-align: left; */
       padding: 1em 1em 0.4em 1em;
     }
 

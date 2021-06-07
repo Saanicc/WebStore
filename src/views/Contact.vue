@@ -22,7 +22,6 @@
                 name="email"
                 placeholder="Your Email"
                 >
-
               <label>Message</label>
               <textarea
                 name="message"
@@ -30,14 +29,12 @@
                 cols="30" rows="5"
                 placeholder="Message">
               </textarea>
-
               <input type="submit" value="Send">
           </form>
       </div>
       <notifications group="notification" />
       <Footer />
     </div>
-
 </template>
 
 <style scoped>
@@ -99,7 +96,6 @@ input[type=submit]:hover {
   } from 'vuelidate/lib/validators'
 import Footer from '../components/Footer.vue'
 
-
 export default {
   components: {
     Footer
@@ -144,7 +140,6 @@ export default {
         text: 'Ditt meddelande har registrerats\nVi kommer att kontakta dig snarast'
       })
 
-      // Reset form field
       this.name = ''
       this.email = ''
       this.message = ''
@@ -160,9 +155,7 @@ export default {
             }
           )
       }
-
       e.preventDefault();
-
     },
   }
 }

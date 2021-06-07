@@ -69,7 +69,6 @@
         }, 1000)
         this.$store.commit('addToCart', product)
       },
-
       changeWishList(product) {
         this.$store.commit('isAddedToWishList', product)
       }

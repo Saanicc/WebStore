@@ -122,7 +122,6 @@
 
 <script>
   import Footer from '../components/Footer.vue'
-  // @ is an alias to /src
 
   export default {
     components: { Footer },
@@ -161,7 +160,6 @@
           product.addedToFavorites = true
           this.$store.commit('isAddedToWishList', product)
         }
-
         this.favorited = !this.favorited
       },
       changeProductColor(color) {

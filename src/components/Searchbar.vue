@@ -24,11 +24,6 @@
 </script>
 
 <style scoped>
-  /* #searchfield {
-    margin-top: 84px;
-    padding-top: 1.3em;
-  } */
-
   #searchbar > input {
     border: none;
     box-shadow: #00000030 1px 2px 4px;
