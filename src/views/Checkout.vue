@@ -318,7 +318,8 @@
   import emailjs from 'emailjs-com'
   import Modal from '../components/Modal'
   import { init } from 'emailjs-com'
-  init('user_TiTSwezkNDuf6XB9cHtHU')
+  // init('user_TiTSwezkNDuf6XB9cHtHU')
+  init('user_0ot3pObrWdZ0Hdpo6XPyj')
 
   import {
     required,
@@ -463,7 +464,8 @@
           swishNumber: this.swishNumber
         }
         emailjs
-          .send('service_c3b8enq', 'template_35snhib', templateParams)
+          // .send('service_c3b8enq', 'template_35snhib', templateParams)
+          .send('service_fblqjeq', 'template_va44rwj', templateParams)
           .then(
             function(response) {
               console.log('SUCCESS!', response.status, response.text)
