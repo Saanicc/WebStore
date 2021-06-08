@@ -30,7 +30,18 @@
         v-else
       ></b-icon>
       <h3>{{ product.name }}</h3>
-      <h4>{{ product.price }} kr</h4>
+      <!-- <h4>{{ product.price }} kr</h4> -->
+      <b-card-sub-title v-if="product.sale">
+        <p style="font-size: 1.3em; margin: 0.9em 0 0 0; color: #db0d0d;">
+          {{ product.salePrice }} kr
+        </p>
+        <p style="font-size: 1em; text-decoration: line-through;">
+          {{ product.price }} kr
+        </p>
+      </b-card-sub-title>
+      <b-card-sub-title v-else>
+        <p style="font-size: 1.3em;">{{ product.price }} kr</p>
+      </b-card-sub-title>
       <p v-if="product.inStock" id="in-stock">Finns i lager</p>
       <p v-else id="out-of-stock">Slut i lager</p>
       <p>{{ product.description }}</p>
@@ -53,9 +64,13 @@
           class="add-btn"
           :class="{ added: product.addedToCart }"
           @click="addToCart(product)"
+          v-if="product.inStock"
         >
           <p v-if="!product.addedToCart">Lägg till i kundvagnen</p>
           <p v-if="product.addedToCart">Tillagd i kundvagnen</p>
+        </button>
+        <button class="add-btn-disabled" v-else disabled>
+          <p>Slut i lager</p>
         </button>
         <p class="delivery">Leverans inom 3-5 arbetsdagar</p>
       </div>
@@ -256,7 +271,8 @@
     padding: 1em 0 1em 0 !important;
   }
 
-  .add-btn {
+  .add-btn,
+  .add-btn-disabled {
     outline: none;
     border: none;
     padding: 1em;
@@ -265,6 +281,10 @@
     box-shadow: #00000050 1px 2px 4px;
     width: 100%;
     height: 56px;
+  }
+
+  .add-btn-disabled {
+    opacity: 0.65;
   }
 
   .add-btn > p {

@@ -31,7 +31,21 @@
                 </div>
               </td>
               <td>{{ product.quantity }}</td>
-              <td>{{ product.price }} kr</td>
+              <td>
+                <div v-if="product.sale">
+                  <p style="font-size: 1em; margin: 1em 0 0 0; color: #db0d0d;">
+                    {{ product.salePrice }} kr
+                  </p>
+                  <p style="font-size: 0.8em; text-decoration: line-through;">
+                    {{ product.price }} kr
+                  </p>
+                </div>
+                <div v-else>
+                  <p style="font-size: 1em; margin: 0 0 0 0;">
+                    {{ product.price }} kr
+                  </p>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -540,7 +554,11 @@
       totalSum() {
         var sum = 0
         for (let i = 0; i < this.products.length; i++) {
-          sum += this.products[i].price * this.products[i].quantity
+          if (this.products[i].sale) {
+            sum += this.products[i].salePrice * this.products[i].quantity
+          } else {
+            sum += this.products[i].price * this.products[i].quantity
+          }
         }
         return sum
       },

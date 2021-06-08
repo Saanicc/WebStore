@@ -39,7 +39,21 @@
                   ></b-form-rating>
                 </div>
                 <b-card-title>{{ product.name }}</b-card-title>
-                <b-card-sub-title>{{ product.price }}</b-card-sub-title>
+                <b-card-sub-title v-if="product.sale">
+                  <p
+                    style="font-size: 1.12em; margin: 0.25em 0 0 0; color: #db0d0d;"
+                  >
+                    {{ product.salePrice }} kr
+                  </p>
+                  <p
+                    style="font-size: 0.9em; margin: 0; text-decoration: line-through;"
+                  >
+                    {{ product.price }} kr
+                  </p>
+                </b-card-sub-title>
+                <b-card-sub-title v-else>
+                  {{ product.price }} kr
+                </b-card-sub-title>
                 <b-card-text>{{ product.short }}</b-card-text>
               </b-card-body>
             </router-link>
@@ -48,9 +62,13 @@
               :class="{ added: product.addedToCart }"
               variant="card-btn-bg"
               @click="addToCart(product)"
+              v-if="product.inStock"
             >
               <p v-if="!product.addedToCart">Lägg till i kundvagnen</p>
               <p v-if="product.addedToCart">Tillagd i kundvagnen</p>
+            </b-button>
+            <b-button class="add-btn" variant="card-btn-bg" disabled v-else>
+              <p>Slut i lager</p>
             </b-button>
           </b-card>
         </b-card-group>

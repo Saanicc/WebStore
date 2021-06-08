@@ -21,7 +21,7 @@
               <td class="product-column">
                 <div>
                   <img :src="product.img[0]" width="100px" />
-                  <p>{{ product.name }}</p>
+                  <p style="font-size: 1em;">{{ product.name }}</p>
                   <p style="font-size: 0.8em;">Färg: {{ product.color }}</p>
                 </div>
               </td>
@@ -32,7 +32,21 @@
                   <button @click="increaseQuantity(product)">+</button>
                 </div>
               </td>
-              <td>{{ product.price }} kr</td>
+              <td>
+                <div v-if="product.sale">
+                  <p style="font-size: 1em; margin: 1em 0 0 0; color: #db0d0d;">
+                    {{ product.salePrice }} kr
+                  </p>
+                  <p style="font-size: 0.8em; text-decoration: line-through;">
+                    {{ product.price }} kr
+                  </p>
+                </div>
+                <div v-else>
+                  <p style="font-size: 1em; margin: 0 0 0 0;">
+                    {{ product.price }} kr
+                  </p>
+                </div>
+              </td>
               <td>
                 <button class="remove-btn" @click="removeFromCart(product)">
                   <b-icon icon="trash" font-scale="1.3"></b-icon>
@@ -102,7 +116,11 @@
       totalSum() {
         var sum = 0
         for (let i = 0; i < this.products.length; i++) {
-          sum += this.products[i].price * this.products[i].quantity
+          if (this.products[i].sale) {
+            sum += this.products[i].salePrice * this.products[i].quantity
+          } else {
+            sum += this.products[i].price * this.products[i].quantity
+          }
         }
         return sum
       }
@@ -210,10 +228,11 @@
     width: 90%;
     transform: translateX(-50%);
     border: none;
-    color: #ffffff;
+    color: #212529;
     padding: 1em;
     border-radius: 5px;
-    background-color: #42b9835d;
+    background-color: #bfcc94;
+    opacity: 0.65;
     box-shadow: #00000050 1px 2px 4px;
   }
 
