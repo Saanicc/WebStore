@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <div class="filter" @click="isOpen = !isOpen" v-if="!phone">
+    <div class="filter" @click="isOpen = !isOpen">
       <svg viewBox="0 0 1030 638" width="25">
         <path
           d="M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z"
@@ -9,6 +9,18 @@
       </svg>
     </div>
     <div class="sub-menu" v-if="isOpen">
+      <div class="items">
+        <div v-for="(brand, i) in brands" :key="i">
+          {{ brand }}
+          <input type="checkbox" :value="brand" v-model="filteredProducts" />
+        </div>
+      </div>
+      <div>
+        <price-slider />
+        <Sort />
+      </div>
+    </div>
+    <div class="sub-menu-mobile">
       <div class="items">
         <div v-for="(brand, i) in brands" :key="i">
           {{ brand }}
@@ -34,13 +46,13 @@
       Sort
     },
     created() {
-      if (screen.width <= 650) {
-        this.isOpen = true
-        this.phone = true
-      } else {
-        !this.isOpen
-        !this.phone
-      }
+      // if (screen.width <= 650) {
+      //   this.isOpen = true
+      //   this.phone = true
+      // } else {
+      //   !this.isOpen
+      //   !this.phone
+      // }
     },
     data() {
       return {
@@ -64,9 +76,11 @@
 
 <style scoped>
   .filter {
-    width: 50px;
-    display: block;
-    margin: 0 auto;
+    display: none;
+  }
+
+  .sub-menu {
+    display: none;
   }
 
   .sub-menu > div {
@@ -78,6 +92,16 @@
   }
 
   @media screen and (min-width: 650px) {
+    .filter {
+      width: 50px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .sub-menu-mobile {
+      display: none;
+    }
+
     .sub-menu {
       position: absolute;
       top: 55px;

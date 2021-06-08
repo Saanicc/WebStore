@@ -27,15 +27,17 @@
             >
               <b-card-body>
                 <img :src="product.img[0]" />
-                <b-form-rating
-                  precision="1"
-                  inline
-                  :value="productRating(product.reviews)"
-                  variant="favorite"
-                  readonly
-                  no-border
-                  class="rating"
-                ></b-form-rating>
+                <div id="rating-wrapper">
+                  <b-form-rating
+                    precision="1"
+                    inline
+                    :value="productRating(product.reviews)"
+                    variant="favorite"
+                    readonly
+                    no-border
+                    class="rating"
+                  ></b-form-rating>
+                </div>
                 <b-card-title>{{ product.name }}</b-card-title>
                 <b-card-sub-title>{{ product.price }}</b-card-sub-title>
                 <b-card-text>{{ product.short }}</b-card-text>
@@ -110,9 +112,15 @@
     border: none !important;
   }
 
+  #rating-wrapper {
+    width: 100%;
+  }
+
   .rating {
     background-color: #ffffff00;
     box-shadow: none !important;
+    width: 150px !important;
+    margin: 0 auto;
   }
 
   .wish {

@@ -62,7 +62,6 @@
     components: { Footer },
     created() {
       this.products = this.$store.state.products
-      console.log(this.products)
     },
     data() {
       return {
@@ -88,7 +87,9 @@
 <style scoped>
   .wrapper {
     padding-top: 100px;
-    height: 100vh;
+    min-height: 100vh;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   #favorites-heading {
