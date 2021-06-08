@@ -296,7 +296,10 @@
         <input
           class="checkout-btn"
           type="button"
-          @click="finishCheckout()"
+          @click="
+            finishCheckout()
+            openModal()
+          "
           value="Slutför betalning"
           v-if="!checkoutEnabled"
           disabled
@@ -306,13 +309,13 @@
           type="button"
           @click="
             finishCheckout()
-            showModal()
+            openModal()
           "
           value="Slutför betalning"
           v-else
         />
-        <Modal v-show="isModalVisible" @close="closeModal" />
       </div>
+      <Modal v-model="modalOpen"></Modal>
     </div>
     <Footer />
   </div>
@@ -365,7 +368,7 @@
         cardYear: '',
         cvc: '',
         cardHolder: '',
-        isModalVisible: false
+        modalOpen: false
       }
     },
     validations: {
@@ -436,11 +439,8 @@
       }
     },
     methods: {
-      showModal() {
-        this.isModalVisible = true
-      },
-      closeModal() {
-        this.isModalVisible = false
+      openModal() {
+        this.modalOpen = !this.modalOpen
       },
       cardPayment() {
         this.paymentMethod = 'CARDPAYMENT'
