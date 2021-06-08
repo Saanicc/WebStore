@@ -70,7 +70,6 @@ export default new Vuex.Store({
         state.products = state.filteredProducts2.sort((a, b) =>
           a[sortBy] > b[sortBy] ? 1 : -1
         )
-        this.commit('priceFilter')
       } else {
         state.products = Data.products.sort((a, b) =>
           a[sortBy] > b[sortBy] ? 1 : -1
@@ -89,8 +88,8 @@ export default new Vuex.Store({
         state.products = Data.products
         state.filteredProducts2 = []
       }
-      console.log('Körs det här?')
-      this.commit('priceFilter')
+
+      this.commit('sortPrice', state.sortBy)
     },
     addToCart(state, product) {
       if (state.cart.includes(product)) {
