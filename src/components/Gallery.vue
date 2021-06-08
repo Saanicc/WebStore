@@ -27,6 +27,15 @@
             >
               <b-card-body>
                 <img :src="product.img[0]" />
+                <b-form-rating
+                  precision="1"
+                  inline
+                  :value="productRating(product.reviews)"
+                  variant="favorite"
+                  readonly
+                  no-border
+                  class="rating"
+                ></b-form-rating>
                 <b-card-title>{{ product.name }}</b-card-title>
                 <b-card-sub-title>{{ product.price }}</b-card-sub-title>
                 <b-card-text>{{ product.short }}</b-card-text>
@@ -66,6 +75,13 @@
       },
       changeWishList(product) {
         this.$store.commit('isAddedToWishList', product)
+      },
+      productRating(rating) {
+        var sumOfRating = 0
+        for (let i = 0; i < rating.length; i++) {
+          sumOfRating += rating[i].ratings
+        }
+        return sumOfRating / rating.length
       }
     }
   }
@@ -94,12 +110,16 @@
     border: none !important;
   }
 
+  .rating {
+    background-color: #ffffff00;
+    box-shadow: none !important;
+  }
+
   .wish {
     position: absolute;
-    top: 1%;
-    left: 0;
-    z-index: 100;
+    top: 5px;
     right: 5px;
+    z-index: 100;
     text-align: right;
     padding-top: 0;
   }
@@ -122,6 +142,11 @@
     width: 100%;
     margin-top: 80px;
   }
+
+  .card {
+    border: none;
+  }
+
   .cards {
     display: block;
     width: 90%;
@@ -146,7 +171,7 @@
   }
 
   .card-title {
-    margin-top: 0.75rem;
+    margin-top: 0;
   }
 
   @media screen and (min-width: 575px) {

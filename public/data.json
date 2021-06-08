@@ -21,19 +21,19 @@
           "id": 1,
           "name": "Adam",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 5
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
 
@@ -60,19 +60,19 @@
           "id": 1,
           "name": "Mattias",
           "message": "Superbra telefon, smidig att använda",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Jennie",
           "message": "Tycker telefonen har för kort batteri tid",
-          "ratings": "4/5"
+          "ratings": 3
         },
         {
           "id": 3,
           "name": "Olle",
           "message": "Tycker telefonen var väldigt svåranvänd",
-          "ratings": "1/5"
+          "ratings": 2
         }
       ],
       "addedToWishList": false
@@ -98,19 +98,19 @@
           "id": 1,
           "name": "Jacob",
           "message": "Jag är nöjd med produkten, gillar att kameran är så bra",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Maria",
           "message": "Väldigt liten och praktiskt telefon",
-          "ratings": "4/5"
+          "ratings": 5
         },
         {
           "id": 3,
           "name": "Olof",
           "message": "Inte värt pengarna för fem öre",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -136,19 +136,19 @@
           "id": 1,
           "name": "Jens",
           "message": "Har alltid använt märket, kommer alltid att använda det",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Sara",
           "message": "Riktigt snygg telefon",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Elias",
           "message": "Kostar för mycket i förhållande till vad den erbjuder",
-          "ratings": "1/5"
+          "ratings": 2
         }
       ],
       "addedToWishList": false
@@ -174,19 +174,19 @@
           "id": 1,
           "name": "Kalle",
           "message": "Jag är nöjd med luren",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Kristoffer",
           "message": "Kanske inte den bästa jag haft, men inte långt ifrån",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Stalin",
           "message": "Tycker den var alldeles för dyr, plus att kameran har en tendens att krångla",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -212,19 +212,19 @@
           "id": 1,
           "name": "William",
           "message": "Gillade produkten, enkel att använda",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Sanna",
           "message": "Simpelt och bra, duger till i princip allt",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Juan",
-          "message": "Usch och fy va dålig den var, jag är missnöjd",
-          "ratings": "1/5"
+          "message": "Kameran är helt sjukt, man kan till och med fota månen med den!!!!",
+          "ratings": 5
         }
       ],
       "addedToWishList": false
@@ -250,19 +250,19 @@
           "id": 1,
           "name": "John",
           "message": "Prisvärd och enkel att använda",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Britt-Marie",
           "message": "Gillar att telefonen har en sån lång betteri tid",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Michael",
           "message": "Får skylla mig själv för att jag köpte kinesisk produkt",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -288,19 +288,19 @@
           "id": 1,
           "name": "Jonas",
           "message": "Supernöjd, har enbart positiva saker att säga om telefonen",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Frida",
           "message": "Gillar att den är så liten, passar jättebra i väskan",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Billy",
           "message": "Fy fasen, hur kan dom sälja sånt här till folk",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -326,19 +326,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 5
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -364,19 +364,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -402,19 +402,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -440,19 +440,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -478,19 +478,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -516,19 +516,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -554,19 +554,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -592,19 +592,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -630,19 +630,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
@@ -668,19 +668,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 5
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 2
         }
       ],
       "addedToWishList": false
@@ -706,19 +706,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 2
         }
       ],
       "addedToWishList": false
@@ -744,19 +744,19 @@
           "id": 1,
           "name": "Jesper",
           "message": "Jag är supernöjd med produkten",
-          "ratings": "5/5"
+          "ratings": 5
         },
         {
           "id": 2,
           "name": "Matilda",
           "message": "Jag gillar telefonen, det är den bästa jag någonsin har haft",
-          "ratings": "4/5"
+          "ratings": 4
         },
         {
           "id": 3,
           "name": "Oscar",
           "message": "Produkten var bristfällig",
-          "ratings": "1/5"
+          "ratings": 1
         }
       ],
       "addedToWishList": false
