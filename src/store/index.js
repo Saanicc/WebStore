@@ -64,7 +64,7 @@ export default new Vuex.Store({
         )
       }
     },
-    sortPrice(state, sortBy) {
+    sortDropDown(state, sortBy) {
       state.sortBy = sortBy
       if (state.filteredProducts2.length > 0) {
         state.products = state.filteredProducts2.sort((a, b) => {
@@ -85,13 +85,6 @@ export default new Vuex.Store({
       }
       this.commit('priceFilter')
     },
-    compare(a, b, sortBy) {
-      if (typeof a[sortBy] !== 'string') {
-        return a[sortBy] > b[sortBy] ? 1 : -1
-      } else {
-        return a[sortBy].toLowerCase() > b[sortBy].toLowerCase() ? 1 : -1
-      }
-    },
     filterOptions(state) {
       if (state.filteredProducts.length > 0 && !state.searchQuery) {
         this.commit('checkboxFilter')
@@ -103,7 +96,7 @@ export default new Vuex.Store({
         state.products = Data.products
         state.filteredProducts2 = []
       }
-      this.commit('sortPrice', state.sortBy)
+      this.commit('sortDropDown', state.sortBy)
     },
     addToCart(state, product) {
       if (state.cart.includes(product)) {

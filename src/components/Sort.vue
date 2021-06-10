@@ -19,7 +19,7 @@
           return this.$store.state.sortBy
         },
         set(sortBy) {
-          this.$store.commit('sortPrice', sortBy)
+          this.$store.commit('sortDropDown', sortBy)
         }
       }
     }
