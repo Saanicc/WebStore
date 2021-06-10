@@ -154,8 +154,7 @@
         color: 'Svart',
         name: '',
         rating: 0,
-        message: '',
-        inputIsValid: this.isValid
+        message: ''
       }
     },
     methods: {
