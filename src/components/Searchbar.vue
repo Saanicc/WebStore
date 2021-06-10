@@ -24,16 +24,34 @@
 </script>
 
 <style scoped>
-  #searchbar > input {
+  #searchbar > #searchfield > input {
     border: none;
     box-shadow: #00000030 1px 2px 4px;
     padding: 8px 10px;
-    width: 90%;
+    border-radius: 5px;
   }
 
-  @media screen and (min-width: 575px) {
-    #searchbar > input {
-      width: 500px;
+  @media screen and (min-width: 650px) {
+    #searchbar > #searchfield > input {
+      width: 220px;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    #searchbar > #searchfield > input {
+      width: 350px;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    #searchbar > #searchfield > input {
+      width: 450px;
+    }
+  }
+
+  @media screen and (min-width: 1050px) {
+    #searchbar > #searchfield > input {
+      width: 550px;
     }
   }
 </style>

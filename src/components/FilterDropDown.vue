@@ -45,15 +45,6 @@
       PriceSlider,
       Sort
     },
-    created() {
-      // if (screen.width <= 650) {
-      //   this.isOpen = true
-      //   this.phone = true
-      // } else {
-      //   !this.isOpen
-      //   !this.phone
-      // }
-    },
     data() {
       return {
         isOpen: false,
@@ -88,7 +79,11 @@
   }
 
   svg:hover {
-    background: #ccc;
+    cursor: pointer;
+  }
+
+  svg:hover path {
+    fill: #ccc;
   }
 
   @media screen and (min-width: 650px) {
@@ -104,7 +99,7 @@
 
     .sub-menu {
       position: absolute;
-      top: 55px;
+      top: 60px;
       left: 0;
       padding: 5px;
       background-color: #494949cc;
