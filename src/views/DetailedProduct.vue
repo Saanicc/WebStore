@@ -31,7 +31,6 @@
         v-else
       ></b-icon>
       <h3>{{ product.name }}</h3>
-      <!-- <h4>{{ product.price }} kr</h4> -->
       <b-card-sub-title v-if="product.sale">
         <p style="font-size: 1.3em; margin: 0.9em 0 0 0; color: #db0d0d;">
           {{ product.salePrice }} kr
@@ -54,10 +53,10 @@
           class="m-md-2 p-3"
           variant="outline-dark"
         >
-          <b-dropdown-item @click="changeProductColor('BLACK')"
+          <b-dropdown-item @click="changeProductColor('BLACK', product)"
             >Svart</b-dropdown-item
           >
-          <b-dropdown-item @click="changeProductColor('WHITE')"
+          <b-dropdown-item @click="changeProductColor('WHITE', product)"
             >Vit</b-dropdown-item
           >
         </b-dropdown>
@@ -156,18 +155,10 @@
     },
     methods: {
       addToCart(product) {
-        switch (this.color) {
-          case 'Svart':
-            product.color = 'Svart'
-            break
-          case 'Vit':
-            product.color = 'Vit'
-            break
-        }
         product.addedToCart = true
         setTimeout(() => {
           product.addedToCart = false
-        }, 2500)
+        }, 1500)
         this.$store.commit('addToCart', product)
       },
       addToFavorites(product) {
@@ -179,13 +170,15 @@
         }
         this.favorited = !this.favorited
       },
-      changeProductColor(color) {
+      changeProductColor(color, product) {
         switch (color) {
           case 'BLACK':
             this.color = 'Svart'
+            product.color = this.color
             break
           case 'WHITE':
             this.color = 'Vit'
+            product.color = this.color
             break
         }
       },

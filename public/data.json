@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": "001",
+      "id": 1,
       "brand": "Apple",
       "name": "iPhone XR",
       "price": 6299,
@@ -41,7 +41,7 @@
       "addedToWishList": false
     },
     {
-      "id": "002",
+      "id": 2,
       "brand": "Apple",
       "name": "iPhone 12 Pro",
       "price": 11999,
@@ -81,7 +81,7 @@
       "addedToWishList": false
     },
     {
-      "id": "003",
+      "id": 3,
       "brand": "Apple",
       "name": "iPhone SE 128 GB",
       "price": 5999,
@@ -121,7 +121,7 @@
       "addedToWishList": false
     },
     {
-      "id": "004",
+      "id": 4,
       "brand": "Apple",
       "name": "iPhone 12 mini",
       "price": 7299,
@@ -161,7 +161,7 @@
       "addedToWishList": false
     },
     {
-      "id": "005",
+      "id": 5,
       "brand": "Apple",
       "name": "iPhone 7",
       "price": 4999,
@@ -201,7 +201,7 @@
       "addedToWishList": false
     },
     {
-      "id": "006",
+      "id": 6,
       "brand": "Samsung",
       "name": "Galaxy S21 Ultra",
       "price": 14999,
@@ -241,7 +241,7 @@
       "addedToWishList": false
     },
     {
-      "id": "007",
+      "id": 7,
       "brand": "Samsung",
       "name": "Galaxy A21s",
       "price": 1999,
@@ -281,7 +281,7 @@
       "addedToWishList": false
     },
     {
-      "id": "008",
+      "id": 8,
       "brand": "Samsung",
       "name": "S20",
       "price": 8999,
@@ -321,7 +321,7 @@
       "addedToWishList": false
     },
     {
-      "id": "009",
+      "id": 9,
       "brand": "Samsung",
       "name": "Galaxy S21+",
       "price": 10999,
@@ -361,7 +361,7 @@
       "addedToWishList": false
     },
     {
-      "id": "010",
+      "id": 10,
       "brand": "Samsung",
       "name": "Galaxy A72",
       "price": 9999,
@@ -401,7 +401,7 @@
       "addedToWishList": false
     },
     {
-      "id": "011",
+      "id": 11,
       "brand": "Oneplus",
       "name": "OnePlus Nord",
       "price": 3999,
@@ -441,7 +441,7 @@
       "addedToWishList": false
     },
     {
-      "id": "012",
+      "id": 12,
       "brand": "Oneplus",
       "name": "OnePlus 9 Pro",
       "price": 12899,
@@ -481,7 +481,7 @@
       "addedToWishList": false
     },
     {
-      "id": "013",
+      "id": 13,
       "brand": "Oneplus",
       "name": "OnePlus Nord N100",
       "price": 2999,
@@ -521,7 +521,7 @@
       "addedToWishList": false
     },
     {
-      "id": "014",
+      "id": 14,
       "brand": "Xiaomi",
       "name": "Xiaomi Mi 11",
       "price": 9899,
@@ -561,7 +561,7 @@
       "addedToWishList": false
     },
     {
-      "id": "015",
+      "id": 15,
       "brand": "Xiaomi",
       "name": "Xiaomi Redmi Note 9",
       "price": 5699,
@@ -601,7 +601,7 @@
       "addedToWishList": false
     },
     {
-      "id": "016",
+      "id": 16,
       "brand": "Xiaomi",
       "name": "Xiaomi Mi 10T Pro",
       "price": 2999,
@@ -641,7 +641,7 @@
       "addedToWishList": false
     },
     {
-      "id": "017",
+      "id": 17,
       "brand": "Sony",
       "name": "Sony Xperia 5 II 5G",
       "price": 6799,
@@ -681,7 +681,7 @@
       "addedToWishList": false
     },
     {
-      "id": "018",
+      "id": 18,
       "brand": "Sony",
       "name": "Sony Xperia L4",
       "price": 5699,
@@ -721,7 +721,7 @@
       "addedToWishList": false
     },
     {
-      "id": "019",
+      "id": 19,
       "brand": "Motorola",
       "name": "Motorola Moto G100 8+",
       "price": 6799,
@@ -761,7 +761,7 @@
       "addedToWishList": false
     },
     {
-      "id": "020",
+      "id": 20,
       "brand": "Motorola",
       "name": "Motorola Moto E7 Plus",
       "price": 5699,
