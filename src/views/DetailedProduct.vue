@@ -99,6 +99,10 @@
           variant="card-btn-bg"
           class="send-review-btn"
           @click="sendReview()"
+          v-if="isValid"
+          >Skicka</b-button
+        >
+        <b-button variant="card-btn-bg" class="send-review-btn-disabled" v-else
           >Skicka</b-button
         >
       </div>
@@ -150,7 +154,8 @@
         color: 'Svart',
         name: '',
         rating: 0,
-        message: ''
+        message: '',
+        inputIsValid: this.isValid
       }
     },
     methods: {
@@ -191,6 +196,22 @@
         }
         this.product.reviews.push(review)
         this.$store.commit('addReview', this.product)
+        this.name = ''
+        this.rating = 0
+        this.message = ''
+      }
+    },
+    computed: {
+      isValid() {
+        var isValid = false
+        if (
+          this.name.length > 0 &&
+          this.rating > 0 &&
+          this.message.length > 0
+        ) {
+          isValid = true
+        }
+        return isValid
       }
     }
   }
@@ -322,11 +343,16 @@
     border: none;
   }
 
-  .add-review > .send-review-btn {
+  .add-review > .send-review-btn,
+  .send-review-btn-disabled {
     padding: 10px;
     margin: 0 0 20px 0;
     border: none;
     box-shadow: none !important;
+  }
+
+  .send-review-btn-disabled {
+    opacity: 0.65;
   }
 
   .add-review > label {
