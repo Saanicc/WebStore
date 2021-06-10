@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="wrapper">
-      <div class="back-btn">
-        <router-link to="/" id="back-btn">Tillbaka</router-link>
-      </div>
+      <BackButton />
       <div id="wishList-heading">
         <h1>Önskelista</h1>
       </div>
@@ -14,19 +12,29 @@
             class="overflow-hidden shadow-sm p-3 mb-5 bg-white rounded"
           >
             <b-row no-gutters>
-              <b-col sm="5">
-                <b-card-img
-                  :src="product.img[0]"
-                  :alt="product.name"
-                  class="rounded-0"
-                ></b-card-img>
+              <b-col sm="4">
+                <router-link
+                  :to="{
+                    path: '/product/' + product.name,
+                    query: {
+                      item: product
+                    }
+                  }"
+                >
+                  <b-card-img
+                    :src="product.img[0]"
+                    :alt="product.name"
+                    class="rounded-0"
+                  >
+                  </b-card-img>
+                </router-link>
               </b-col>
-              <b-col sm="5">
+              <b-col sm="4">
                 <b-card-body>
                   <b-card-title>{{ product.name }}</b-card-title>
                 </b-card-body>
               </b-col>
-              <b-col sm="1" align-self="center">
+              <b-col sm="2" align-self="center">
                 <b-button
                   pill
                   class="add-to-cart-btn"
@@ -36,7 +44,7 @@
                   <b-icon icon="cart4" font-scale="1.3"></b-icon>
                 </b-button>
               </b-col>
-              <b-col sm="1" align-self="center">
+              <b-col sm="2" align-self="center">
                 <b-button
                   pill
                   class="remove-btn"
@@ -56,10 +64,11 @@
 </template>
 
 <script>
+  import BackButton from '../components/BackButton.vue'
   import Footer from '../components/Footer.vue'
   export default {
     name: 'WishList',
-    components: { Footer },
+    components: { Footer, BackButton },
     created() {
       this.products = this.$store.state.products
     },
@@ -96,12 +105,6 @@
     margin: 12px;
   }
 
-  #back-btn {
-    display: flex;
-    text-align: left;
-    margin-left: 2.5em;
-    color: #157a6e;
-  }
   .card {
     display: flex;
     margin-left: 20px;
@@ -113,5 +116,12 @@
     align-items: center;
     justify-content: center;
     display: flex;
+  }
+
+  @media screen and (min-width: 575px) {
+    .button {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
   }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <BackButton />
     <b-carousel
       id="carousel-1"
       style="text-shadow: 0px 0px 2px #000"
@@ -137,9 +138,10 @@
 
 <script>
   import Footer from '../components/Footer.vue'
+  import BackButton from '../components/BackButton.vue'
 
   export default {
-    components: { Footer },
+    components: { Footer, BackButton },
     name: 'DetailedProduct',
     created() {},
     data() {

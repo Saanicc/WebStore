@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="cart-page">
+      <BackButton />
       <h1 class="title">Kundvagn</h1>
       <div class="cart">
         <table class="table is-striped">
@@ -85,8 +86,9 @@
 
 <script>
   import Footer from '../components/Footer.vue'
+  import BackButton from '../components/BackButton.vue'
   export default {
-    components: { Footer },
+    components: { Footer, BackButton },
     name: 'Cart',
     created() {
       this.products = this.$store.state.cart
