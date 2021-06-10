@@ -9,7 +9,10 @@ export default new Vuex.Store({
     cart: [],
     filteredProducts: [],
     filteredProducts2: [],
-    products: Data.products,
+    products: Data.products.map((product) => {
+      product.f = () => {}
+      return product
+    }),
     searchQuery: null,
     sortBy: null,
     price: 20000
@@ -99,11 +102,16 @@ export default new Vuex.Store({
       this.commit('sortDropDown', state.sortBy)
     },
     addToCart(state, product) {
-      if (state.cart.includes(product)) {
-        product.quantity += 1
+      const cartItem = state.cart.find(
+        (cartItem) =>
+          product.id === cartItem.id && product.color === cartItem.color
+      )
+
+      if (cartItem) {
+        cartItem.quantity++
       } else {
         product.quantity = 1
-        state.cart.push(product)
+        state.cart.push({ ...product })
       }
     },
     removeFromCart(state, product) {

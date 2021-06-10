@@ -17,7 +17,7 @@
             <tr
               class="table-item"
               v-for="product in products"
-              :key="product.id"
+              :key="product.id + product.color"
             >
               <td class="product-column">
                 <div>
